@@ -123,10 +123,9 @@ def {{ methodname }}({{ inputs }}) -> {{ response_type }}:
     data = { "{{inputname}}" : {{inputname}} }
     {% else %}
     {% if in_attrs -%}
-    data = { 
-    {% for in_attr in in_attrs %}
-        "{{in_attr.Name}}" : {{in_attr.Name}},
-    {% endfor %}
+    data = { {%- for in_attr in in_attrs -%}
+            "{{in_attr.Name}}" : {{in_attr.Name}},
+            {%- endfor -%}
     }
     {% endif -%}
     {% endif -%}
