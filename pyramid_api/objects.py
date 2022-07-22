@@ -799,7 +799,7 @@ class ImportApiResultObject(BaseModel):
     """ 
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/ImportApiResultObject.htm
     """
-    importDscMap: Optional[Dict[str,str]]  # Format:"" Descr:"A 'map' of the content items and their matching connection strings needed for data source management"
+    importDscMap: Optional[Optional[Dict[str,List[ConnStringDscApiObject]]]]  # Format:"" Descr:"A 'map' of the content items and their matching connection strings needed for data source management"
     itemsIds: Optional[Dict[str,str]]  # Format:"" Descr:"A 'map' of the ids of all items in the source & the destination"
     failedItems: Optional[List['RelatedItemData']]  # Format:"" Descr:"A 'list' of the content items that failed to be imported"
     

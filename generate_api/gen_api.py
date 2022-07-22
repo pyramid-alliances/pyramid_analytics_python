@@ -151,7 +151,6 @@ python_types = {
 
 }
 
-
 def gen_enum(basedir="pyramid_api"):
     with open(f"{basedir}/enum.py", "w") as out:
         t = env.from_string(tpl_enum)
@@ -258,6 +257,7 @@ def gen_object(basedir="pyramid_api"):
             header = [x.text.strip() for x in api_tbl.select("tr th p")]
             #print(header)
             attrs = []
+
             for row in api_tbl.select("tr")[1:]:
                 attr = dict(zip(header,[a.text.strip() for a in row.select("td")]))
                 #if attrs["Type"] == "string": attrs["Type"] = "str"
@@ -267,7 +267,7 @@ def gen_object(basedir="pyramid_api"):
                 if attr_type == "[UUID]\n[UUID]":
                     attr_type = "Dict[str,str]"
                 elif attr_type == '[string]\n[[ConnStringDscApiObject]]':
-                    attr_type = "Dict[str,str]"
+                    attr_type = "Optional[Dict[str,List[ConnStringDscApiObject]]]"
                 else:
                     attr_format = attr.get("Format", "").strip()
                     attr_type_req = attr.get("Required", "").strip()
