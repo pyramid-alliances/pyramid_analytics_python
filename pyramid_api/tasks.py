@@ -30,11 +30,7 @@ def deleteSchedule(scheduleId: str) -> ModifiedItemsResult:
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/API2/tasks/deleteSchedule.htm
     """
     
-    data = { 
-    
-        "scheduleId" : scheduleId,
-    
-    }
+    data = {"scheduleId" : scheduleId,}
     return call_api("/API2/tasks/deleteSchedule",
                 data=data, 
                 response_type=ModifiedItemsResult
@@ -91,11 +87,7 @@ def getExecutions(scheduleId: str) -> List[ExecutionViewData]:
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/API2/tasks/getExecutions.htm
     """
     
-    data = { 
-    
-        "scheduleId" : scheduleId,
-    
-    }
+    data = {"scheduleId" : scheduleId,}
     return call_api("/API2/tasks/getExecutions",
                 data=data, 
                 response_type=List[ExecutionViewData]
@@ -124,11 +116,7 @@ def getScheduleExecutionStatus(executionId: str) -> ApiResultTaskStatus:
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/API2/tasks/getScheduleExecutionStatus.htm
     """
     
-    data = { 
-    
-        "executionId" : executionId,
-    
-    }
+    data = {"executionId" : executionId,}
     return call_api("/API2/tasks/getScheduleExecutionStatus",
                 data=data, 
                 response_type=ApiResultTaskStatus
@@ -157,11 +145,7 @@ def getSchedulesForUser(userId: str) -> List[ScheduleViewObject]:
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/API2/tasks/getSchedulesForUser.htm
     """
     
-    data = { 
-    
-        "userId" : userId,
-    
-    }
+    data = {"userId" : userId,}
     return call_api("/API2/tasks/getSchedulesForUser",
                 data=data, 
                 response_type=List[ScheduleViewObject]
@@ -190,11 +174,7 @@ def getTaskData(taskId: str) -> TaskViewData:
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/API2/tasks/getTaskData.htm
     """
     
-    data = { 
-    
-        "taskId" : taskId,
-    
-    }
+    data = {"taskId" : taskId,}
     return call_api("/API2/tasks/getTaskData",
                 data=data, 
                 response_type=TaskViewData
@@ -223,11 +203,7 @@ def getTaskOutputs(taskId: str) -> List[ItemId]:
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/API2/tasks/getTaskOutputs.htm
     """
     
-    data = { 
-    
-        "taskId" : taskId,
-    
-    }
+    data = {"taskId" : taskId,}
     return call_api("/API2/tasks/getTaskOutputs",
                 data=data, 
                 response_type=List[ItemId]
@@ -284,11 +260,7 @@ def getTasks(executionsId: str) -> List[TaskViewData]:
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/API2/tasks/getTasks.htm
     """
     
-    data = { 
-    
-        "executionsId" : executionsId,
-    
-    }
+    data = {"executionsId" : executionsId,}
     return call_api("/API2/tasks/getTasks",
                 data=data, 
                 response_type=List[TaskViewData]
@@ -317,11 +289,7 @@ def getTasksIds(executionsId: str) -> List[ItemId]:
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/API2/tasks/getTasksIds.htm
     """
     
-    data = { 
-    
-        "executionsId" : executionsId,
-    
-    }
+    data = {"executionsId" : executionsId,}
     return call_api("/API2/tasks/getTasksIds",
                 data=data, 
                 response_type=List[ItemId]
@@ -350,11 +318,7 @@ def reRunTask(taskId: str) -> ModifiedItemsResult:
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/API2/tasks/reRunTask.htm
     """
     
-    data = { 
-    
-        "taskId" : taskId,
-    
-    }
+    data = {"taskId" : taskId,}
     return call_api("/API2/tasks/reRunTask",
                 data=data, 
                 response_type=ModifiedItemsResult
@@ -383,11 +347,7 @@ def resumeSchedule(scheduleId: str) -> ModifiedItemsResult:
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/API2/tasks/resumeSchedule.htm
     """
     
-    data = { 
-    
-        "scheduleId" : scheduleId,
-    
-    }
+    data = {"scheduleId" : scheduleId,}
     return call_api("/API2/tasks/resumeSchedule",
                 data=data, 
                 response_type=ModifiedItemsResult
@@ -443,11 +403,7 @@ def suspendSchedule(scheduleId: str) -> ModifiedItemsResult:
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/API2/tasks/suspendSchedule.htm
     """
     
-    data = { 
-    
-        "scheduleId" : scheduleId,
-    
-    }
+    data = {"scheduleId" : scheduleId,}
     return call_api("/API2/tasks/suspendSchedule",
                 data=data, 
                 response_type=ModifiedItemsResult

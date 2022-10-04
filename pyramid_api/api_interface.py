@@ -128,7 +128,13 @@ class ApiInterface:
             raise error
         log.debug(f"status -> {res.status_code}")
         try:
+            #import ipdb;ipdb.set_trace()
             _json = res.json()
+            _data = _json.get("data", {})
+            if isinstance(_data, dict) and _data.get("success") == False:
+                raise APIException(
+                    f'Error: {_data.get("errorMessage")}'
+                )
             if "error" in _json:
                 raise APIException(
                     f'Unexpected error returned from server: {_json.get("error")}'
@@ -144,8 +150,6 @@ class ApiInterface:
 
     def __ignore_nulls(self, d: Dict):
         return {k: v for k, v in d.items() if v != None}
-
-
 
 
 def setup_logging():

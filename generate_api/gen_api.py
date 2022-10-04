@@ -441,6 +441,11 @@ def gen_methods(basedir="pyramid_api"):
                             inputtype = "{}={}".format(inputtype, in_attr.get("Default"))
                         inputs.append(inputtype)
 
+                #print(methodname, response_type)
+                if methodname == "content/deleteTag":
+                    # XXX patch incorrect definition on documentation
+                    response_type = "ModifiedItemsResult"
+
                 out.write(t.render(
                         methodname=methodname.split("/")[-1], 
                         url=url, method_url=method_url,

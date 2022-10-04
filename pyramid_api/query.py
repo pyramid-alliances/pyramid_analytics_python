@@ -57,11 +57,7 @@ def getParameterElements(parameterId: str) -> EnumerationOutput:
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/API2/query/getParameterElements.htm
     """
     
-    data = { 
-    
-        "parameterId" : parameterId,
-    
-    }
+    data = {"parameterId" : parameterId,}
     return call_api("/API2/query/getParameterElements",
                 data=data, 
                 response_type=EnumerationOutput

@@ -233,7 +233,7 @@ def createNewFolder(folderApiData: NewFolderApiData) -> ModifiedItemsResult:
 
 
 
-def deleteTag(tagId: str) -> TagData:
+def deleteTag(tagId: str) -> ModifiedItemsResult:
     """
     Description:
         Delete a Tag
@@ -254,14 +254,10 @@ def deleteTag(tagId: str) -> TagData:
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/API2/content/deleteTag.htm
     """
     
-    data = { 
-    
-        "tagId" : tagId,
-    
-    }
+    data = {"tagId" : tagId,}
     return call_api("/API2/content/deleteTag",
                 data=data, 
-                response_type=TagData
+                response_type=ModifiedItemsResult
            )
 
 
@@ -285,11 +281,7 @@ def exportContent(itemIds: List[str]) -> None:
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/API2/content/exportContent.htm
     """
     
-    data = { 
-    
-        "itemIds" : itemIds,
-    
-    }
+    data = {"itemIds" : itemIds,}
     return call_api("/API2/content/exportContent",
                 data=data, 
                 response_type=None
@@ -346,11 +338,7 @@ def findItemsByTagId(tag: str) -> List[ItemId]:
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/API2/content/findItemsByTagId.htm
     """
     
-    data = { 
-    
-        "tag" : tag,
-    
-    }
+    data = {"tag" : tag,}
     return call_api("/API2/content/findItemsByTagId",
                 data=data, 
                 response_type=List[ItemId]
@@ -379,11 +367,7 @@ def findItemsByTagName(tag: str) -> List[ItemId]:
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/API2/content/findItemsByTagName.htm
     """
     
-    data = { 
-    
-        "tag" : tag,
-    
-    }
+    data = {"tag" : tag,}
     return call_api("/API2/content/findItemsByTagName",
                 data=data, 
                 response_type=List[ItemId]
@@ -412,11 +396,7 @@ def getAllItemTags(itemId: str) -> List[ItemId]:
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/API2/content/getAllItemTags.htm
     """
     
-    data = { 
-    
-        "itemId" : itemId,
-    
-    }
+    data = {"itemId" : itemId,}
     return call_api("/API2/content/getAllItemTags",
                 data=data, 
                 response_type=List[ItemId]
@@ -445,11 +425,7 @@ def getAllItemsCreatedByUser(userId: str) -> List[PyramidContentItem]:
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/API2/content/getAllItemsCreatedByUser.htm
     """
     
-    data = { 
-    
-        "userId" : userId,
-    
-    }
+    data = {"userId" : userId,}
     return call_api("/API2/content/getAllItemsCreatedByUser",
                 data=data, 
                 response_type=List[PyramidContentItem]
@@ -499,11 +475,7 @@ def getAllUserContentItems(userId: str) -> List[PyramidContentItem]:
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/API2/content/getAllUserContentItems.htm
     """
     
-    data = { 
-    
-        "userId" : userId,
-    
-    }
+    data = {"userId" : userId,}
     return call_api("/API2/content/getAllUserContentItems",
                 data=data, 
                 response_type=List[PyramidContentItem]
@@ -532,11 +504,7 @@ def getAutoRecommendedItems(userId: str) -> List[PyramidContentItem]:
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/API2/content/getAutoRecommendedItems.htm
     """
     
-    data = { 
-    
-        "userId" : userId,
-    
-    }
+    data = {"userId" : userId,}
     return call_api("/API2/content/getAutoRecommendedItems",
                 data=data, 
                 response_type=List[PyramidContentItem]
@@ -565,11 +533,7 @@ def getContentItemMetaData(itemId: str) -> PyramidContentItem:
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/API2/content/getContentItemMetaData.htm
     """
     
-    data = { 
-    
-        "itemId" : itemId,
-    
-    }
+    data = {"itemId" : itemId,}
     return call_api("/API2/content/getContentItemMetaData",
                 data=data, 
                 response_type=PyramidContentItem
@@ -598,11 +562,7 @@ def getContentItemSecurityRoles(contentItemId: str) -> List[RoleData]:
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/API2/content/getContentItemSecurityRoles.htm
     """
     
-    data = { 
-    
-        "contentItemId" : contentItemId,
-    
-    }
+    data = {"contentItemId" : contentItemId,}
     return call_api("/API2/content/getContentItemSecurityRoles",
                 data=data, 
                 response_type=List[RoleData]
@@ -631,11 +591,7 @@ def getContentItemSecurityRolesID(contentItemId: str) -> List[ItemId]:
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/API2/content/getContentItemSecurityRolesID.htm
     """
     
-    data = { 
-    
-        "contentItemId" : contentItemId,
-    
-    }
+    data = {"contentItemId" : contentItemId,}
     return call_api("/API2/content/getContentItemSecurityRolesID",
                 data=data, 
                 response_type=List[ItemId]
@@ -664,11 +620,7 @@ def getFavoriteItems(userId: str) -> List[PyramidContentItem]:
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/API2/content/getFavoriteItems.htm
     """
     
-    data = { 
-    
-        "userId" : userId,
-    
-    }
+    data = {"userId" : userId,}
     return call_api("/API2/content/getFavoriteItems",
                 data=data, 
                 response_type=List[PyramidContentItem]
@@ -725,11 +677,7 @@ def getFolderItems(folderId: str) -> List[PyramidContentItem]:
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/API2/content/getFolderItems.htm
     """
     
-    data = { 
-    
-        "folderId" : folderId,
-    
-    }
+    data = {"folderId" : folderId,}
     return call_api("/API2/content/getFolderItems",
                 data=data, 
                 response_type=List[PyramidContentItem]
@@ -758,11 +706,7 @@ def getMostUsedItems(userId: str) -> List[PyramidContentItem]:
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/API2/content/getMostUsedItems.htm
     """
     
-    data = { 
-    
-        "userId" : userId,
-    
-    }
+    data = {"userId" : userId,}
     return call_api("/API2/content/getMostUsedItems",
                 data=data, 
                 response_type=List[PyramidContentItem]
@@ -791,11 +735,7 @@ def getPrivateFolderForUser(userId: str) -> PyramidContentItem:
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/API2/content/getPrivateFolderForUser.htm
     """
     
-    data = { 
-    
-        "userId" : userId,
-    
-    }
+    data = {"userId" : userId,}
     return call_api("/API2/content/getPrivateFolderForUser",
                 data=data, 
                 response_type=PyramidContentItem
@@ -824,11 +764,7 @@ def getPrivateRootFolder(userId: str) -> PyramidContentItem:
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/API2/content/getPrivateRootFolder.htm
     """
     
-    data = { 
-    
-        "userId" : userId,
-    
-    }
+    data = {"userId" : userId,}
     return call_api("/API2/content/getPrivateRootFolder",
                 data=data, 
                 response_type=PyramidContentItem
@@ -885,11 +821,7 @@ def getRecentItems(userId: str) -> List[PyramidContentItem]:
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/API2/content/getRecentItems.htm
     """
     
-    data = { 
-    
-        "userId" : userId,
-    
-    }
+    data = {"userId" : userId,}
     return call_api("/API2/content/getRecentItems",
                 data=data, 
                 response_type=List[PyramidContentItem]
@@ -918,11 +850,7 @@ def getRecommendedItems(userId: str) -> List[PyramidContentItem]:
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/API2/content/getRecommendedItems.htm
     """
     
-    data = { 
-    
-        "userId" : userId,
-    
-    }
+    data = {"userId" : userId,}
     return call_api("/API2/content/getRecommendedItems",
                 data=data, 
                 response_type=List[PyramidContentItem]
@@ -951,11 +879,7 @@ def getTag(tagId: str) -> TagData:
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/API2/content/getTag.htm
     """
     
-    data = { 
-    
-        "tagId" : tagId,
-    
-    }
+    data = {"tagId" : tagId,}
     return call_api("/API2/content/getTag",
                 data=data, 
                 response_type=TagData
@@ -984,11 +908,7 @@ def getUserGroupFolders(userId: str) -> List[PyramidContentItem]:
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/API2/content/getUserGroupFolders.htm
     """
     
-    data = { 
-    
-        "userId" : userId,
-    
-    }
+    data = {"userId" : userId,}
     return call_api("/API2/content/getUserGroupFolders",
                 data=data, 
                 response_type=List[PyramidContentItem]
@@ -1017,11 +937,7 @@ def getUserGroupRootFolder(userId: str) -> PyramidContentItem:
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/API2/content/getUserGroupRootFolder.htm
     """
     
-    data = { 
-    
-        "userId" : userId,
-    
-    }
+    data = {"userId" : userId,}
     return call_api("/API2/content/getUserGroupRootFolder",
                 data=data, 
                 response_type=PyramidContentItem
@@ -1050,11 +966,7 @@ def getUserPrivateFolder(userId: str) -> List[PyramidContentItem]:
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/API2/content/getUserPrivateFolder.htm
     """
     
-    data = { 
-    
-        "userId" : userId,
-    
-    }
+    data = {"userId" : userId,}
     return call_api("/API2/content/getUserPrivateFolder",
                 data=data, 
                 response_type=List[PyramidContentItem]
@@ -1083,11 +995,7 @@ def getUserPrivateRootFolder(userId: str) -> PyramidContentItem:
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/API2/content/getUserPrivateRootFolder.htm
     """
     
-    data = { 
-    
-        "userId" : userId,
-    
-    }
+    data = {"userId" : userId,}
     return call_api("/API2/content/getUserPrivateRootFolder",
                 data=data, 
                 response_type=PyramidContentItem
@@ -1116,11 +1024,7 @@ def getUserPublicFolders(userId: str) -> List[PyramidContentItem]:
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/API2/content/getUserPublicFolders.htm
     """
     
-    data = { 
-    
-        "userId" : userId,
-    
-    }
+    data = {"userId" : userId,}
     return call_api("/API2/content/getUserPublicFolders",
                 data=data, 
                 response_type=List[PyramidContentItem]
@@ -1149,11 +1053,7 @@ def getUserPublicRootFolder(userId: str) -> PyramidContentItem:
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/API2/content/getUserPublicRootFolder.htm
     """
     
-    data = { 
-    
-        "userId" : userId,
-    
-    }
+    data = {"userId" : userId,}
     return call_api("/API2/content/getUserPublicRootFolder",
                 data=data, 
                 response_type=PyramidContentItem
@@ -1237,11 +1137,7 @@ def purgeContentItems(itemIds: List[str]) -> ModifiedItemsResult:
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/API2/content/purgeContentItems.htm
     """
     
-    data = { 
-    
-        "itemIds" : itemIds,
-    
-    }
+    data = {"itemIds" : itemIds,}
     return call_api("/API2/content/purgeContentItems",
                 data=data, 
                 response_type=ModifiedItemsResult
@@ -1381,11 +1277,7 @@ def restoreSoftDeletedContentItems(itemIds: List[str]) -> ModifiedItemsResult:
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/API2/content/restoreSoftDeletedContentItems.htm
     """
     
-    data = { 
-    
-        "itemIds" : itemIds,
-    
-    }
+    data = {"itemIds" : itemIds,}
     return call_api("/API2/content/restoreSoftDeletedContentItems",
                 data=data, 
                 response_type=ModifiedItemsResult
@@ -1413,11 +1305,7 @@ def softDeleteContentItems(itemIds: List[str]) -> ModifiedItemsResult:
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/API2/content/softDeleteContentItems.htm
     """
     
-    data = { 
-    
-        "itemIds" : itemIds,
-    
-    }
+    data = {"itemIds" : itemIds,}
     return call_api("/API2/content/softDeleteContentItems",
                 data=data, 
                 response_type=ModifiedItemsResult

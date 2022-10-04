@@ -534,11 +534,7 @@ def deleteProfile(profileId: str) -> ModifiedItemsResult:
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/API2/access/deleteProfile.htm
     """
     
-    data = { 
-    
-        "profileId" : profileId,
-    
-    }
+    data = {"profileId" : profileId,}
     return call_api("/API2/access/deleteProfile",
                 data=data, 
                 response_type=ModifiedItemsResult
@@ -567,11 +563,7 @@ def deleteRole(roleId: str) -> ModifiedItemsResult:
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/API2/access/deleteRole.htm
     """
     
-    data = { 
-    
-        "roleId" : roleId,
-    
-    }
+    data = {"roleId" : roleId,}
     return call_api("/API2/access/deleteRole",
                 data=data, 
                 response_type=ModifiedItemsResult
@@ -628,11 +620,7 @@ def deleteUser(userId: str) -> ModifiedItemsResult:
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/API2/access/deleteUser.htm
     """
     
-    data = { 
-    
-        "userId" : userId,
-    
-    }
+    data = {"userId" : userId,}
     return call_api("/API2/access/deleteUser",
                 data=data, 
                 response_type=ModifiedItemsResult
@@ -682,11 +670,7 @@ def getAllNonPrivateRolesByTenant(tenantId: str) -> List[RoleData]:
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/API2/access/getAllNonPrivateRolesByTenant.htm
     """
     
-    data = { 
-    
-        "tenantId" : tenantId,
-    
-    }
+    data = {"tenantId" : tenantId,}
     return call_api("/API2/access/getAllNonPrivateRolesByTenant",
                 data=data, 
                 response_type=List[RoleData]
@@ -715,11 +699,7 @@ def getAllNonPrivateRolesIDByTenant(tenantId: str) -> List[ItemId]:
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/API2/access/getAllNonPrivateRolesIDByTenant.htm
     """
     
-    data = { 
-    
-        "tenantId" : tenantId,
-    
-    }
+    data = {"tenantId" : tenantId,}
     return call_api("/API2/access/getAllNonPrivateRolesIDByTenant",
                 data=data, 
                 response_type=List[ItemId]
@@ -769,11 +749,7 @@ def getAllProfilesByTenantId(tenantId: str) -> List[ProfileApiData]:
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/API2/access/getAllProfilesByTenantId.htm
     """
     
-    data = { 
-    
-        "tenantId" : tenantId,
-    
-    }
+    data = {"tenantId" : tenantId,}
     return call_api("/API2/access/getAllProfilesByTenantId",
                 data=data, 
                 response_type=List[ProfileApiData]
@@ -823,11 +799,7 @@ def getAllRolesByProfileId(profileId: str) -> List[RoleData]:
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/API2/access/getAllRolesByProfileId.htm
     """
     
-    data = { 
-    
-        "profileId" : profileId,
-    
-    }
+    data = {"profileId" : profileId,}
     return call_api("/API2/access/getAllRolesByProfileId",
                 data=data, 
                 response_type=List[RoleData]
@@ -856,11 +828,7 @@ def getAllRolesByUser(userId: str) -> List[ItemId]:
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/API2/access/getAllRolesByUser.htm
     """
     
-    data = { 
-    
-        "userId" : userId,
-    
-    }
+    data = {"userId" : userId,}
     return call_api("/API2/access/getAllRolesByUser",
                 data=data, 
                 response_type=List[ItemId]
@@ -931,11 +899,7 @@ def getAllUsersByTenant(tenantId: str) -> List[ItemId]:
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/API2/access/getAllUsersByTenant.htm
     """
     
-    data = { 
-    
-        "tenantId" : tenantId,
-    
-    }
+    data = {"tenantId" : tenantId,}
     return call_api("/API2/access/getAllUsersByTenant",
                 data=data, 
                 response_type=List[ItemId]
@@ -1039,11 +1003,7 @@ def getGroupsByRole(roleId: str) -> List[LdapGroupDetails]:
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/API2/access/getGroupsByRole.htm
     """
     
-    data = { 
-    
-        "roleId" : roleId,
-    
-    }
+    data = {"roleId" : roleId,}
     return call_api("/API2/access/getGroupsByRole",
                 data=data, 
                 response_type=List[LdapGroupDetails]
@@ -1071,11 +1031,7 @@ def getLicenseCount(tenantId: str) -> None:
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/API2/access/getLicenseCount.htm
     """
     
-    data = { 
-    
-        "tenantId" : tenantId,
-    
-    }
+    data = {"tenantId" : tenantId,}
     return call_api("/API2/access/getLicenseCount",
                 data=data, 
                 response_type=None
@@ -1166,11 +1122,7 @@ def getPrivateProfileIdForUser(userId: str) -> ItemId:
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/API2/access/getPrivateProfileIdForUser.htm
     """
     
-    data = { 
-    
-        "userId" : userId,
-    
-    }
+    data = {"userId" : userId,}
     return call_api("/API2/access/getPrivateProfileIdForUser",
                 data=data, 
                 response_type=ItemId
@@ -1199,11 +1151,7 @@ def getRoleById(roleId: str) -> RoleData:
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/API2/access/getRoleById.htm
     """
     
-    data = { 
-    
-        "roleId" : roleId,
-    
-    }
+    data = {"roleId" : roleId,}
     return call_api("/API2/access/getRoleById",
                 data=data, 
                 response_type=RoleData
@@ -1260,11 +1208,7 @@ def getTenantByName(name: str) -> AdminMultiTenantData:
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/API2/access/getTenantByName.htm
     """
     
-    data = { 
-    
-        "name" : name,
-    
-    }
+    data = {"name" : name,}
     return call_api("/API2/access/getTenantByName",
                 data=data, 
                 response_type=AdminMultiTenantData
@@ -1293,11 +1237,7 @@ def getUser(userId: str) -> PyramidViewUserObject:
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/API2/access/getUser.htm
     """
     
-    data = { 
-    
-        "userId" : userId,
-    
-    }
+    data = {"userId" : userId,}
     return call_api("/API2/access/getUser",
                 data=data, 
                 response_type=PyramidViewUserObject
@@ -1326,11 +1266,7 @@ def getUserByOpenIdPrincipalName(PrincipalName: str) -> PyramidViewUserObject:
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/API2/access/getUserByOpenIdPrincipalName.htm
     """
     
-    data = { 
-    
-        "PrincipalName" : PrincipalName,
-    
-    }
+    data = {"PrincipalName" : PrincipalName,}
     return call_api("/API2/access/getUserByOpenIdPrincipalName",
                 data=data, 
                 response_type=PyramidViewUserObject
@@ -1359,11 +1295,7 @@ def getUserBySamlPrincipalName(PrincipalName: str) -> PyramidViewUserObject:
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/API2/access/getUserBySamlPrincipalName.htm
     """
     
-    data = { 
-    
-        "PrincipalName" : PrincipalName,
-    
-    }
+    data = {"PrincipalName" : PrincipalName,}
     return call_api("/API2/access/getUserBySamlPrincipalName",
                 data=data, 
                 response_type=PyramidViewUserObject
@@ -1391,11 +1323,7 @@ def getUserLastLogin(userName: str) -> None:
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/API2/access/getUserLastLogin.htm
     """
     
-    data = { 
-    
-        "userName" : userName,
-    
-    }
+    data = {"userName" : userName,}
     return call_api("/API2/access/getUserLastLogin",
                 data=data, 
                 response_type=None
@@ -1423,11 +1351,7 @@ def getUserStatusById(userId: str) -> None:
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/API2/access/getUserStatusById.htm
     """
     
-    data = { 
-    
-        "userId" : userId,
-    
-    }
+    data = {"userId" : userId,}
     return call_api("/API2/access/getUserStatusById",
                 data=data, 
                 response_type=None
@@ -1455,11 +1379,7 @@ def getUserStatusByName(userName: str) -> None:
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/API2/access/getUserStatusByName.htm
     """
     
-    data = { 
-    
-        "userName" : userName,
-    
-    }
+    data = {"userName" : userName,}
     return call_api("/API2/access/getUserStatusByName",
                 data=data, 
                 response_type=None
@@ -1488,11 +1408,7 @@ def getUsersByName(userName: str) -> List[PyramidViewUserObject]:
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/API2/access/getUsersByName.htm
     """
     
-    data = { 
-    
-        "userName" : userName,
-    
-    }
+    data = {"userName" : userName,}
     return call_api("/API2/access/getUsersByName",
                 data=data, 
                 response_type=List[PyramidViewUserObject]
@@ -1521,11 +1437,7 @@ def getUsersByRole(roleId: str) -> List[PyramidViewUserObject]:
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/API2/access/getUsersByRole.htm
     """
     
-    data = { 
-    
-        "roleId" : roleId,
-    
-    }
+    data = {"roleId" : roleId,}
     return call_api("/API2/access/getUsersByRole",
                 data=data, 
                 response_type=List[PyramidViewUserObject]
@@ -2001,11 +1913,7 @@ def updateUsersPhones(updateUser: dict) -> None:
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/API2/access/updateUsersPhones.htm
     """
     
-    data = { 
-    
-        "updateUser" : updateUser,
-    
-    }
+    data = {"updateUser" : updateUser,}
     return call_api("/API2/access/updateUsersPhones",
                 data=data, 
                 response_type=None

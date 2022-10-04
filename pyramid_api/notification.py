@@ -30,11 +30,7 @@ def getNotificationIndicators(userId: str) -> NotificationIndicatorsResult:
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/API2/notification/getNotificationIndicators.htm
     """
     
-    data = { 
-    
-        "userId" : userId,
-    
-    }
+    data = {"userId" : userId,}
     return call_api("/API2/notification/getNotificationIndicators",
                 data=data, 
                 response_type=NotificationIndicatorsResult

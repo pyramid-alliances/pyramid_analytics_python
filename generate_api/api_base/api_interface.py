@@ -33,9 +33,23 @@ class PasswordGrant(Grant):
 class TokenGrant(Grant):
     pass
 
-
-_session = None
-
+class UserContext:
+    def __init__(self, username):
+        self.username = username
+         
+    def __enter__(self):
+        
+        self.session = get_session(domain=None)
+        log.info (f"__enter__ user {self.session}")
+        user_session = self.session.authenticateAs(self.username)
+        set_session(user_session)
+        assert user_session == get_session(domain=None)
+        return self
+     
+    def __exit__(self, exc_type, exc_value, exc_traceback):
+        set_session(self.session)
+        assert self.session == get_session(domain=None)
+        log.info('__exit__ user session')
 
 class ApiInterface:
     def __init__(self, domain: str = None):
@@ -46,8 +60,8 @@ class ApiInterface:
 
         if log.getEffectiveLevel() is logging.DEBUG:
             self.called_endpoints = set()
-            log.warn("LogLevel is Debug! API will log ALL requests and responses!")
-            log.warn("Unless you are debugging you do not want this!")
+            log.warning("LogLevel is Debug! API will log ALL requests and responses!")
+            log.warning("Unless you are debugging you do not want this!")
 
     # def login(self, username: str, password: str):
     #    return self.authenticate(PasswordGrant(username=username, password=password))
@@ -67,16 +81,32 @@ class ApiInterface:
         except HTTPError as err:
             raise APIException("Invalid Credentials") from err
 
+    def authenticateAs(self, userIdentity: str):
+        try:
+            userToken = self._call_api(
+                '/API2/auth/authenticateUserByToken',
+                {
+                    'data': {
+                        'userIdentity': userIdentity,
+                        'token': self.token
+                    }
+                }
+            )
+        except HTTPError as err:
+            raise err
+        # new API object for the new user
+        session = ApiInterface(domain=self.domain)
+        session.token = userToken
+        return session
+
     def validate_grant(self, credential: TokenGrant):
-        return
-        """
         self.domain = credential.domain
         self.token = credential.token
         try:
             self.getMe()
         except HTTPError as err:
             raise APIException('Invalid Token') from err
-        """
+
 
     def _call_api(self, endpoint: str, data: Any, method: str = "POST"):
         if self.called_endpoints != None:
@@ -87,17 +117,24 @@ class ApiInterface:
         data["auth"] = self.token
         # print(repr(data))
         res = requests.request(method=method, url=f"{self.domain}{endpoint}", json=data)
+        log.debug("REQ: {}".format(res))
         log.debug(f"{endpoint}")
         log.debug(json.dumps(data, indent=2))
         try:
             res.raise_for_status()
-        except HTTPError as her:
-            log.error(her)
+        except HTTPError as error:
+            log.error(error)
             log.error(f"error content: {res.text}")
-            raise her
+            raise error
         log.debug(f"status -> {res.status_code}")
         try:
+            #import ipdb;ipdb.set_trace()
             _json = res.json()
+            _data = _json.get("data", {})
+            if isinstance(_data, dict) and _data.get("success") == False:
+                raise APIException(
+                    f'Error: {_data.get("errorMessage")}'
+                )
             if "error" in _json:
                 raise APIException(
                     f'Unexpected error returned from server: {_json.get("error")}'
@@ -115,15 +152,19 @@ class ApiInterface:
         return {k: v for k, v in d.items() if v != None}
 
 
-
-
 def setup_logging():
     logging.basicConfig(filename="pyramid.log", encoding="utf-8", level=logging.DEBUG)
 
 
 def call_api(endpoint: str, data: Dict, response_type: Any = None):
-    if not _session:
+    global _session
+    try:
+        if not _session.token:
+            raise APIException("You need to login first. ")
+    except NameError as e:
+        _session = None
         raise APIException("You need to create a session first. ")
+
     clean_data = None
     if data:
         clean_data = {}
@@ -133,10 +174,10 @@ def call_api(endpoint: str, data: Dict, response_type: Any = None):
             elif isinstance(v, UUID):
                 v = str(v)
             elif isinstance(v, BaseModel):
-                v = v.dict()
+                v =  {key:value for key,value in v.dict().items() if value!=None}
             clean_data[k] = v
 
-    print(f"calling {endpoint} data: '{clean_data}' response_type : {response_type}")
+    #print(f"calling {endpoint} data: '{clean_data}' response_type : {response_type}")
     response = _session._call_api(endpoint, clean_data)
     result = None
     if response_type:
@@ -144,23 +185,35 @@ def call_api(endpoint: str, data: Dict, response_type: Any = None):
             #import ipdb;ipdb.set_trace()
             if typing.get_origin(response_type) == list:
                 elem_type = typing.get_args(response_type)[0]
-                print(f"elem type {elem_type}")
+                #print(f"elem type {elem_type}")
                 result = [ elem_type(**elem) for elem in response["data"]]
             else:
                 result = response_type(**response["data"])
         else:
             raise(APIException("invalid response : {}".format(response)))
     else:
-        return response
-    #print(result)
+        if "data" in response:
+            return response["data"]
+        else:
+            return response
     return result
 
 
 def get_session(domain: str) -> ApiInterface:
     global _session
-    if not _session:
-        _session = ApiInterface(domain=domain)
+    try:
+        if _session: 
+            return _session
+    except NameError as e:
+        _session = None
+
+    _session = ApiInterface(domain=domain)
     return _session
+
+
+def set_session(session: ApiInterface) -> None:
+    global _session
+    _session = session
 
 
 def clear_session() -> None:
@@ -169,9 +222,11 @@ def clear_session() -> None:
 
 __all__ = (
     "ApiInterface",
+    "UserContext",
     "APIException",
     "PasswordGrant",
     "TokenGrant",
     "get_session",
+    "set_session",
     "setup_logging",
 )

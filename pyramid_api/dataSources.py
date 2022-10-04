@@ -338,11 +338,7 @@ def deleteDataBase(databaseId: str) -> ModifiedItemsResult:
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/API2/dataSources/deleteDataBase.htm
     """
     
-    data = { 
-    
-        "databaseId" : databaseId,
-    
-    }
+    data = {"databaseId" : databaseId,}
     return call_api("/API2/dataSources/deleteDataBase",
                 data=data, 
                 response_type=ModifiedItemsResult
@@ -371,11 +367,7 @@ def deleteDataSource(sourceId: str) -> ModifiedItemsResult:
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/API2/dataSources/deleteDataSource.htm
     """
     
-    data = { 
-    
-        "sourceId" : sourceId,
-    
-    }
+    data = {"sourceId" : sourceId,}
     return call_api("/API2/dataSources/deleteDataSource",
                 data=data, 
                 response_type=ModifiedItemsResult
@@ -404,11 +396,7 @@ def deleteMaterializedModel(modelId: str) -> ModifiedItemsResult:
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/API2/dataSources/deleteMaterializedModel.htm
     """
     
-    data = { 
-    
-        "modelId" : modelId,
-    
-    }
+    data = {"modelId" : modelId,}
     return call_api("/API2/dataSources/deleteMaterializedModel",
                 data=data, 
                 response_type=ModifiedItemsResult
@@ -549,11 +537,7 @@ def exportModel(materializedModelId: str) -> ExportData:
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/API2/dataSources/exportModel.htm
     """
     
-    data = { 
-    
-        "materializedModelId" : materializedModelId,
-    
-    }
+    data = {"materializedModelId" : materializedModelId,}
     return call_api("/API2/dataSources/exportModel",
                 data=data, 
                 response_type=ExportData
@@ -687,11 +671,7 @@ def getDataModelStructure(modelId: str) -> ModelingModel:
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/API2/dataSources/getDataModelStructure.htm
     """
     
-    data = { 
-    
-        "modelId" : modelId,
-    
-    }
+    data = {"modelId" : modelId,}
     return call_api("/API2/dataSources/getDataModelStructure",
                 data=data, 
                 response_type=ModelingModel
@@ -720,11 +700,7 @@ def getDataSourcesByTenant(tenantId: str) -> List[MaterializedItemObject]:
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/API2/dataSources/getDataSourcesByTenant.htm
     """
     
-    data = { 
-    
-        "tenantId" : tenantId,
-    
-    }
+    data = {"tenantId" : tenantId,}
     return call_api("/API2/dataSources/getDataSourcesByTenant",
                 data=data, 
                 response_type=List[MaterializedItemObject]
@@ -753,11 +729,7 @@ def getDataSourcesByUserId(userId: str) -> ModifiedItemsResult:
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/API2/dataSources/getDataSourcesByUserId.htm
     """
     
-    data = { 
-    
-        "userId" : userId,
-    
-    }
+    data = {"userId" : userId,}
     return call_api("/API2/dataSources/getDataSourcesByUserId",
                 data=data, 
                 response_type=ModifiedItemsResult
@@ -842,11 +814,7 @@ def getMasterFlowProgressUpdate(scheduleId: str) -> MasterFlowProgressResult:
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/API2/dataSources/getMasterFlowProgressUpdate.htm
     """
     
-    data = { 
-    
-        "scheduleId" : scheduleId,
-    
-    }
+    data = {"scheduleId" : scheduleId,}
     return call_api("/API2/dataSources/getMasterFlowProgressUpdate",
                 data=data, 
                 response_type=MasterFlowProgressResult
@@ -875,11 +843,7 @@ def getMasterFlowVariables(itemId: str) -> MasterFlowVariablesResult:
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/API2/dataSources/getMasterFlowVariables.htm
     """
     
-    data = { 
-    
-        "itemId" : itemId,
-    
-    }
+    data = {"itemId" : itemId,}
     return call_api("/API2/dataSources/getMasterFlowVariables",
                 data=data, 
                 response_type=MasterFlowVariablesResult
@@ -908,11 +872,7 @@ def getRolesByDataBase(dataBaseId: str) -> List[ItemRolePair]:
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/API2/dataSources/getRolesByDataBase.htm
     """
     
-    data = { 
-    
-        "dataBaseId" : dataBaseId,
-    
-    }
+    data = {"dataBaseId" : dataBaseId,}
     return call_api("/API2/dataSources/getRolesByDataBase",
                 data=data, 
                 response_type=List[ItemRolePair]
@@ -941,11 +901,7 @@ def getRolesByModel(modelId: str) -> List[ItemRolePair]:
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/API2/dataSources/getRolesByModel.htm
     """
     
-    data = { 
-    
-        "modelId" : modelId,
-    
-    }
+    data = {"modelId" : modelId,}
     return call_api("/API2/dataSources/getRolesByModel",
                 data=data, 
                 response_type=List[ItemRolePair]
@@ -974,11 +930,7 @@ def getRolesByServer(serverId: str) -> List[ItemRolePair]:
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/API2/dataSources/getRolesByServer.htm
     """
     
-    data = { 
-    
-        "serverId" : serverId,
-    
-    }
+    data = {"serverId" : serverId,}
     return call_api("/API2/dataSources/getRolesByServer",
                 data=data, 
                 response_type=List[ItemRolePair]
@@ -1007,11 +959,7 @@ def getServerDataById(dataServerId: str) -> ServerData:
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/API2/dataSources/getServerDataById.htm
     """
     
-    data = { 
-    
-        "dataServerId" : dataServerId,
-    
-    }
+    data = {"dataServerId" : dataServerId,}
     return call_api("/API2/dataSources/getServerDataById",
                 data=data, 
                 response_type=ServerData

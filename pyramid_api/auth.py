@@ -191,11 +191,7 @@ def authenticateUserEmbedWindows(domain: str) -> str:
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/API2/auth/authenticateUserEmbedWindows.htm
     """
     
-    data = { 
-    
-        "domain" : domain,
-    
-    }
+    data = {"domain" : domain,}
     return call_api("/API2/auth/authenticateUserEmbedWindows",
                 data=data, 
                 response_type=str
@@ -223,11 +219,7 @@ def authenticateUserOPENID(parameterMap: str) -> str:
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/API2/auth/authenticateUserOPENID.htm
     """
     
-    data = { 
-    
-        "parameterMap" : parameterMap,
-    
-    }
+    data = {"parameterMap" : parameterMap,}
     return call_api("/API2/auth/authenticateUserOPENID",
                 data=data, 
                 response_type=str
@@ -282,11 +274,7 @@ def authenticateUserSAML(token: str) -> str:
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/API2/auth/authenticateUserSAML.htm
     """
     
-    data = { 
-    
-        "token" : token,
-    
-    }
+    data = {"token" : token,}
     return call_api("/API2/auth/authenticateUserSAML",
                 data=data, 
                 response_type=str
