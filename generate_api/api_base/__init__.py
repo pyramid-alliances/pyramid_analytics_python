@@ -11,7 +11,9 @@ from . import query
 from . import tasks
 
 
-def login(domain: str, username: str, password: str) -> ApiInterface:
-    session = get_session(domain=domain)
+def login(domain: str, username: str, password: str, set_active: bool = True) -> ApiInterface:
+    session = ApiInterface(domain=domain)
     session.authenticate(PasswordGrant(username=username, password=password))
+    if set_active:
+        set_session(session)
     return session

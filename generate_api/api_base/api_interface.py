@@ -51,6 +51,25 @@ class UserContext:
         assert self.session == get_session(domain=None)
         log.info('__exit__ user session')
 
+
+class SessionContext:
+    """
+    switch between sessions with a context manager
+    """
+    def __init__(self, session):
+        self._session = session
+        self._prev_session = None
+
+    def __enter__(self):
+        self._prev_session = get_session()
+        log.info (f"__enter__ session {self._session}")
+        set_session(self._session)
+        return self
+
+    def __exit__(self, exc_type, exc_value, exc_traceback):
+        set_session(self._prev_session)
+        log.info(f'__exit__ session {self._session}')
+
 class ApiInterface:
     def __init__(self, domain: str = None):
         self.domain: str = domain
@@ -199,10 +218,10 @@ def call_api(endpoint: str, data: Dict, response_type: Any = None):
     return result
 
 
-def get_session(domain: str) -> ApiInterface:
+def get_session(domain: Optional[str] = None) -> ApiInterface:
     global _session
     try:
-        if _session: 
+        if _session:
             return _session
     except NameError as e:
         _session = None
@@ -223,6 +242,7 @@ def clear_session() -> None:
 __all__ = (
     "ApiInterface",
     "UserContext",
+    "SessionContext",
     "APIException",
     "PasswordGrant",
     "TokenGrant",
