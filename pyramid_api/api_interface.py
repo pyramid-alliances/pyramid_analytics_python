@@ -208,6 +208,10 @@ def call_api(endpoint: str, data: Dict, response_type: Any = None):
                 result = [ elem_type(**elem) for elem in response["data"]]
             else:
                 result = response_type(**response["data"])
+        elif response == "{}":
+            # empty response from server
+            log.info("server returned an empty result")
+            return None
         else:
             raise(APIException("invalid response : {}".format(response)))
     else:
