@@ -19,6 +19,7 @@ from .api_types import (
     ContentType,
     ContentItemObjectType,
     ImportApiResultObject,
+    ItemId,
     NotificationIndicatorsResult,
     MaterializedItemObject,
     MaterializedRoleAssignmentType,
@@ -26,13 +27,17 @@ from .api_types import (
     NewFolder,
     NewTenant,
     PieApiObject,
+    QueryExportData,
     User,
     Role,
     SearchParams,
     SearchMatchType,
     Server,
+    ServerDetails,
     TenantData,
     ValidRootFolderType,
+    MasterFlowValidationResult,
+    ItemRolePair
 )
 
 LOG = logging.getLogger(__name__)
@@ -140,6 +145,23 @@ class API:
     def __ignore_nulls(self, d: Dict):
         return {k: v for k, v in d.items() if v != None}
 
+    # to call any API that has not been explicitly defined
+    # you can add an explicit API method later :-)
+    #
+    # api.generic('/API2/access/getUsersByName', {
+    #   itemId:'abcd'
+    # })
+    def generic(self, apiName: str, parameters: Dict) -> Any:
+        allParameters = {
+            'auth': self.token
+        }
+        allParameters.update(parameters)
+        res = self._call_api(
+            apiName,
+            allParameters
+        )
+        return res['data']
+
     ##
     # --- Access ---
     ##
@@ -153,6 +175,57 @@ class API:
             }
         )
         return [User(**i) for i in res['data']]
+
+    def getUsersByRole(self, roleId) -> List[User]:
+        res = self._call_api(
+            '/API2/access/getUsersByRole',
+            {
+                'auth': self.token,
+                'roleId': roleId
+            }
+        )
+        return [User(**i) for i in res['data']]
+
+    def addUserToRole(self, userId: str, roleId: str)-> ModifiedItemsResult:
+        return self._call_expect_modified(
+            '/API2/access/addUserToRole', {
+                'auth': self.token,
+                'addUserRoleData': {
+                    'userId': userId,
+                    'roleId': roleId
+                }
+            }
+        )
+
+    def addUsersToRole(self, userIds: List[str], roleId: str)-> ModifiedItemsResult:
+        return self._call_expect_modified(
+            '/API2/access/addUsersToRole', {
+                'auth': self.token,
+                'addUsersRoleData': {
+                    'userIds': userIds,
+                    'roleId': roleId
+                }
+            }
+        )
+        # res = self._call_api(
+        #     '/API2/access/getUsersByRole',
+        #     {
+        #         'auth': self.token,
+        #         'roleId': roleId
+        #     }
+        # )
+        # return [User(**i) for i in res['data']]
+        
+        
+    ## identity ---
+
+    def getMe(self) -> User: # user_id
+        res = self._call_api(
+            '/API2/access/getMe',
+            {
+                'auth': self.token
+            })
+        return User(**res['data'])
 
     ##
     # --- Auth ---
@@ -171,7 +244,23 @@ class API:
                 }
             )
         except HTTPError as err:
-            raise APIException('Invalid Credentials') from err
+            raise err
+
+    def authenticateAs(self, userIdentity: str):
+        try:
+            userToken = self._call_api(
+                '/API2/auth/authenticateUserByToken',
+                {
+                    'data': {
+                        'userIdentity': userIdentity,
+                        'token': self.token
+                    }
+                }
+            )
+        except HTTPError as err:
+            raise err
+        # new API object for the new user
+        return API(TokenGrant(domain = self.domain, token = userToken))
 
     def validate_grant(self, credential: TokenGrant):
         self.domain = credential.domain
@@ -182,27 +271,15 @@ class API:
             raise APIException('Invalid Token') from err
 
     ##
-    # --- Identity ---
-    ##
-
-    def getMe(self) -> User: # user_id
-        res = self._call_api(
-            '/API2/access/getMe',
-            {
-                'auth': self.token
-            })
-        return User(**res['data'])
-
-    ##
     # --- Notifications ---
     ##
 
-    def getNotificationIndicators(self, user_id: str) -> NotificationIndicatorsResult:
+    def getNotificationIndicators(self, userId: str) -> NotificationIndicatorsResult:
         res = self._call_api(
             '/API2/notification/getNotificationIndicators',
             {
                 'auth': self.token,
-                'userId': user_id
+                'userId': userId
             })
         return NotificationIndicatorsResult(**res['data'])
 
@@ -218,6 +295,22 @@ class API:
             }
         )
 
+    def purgeContentItems(self, itemIds: List[str]) -> ModifiedItemsResult:
+        return self._call_expect_modified(
+            '/API2/content/purgeContentItems', {
+                'auth': self.token,
+                'itemIds': itemIds
+            }
+        )
+
+
+    def softDeleteContentItems(self, itemIds: List[str]) -> ModifiedItemsResult:
+        return self._call_expect_modified(
+            '/API2/content/softDeleteContentItems', {
+                'auth': self.token,
+                'itemIds': itemIds
+            }
+        )
 
     def findContentItem(self, params: SearchParams) -> List[ContentItem]:
         res = self._call_api(
@@ -227,32 +320,52 @@ class API:
                 'searchParams': self.__ignore_nulls(asdict(params))
             })
         return [ContentItem(**i) for i in res['data']]
-        
 
-    def getUserPublicRootFolder(self, user_id: str) -> ContentItem:
+
+    def getContentItemMetaData(self, itemId: str) -> ContentItem:
+        res = self._call_api(
+            '/API2/content/getContentItemMetaData',
+            {
+                'auth': self.token,
+                'itemId': itemId
+            })
+        return ContentItem(**res['data'])
+
+
+    def getContentItemSecurityRoles(self, itemId: str) -> List[Role]:
+        res = self._call_api(
+            '/API2/content/getContentItemSecurityRoles',
+            {
+                'auth': self.token,
+                'contentItemId': itemId
+            })
+        return [Role(**i) for i in res['data']]
+
+
+    def getUserPublicRootFolder(self, userId: str) -> ContentItem:
         res = self._call_api(
             '/API2/content/getUserPublicRootFolder',
             {
                 'auth': self.token,
-                'userId': user_id
+                'userId': userId
             })
         return ContentItem(**res['data'])
 
-    def getPrivateRootFolder(self, user_id: str) -> ContentItem:
+    def getPrivateRootFolder(self, userId: str) -> ContentItem:
         res = self._call_api(
             '/API2/content/getPrivateRootFolder',
             {
                 'auth': self.token,
-                'userId': user_id
+                'userId': userId
             })
         return ContentItem(**res['data'])
 
-    def getPrivateFolderForUser(self, user_id: str) -> ContentItem:
+    def getPrivateFolderForUser(self, userId: str) -> ContentItem:
         res = self._call_api(
             '/API2/content/getPrivateFolderForUser',
             {
                 'auth': self.token,
-                'userId': user_id
+                'userId': userId
             })
         return ContentItem(**res['data'])
 
@@ -273,26 +386,43 @@ class API:
             })
         return ContentItem(**res['data'])
 
-    def getUserGroupRootFolder(self, user_id: str) -> ContentItem:
+    def getUserGroupRootFolder(self, userId: str) -> ContentItem:
         res = self._call_api(
             '/API2/content/getUserGroupRootFolder',
             {
                 'auth': self.token,
-                'userId': user_id
+                'userId': userId
             })
         return ContentItem(**res['data'])
 
-    def getFolderItems(self, user_id: str, folder_id) -> List[ContentItem]:
+    def getFolderItems(self, folderId) -> List[ContentItem]:
         res = self._call_api(
             '/API2/content/getFolderItems',
             {
                 'auth': self.token,
-                'userId': user_id,
-                'folderId': folder_id
-        })
+                'folderId': folderId
+            })
         return [ContentItem(**i) for i in res['data']]
 
-    
+    def addRoleToItem(
+        self,
+        itemId: str,
+        roleId: str,
+        accessType: AccessType = AccessType.read,
+        propagateRoles: bool = False
+        ) -> ModifiedItemsResult:
+        return self._call_expect_modified(
+            '/API2/content/addRoleToItem',
+            {
+                'auth': self.token,
+                'roleToItemApiData': {
+                    'itemId': itemId,
+                    'roleId': roleId,
+                    'accessType': accessType,
+                    'propagateRoles': propagateRoles
+                }
+        })
+
     def importContent(self, obj: PieApiObject) -> ImportApiResultObject:
         res = self._call_api(
             '/API2/content/importContent', {
@@ -302,11 +432,7 @@ class API:
         )
         return ImportApiResultObject(**res['data'])
 
-    ##
-    # --- Management ---
-    ##
-
-    ## Tenant
+    # Tenant
 
     def createTenant(
         self,
@@ -320,8 +446,15 @@ class API:
                 'tenant': asdict(tenant)
         })
 
+    def getAllTenants(self) -> List[TenantData]:
+        res = self._call_api(
+            '/API2/access/getAllTenants',
+            {
+                'auth': self.token
+        })
+        return TenantData(**res['data'])
 
-    def getTenantByName(self, name: str) -> TenantData:
+    def getTenantByName(self, name: str) -> List[TenantData]:
         res = self._call_api(
             '/API2/access/getTenantByName',
             {
@@ -330,9 +463,19 @@ class API:
         })
         return TenantData(**res['data'])
 
+    def getDefaultTenant(
+        self
+    ) -> str:
+        res = self._call_api(
+            '/API2/access/getDefaultTenant',
+            {
+                'auth': self.token
+            })
+        return res['data']
+
     def deleteTenants(
         self,
-        tenant_ids: List[str],
+        tenantIds: List[str],
         delete_users: bool,
         delete_servers: bool
     ) -> ModifiedItemsResult:
@@ -342,7 +485,7 @@ class API:
             {
                 'auth': self.token,
                 'data': {
-                    'tenantIds': tenant_ids,
+                    'tenantIds': tenantIds,
                     'deleteUsers': delete_users,
                     'deleteServers': delete_servers
                 }
@@ -362,6 +505,27 @@ class API:
             }
         )
 
+    def deleteRole(
+        self,
+        roleId: str
+    ) -> ModifiedItemsResult:    
+        return self._call_expect_modified(
+            '/API2/access/deleteRole',
+            {
+                'auth': self.token,
+                'roleId': roleId
+            }
+        )
+
+    def getAllRoles(self) -> List[ItemId]:    
+        res = self._call_api(
+            '/API2/access/getAllRoles',
+            {
+                'auth': self.token
+            }
+        )
+        return [ItemId(**i) for i in res['data']]
+
     ## User
 
     def createUserDb(self, user: User) -> ModifiedItemsResult:
@@ -374,6 +538,21 @@ class API:
         })
 
 
+    def deleteUser(
+        self,
+        userId: str
+    ) -> ModifiedItemsResult:    
+        return self._call_expect_modified(
+            '/API2/access/deleteUser',
+            {
+                'auth': self.token,
+                'userId': userId
+            }
+        )
+
+
+    ## dataSources
+    
     ## Server
     def createDataServer(self, server: Server) -> ModifiedItemsResult:
         return self._call_expect_modified(
@@ -382,79 +561,128 @@ class API:
                 'auth': self.token,
                 'serverData': self.__ignore_nulls(asdict(server))
         })
+    
+    def getServerDataById(self, dataServerId: str) -> Server:
+        res = self._call_api(
+            '/API2/dataSources/getServerDataById',
+            {
+                'auth': self.token,
+                'dataServerId': dataServerId
+        })
+        return ServerDetails(**res['data'])
 
-    def addRoleToServer(self, server_id: str, role_id: str, access_type: AccessType) -> ModifiedItemsResult:
+    def deleteDataSource(
+        self,
+        sourceId: str
+    ) -> ModifiedItemsResult:    
+        return self._call_expect_modified(
+            '/API2/dataSources/deleteDataSource',
+            {
+                'auth': self.token,
+                'sourceId': sourceId
+            }
+        )
+
+    def addRolesToServer(self, serverId: str, rolesAndAccess: List[ItemRolePair]) -> ModifiedItemsResult:
         return self._call_expect_modified(
             '/API2/dataSources/addRolesToServer',
             {
                 'auth': self.token,
                 'itemRoles': {
-                    'itemId': server_id,
-                    'itemRolePairList': [{
-                        'roleId': role_id,
-                        'accessType': access_type
-                    }]
+                    'itemId': serverId,
+                    # 'serverId': serverId,
+                    'itemRolePairList': [self.__ignore_nulls(asdict(i)) for i in rolesAndAccess]
+                    # [
+                    #     ItemRolePair(roleId, accessType)
+                    # ]
                 }
         })
 
-    def addRoleToDataBase(
+    def addRolesToDataBase(
         self,
-        db_id: str,
-        role_id: str,
-        access_type: AccessType = AccessType.read
+        databaseId: str,
+        rolesAndAccess: List[ItemRolePair]
+        # roleId: str,
+        # accessType: AccessType = AccessType.read
     ) -> ModifiedItemsResult:
         return self._call_expect_modified(
             '/API2/dataSources/addRolesToDataBase',
             {
                 'auth': self.token,
                 'itemRoles': {
-                    'itemId': db_id,
-                    'itemRolePairList': [{
-                        'roleId': role_id,
-                        'accessType': access_type
-                    }]
+                    'itemId': databaseId,
+                    # 'databaseId': databaseId,
+                    'itemRolePairList': [self.__ignore_nulls(asdict(i)) for i in rolesAndAccess]
+                    # [
+                    #     ItemRolePair(roleId, accessType)
+                    # ]
                 }
         })
 
-    def addRoleToModel(
+    def addRolesToModel(
         self,
-        model_id: str,
-        role_id: str,
-        access_type: AccessType = AccessType.read
+        modelId: str,
+        rolesAndAccess: List[ItemRolePair]
+        # roleId: str,
+        # accessType: AccessType = AccessType.read
     ) -> ModifiedItemsResult:
         return self._call_expect_modified(
             '/API2/dataSources/addRolesToDataBase',
             {
                 'auth': self.token,
                 'itemRoles': {
-                    'itemId': model_id,
-                    'itemRolePairList': [{
-                        'roleId': role_id,
-                        'accessType': access_type
-                    }]
+                    'itemId': modelId,
+                    # 'modelId': modelId,
+                    'itemRolePairList': [self.__ignore_nulls(asdict(i)) for i in rolesAndAccess]
+                    # [
+                    #     ItemRolePair(roleId, accessType)
+                    # ]
                 }
         })
 
-
-    def addRoleToItem(
+    def addRolesToModelAndBubbleUp(
         self,
-        folderId: str,
-        roleId: str,
-        accessType: AccessType = AccessType.read,
-        propagateRoles: bool = False
-        ) -> ModifiedItemsResult:
+        modelId: str,
+        rolesAndAccess: List[ItemRolePair]
+        # roleId: str,
+        # accessType: AccessType = AccessType.read
+    ) -> ModifiedItemsResult:
         return self._call_expect_modified(
-            '/API2/content/addRoleToItem',
+            '/API2/dataSources/addRolesToItemAndBubbleUp',
             {
                 'auth': self.token,
-                'roleToItemApiData': {
-                    'itemId': folderId,
-                    'roleId': roleId,
-                    'accessType': accessType,
-                    'propagateRoles': propagateRoles
-
+                'itemRoles': {
+                    'itemId': modelId,
+                    # 'modelId': modelId,
+                    'itemRolePairList': [self.__ignore_nulls(asdict(i)) for i in rolesAndAccess]
+                    # [
+                    #     ItemRolePair(roleId, accessType)
+                    # ]
                 }
         })
+
+
+    def addRolesToServerAndPropagate(
+        self,
+        serverId: str,
+        rolesAndAccess: List[ItemRolePair]
+        # roleId: str,
+        # accessType: AccessType = AccessType.read
+    ) -> ModifiedItemsResult:
+        return self._call_expect_modified(
+            '/API2/dataSources/addRolesToItemAndPropagate',
+            {
+                'auth': self.token,
+                'itemRoles': {
+                    'itemId': serverId,
+                    # 'serverId': serverId,
+                    'itemRolePairList': [self.__ignore_nulls(asdict(i)) for i in rolesAndAccess]
+                    # [
+                    #     ItemRolePair(roleId, accessType)
+                    # ]
+                }
+        })
+
     
 
     def changeDataSource(self, oldConnection: str, newConnection: str, itemId: str) -> ModifiedItemsResult:
@@ -541,6 +769,8 @@ class API:
                 'auth': self.token
             }
         )
+        # returns {'data': '36da9e00-f31d-424c-a247-576402695fd6'}
+        # connectionStringId
         return res['data']
 
 
@@ -555,27 +785,126 @@ class API:
                 }
         })
 
+    def deleteDataBase(
+        self,
+        databaseId: str
+    ) -> ModifiedItemsResult:    
+        return self._call_expect_modified(
+            '/API2/dataSources/deleteDataBase',
+            {
+                'auth': self.token,
+                'databaseId': databaseId
+            }
+        )
+
+    def validateMasterFlow(
+        self,
+        itemId: str,
+        executionTitle: str = 'validation'
+    ) -> MasterFlowValidationResult:   
+        res =  self._call_api(
+            '/API2/dataSources/validateMasterFlow',
+            {
+                'auth': self.token,
+                'validateMasterFlowObject': {
+                    'itemId': itemId,
+                    'executionTitle': executionTitle
+                }
+            }
+        )
+        return MasterFlowValidationResult(**res['data'])
+
+    def updateSourceNodeConnection(
+        self,
+        dataFlowNodeId: str,
+        itemId: str,
+        serverId: str = None,
+        databaseName: str = None
+    ) -> ModifiedItemsResult:    
+        return self._call_expect_modified(
+            '/API2/dataSources/updateSourceNodeConnection',
+            {
+                'auth': self.token,
+                'dataFlowNodeId': dataFlowNodeId,
+                'serverId': serverId,
+                'databaseName': databaseName,
+                'itemId': itemId,
+            }
+        )
+
+    def updateTargetNodeConnection(
+        self,
+        dataFlowNodeId: str,
+        itemId: str,
+        serverId: str = None,
+        databaseName: str = None,
+        useExistingDatabase: bool = True
+    ) -> ModifiedItemsResult:    
+        return self._call_expect_modified(
+            '/API2/dataSources/updateTargetNodeConnection',
+            {
+                'auth': self.token,
+                'dataFlowNodeId': dataFlowNodeId,
+                'serverId': serverId,
+                'databaseName': databaseName,
+                'useExistingDatabase': useExistingDatabase,
+                'itemId': itemId,
+            }
+        )
+
+
+    def updateVariableConnection(
+        self,
+        dataFlowNodeId: str,
+        variableName: str,
+        serverId: str = None,
+        databaseName: str = None
+    ) -> ModifiedItemsResult:    
+        return self._call_expect_modified(
+            '/API2/dataSources/updateVariableConnection',
+            {
+                'auth': self.token,
+                'dataFlowNodeId': dataFlowNodeId,
+                'serverId': serverId,
+                'databaseName': databaseName,
+                'variableName': variableName,
+            }
+        )
+
     ##
     # --- Tasks ---
     ##
 
     # TODO Write Tests
 
-    def reRunTask(self, task_id: str) -> ModifiedItemsResult:
+    def reRunTask(self, taskId: str) -> ModifiedItemsResult:
         return self._call_expect_modified(
             '/API2/tasks/reRunTask',
             {
                 'auth': self.token,
-                'taskId': task_id
+                'taskId': taskId
         })
 
-    def runSchedule(self, schedule_id: str, check_triggers=True) -> str: # id
+    def runSchedule(self, scheduleId: str, check_triggers=True) -> str: # id
         return self._call_api(
             '/API2/tasks/runSchedule',
             {
                 'auth': self.token,
                 'data':{
-                    'scheduleId': schedule_id,
+                    'scheduleId': scheduleId,
                     'checkTriggers': check_triggers
                 }
         })
+
+    ##
+    # --- Query ---
+    ##
+
+    def extractQueryResult(self, queryData: QueryExportData) -> str:
+        res = self._call_api(
+            '/API2/query/extractQueryResult',
+            {
+                'auth': self.token,
+                'data':  self.__ignore_nulls(asdict(queryData))
+            })
+        return res['data']

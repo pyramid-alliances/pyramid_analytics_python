@@ -1,5 +1,8 @@
+from __future__ import annotations
+
 import copy
 from enum import IntEnum
+from operator import truediv
 
 from dataclasses_json import DataClassJsonMixin
 
@@ -14,6 +17,7 @@ from typing import (
     List,
     Optional
 )
+
 
 def default_field(obj):
     return field(default_factory=lambda: copy.copy(obj))
@@ -132,8 +136,28 @@ class ContentType(IntEnum):
     etlflow = 4
     folder = 5
     publisher = 6
+    server = 7
     storyboard = 8
+    document = 9
+    component = 10
+    theme = 11
+    prom = 12
+    contentview = 13
+    # there is no 14!
+    kpibandscontainer = 15
+    datasource = 16
 
+class ContentItemType(IntEnum):
+    none = 0
+    asset =1
+    server = 2
+    document = 3
+    container = 4
+    folder = 5
+    calculation = 6
+    prom = 7
+    etlflow = 8
+    customvisual = 9
 
 # NOT THE SAME AS ABOVE!?!?!?!?
 class ContentItemObjectType(IntEnum):
@@ -142,7 +166,6 @@ class ContentItemObjectType(IntEnum):
     storyboard = 2
     calculation = 3
     datadiscovery = 4
-
 
 class MaterializedItemType(IntEnum):
     none = 0
@@ -176,6 +199,42 @@ class ValidRootFolderType(IntEnum):
     group = 2
 
 
+class ApiResponseFormat(IntEnum):
+    json = 0
+    xml = 1
+    csv = 2
+    odata = 3
+    odata_metadata = 4
+    odata_db_level = 5
+
+class SyntaxType(IntEnum):
+    pql = 0
+    ms = 1
+    bw = 2
+
+class WriteCapability(IntEnum):
+    Read = 0
+    Write = 1
+
+class ClashDefaultOption(IntEnum):
+    REPLACE_FILE = 1
+    # Need:
+    # NEW
+    # SKIP
+
+class RootFolderType(IntEnum):
+    private = 0
+    public = 1
+    group = 2
+    oneoff = 3
+    privatedummy = 4
+    tenantsrootfolderdummy = 5
+    tenantdummy = 6
+    deletedcontent = 7
+    crosstenant = 8
+    recent = 9
+    favorites = 10
+
 @dataclass
 class ItemId(DataClassJsonMixin):
     id: str
@@ -191,14 +250,19 @@ class Role(DataClassJsonMixin):
     isHidden: bool = False
     isPrivate: bool = False
     isGroupRole: bool = False
+    createdBy: str = None
     
+@dataclass
+class ItemRolePair(DataClassJsonMixin):
+    roleId: str
+    accessType: AccessType = AccessType.none
 
 @dataclass
 class User(DataClassJsonMixin):
     tenantId: str
     userName: str
     roleIds: List[str] = default_field([])
-    clientLicenseType: ClientLicenseType = 0
+    clientLicenseType: ClientLicenseType = ClientLicenseType.none
     id: str = None
     firstName: Optional[str] = None
     lastName: Optional[str] = None
@@ -217,19 +281,18 @@ class User(DataClassJsonMixin):
     inheritanceType: Optional[str] = None
     secondaryMobilePhone: Optional[str] = None
 
-
 @dataclass
 class Server(DataClassJsonMixin):
     port: int
     serverName: str
     id: Optional[str] = None
-    serverType: ServerType = 0
+    serverType: ServerType = ServerType.none
     serverIp: Optional[str] = None
     instanceName: Optional[str] = None
-    writeCapable: int = 0
+    writeCapable: Optional[WriteCapability] = WriteCapability.Read
     optionalParameters: Optional[str] = None
     securedByUser: bool = False
-    serverAuthenticationMethod: ServerAuthenticationMethod = 0
+    serverAuthenticationMethod: Optional[ServerAuthenticationMethod] = ServerAuthenticationMethod.userpassword
     userName: Optional[str] = None
     password: Optional[str] = None
     tenantId: Optional[str] = None
@@ -237,8 +300,13 @@ class Server(DataClassJsonMixin):
     useGlobalAccount: bool = False
     pulseClient: Optional[str] = None
     defaultDatabaseName: Optional[str] = None
-    overlayPyramidSecurity: bool = False
+    overlayPyramidSecurity: Optional[bool] = False
     serverIpAndInstanceName: Optional[str] = None
+
+
+@dataclass
+class ServerDetails(Server):
+    inheritanceType: Optional[str] = 'ServerData'
 
 
 @dataclass
@@ -315,7 +383,7 @@ class ConnectionStringProperties(DataClassJsonMixin):
     serverName: Optional[str] = None
     dataBaseId: Optional[str] = None
     dataBaseName: Optional[str] = None
-    connectionStringType: Optional[ServerType] = 0
+    connectionStringType: Optional[ServerType] = ServerType.none
     isDynamicModel: Optional[bool] = False
     modelParamsStatus: Optional[str] = None
     securityHash: Optional[str] = None
@@ -326,15 +394,15 @@ class ContentItem(DataClassJsonMixin):
     id: Optional[str]
     parentId: Optional[str]
     caption: Optional[str]
-    itemType: Optional[int]
-    contentType: Optional[ContentType]
+    itemType: Optional[ContentItemType]
     createdBy: Optional[str] = None
     createdDate: Optional[int] = None
     version: Optional[str] = None
     modifiedDate: Optional[str] = None
-    tenantId: Optional[str] = None
     description: Optional[str] = None
-
+    tenantId: Optional[str] = None
+    contentType: Optional[ContentType] = None
+    isDeleted: bool = False
 
 @dataclass
 class ModifiedItemsResult(DataClassJsonMixin):
@@ -347,14 +415,14 @@ class ModifiedItemsResult(DataClassJsonMixin):
 class MaterializedItemObject(DataClassJsonMixin):
     itemId: str
     itemCaption: str = None
-    itemType: MaterializedItemType = 0
+    itemType: MaterializedItemType = MaterializedItemType.none
 
 
 @dataclass
 class PieApiObject(DataClassJsonMixin):
     rootFolderId: str
     fileZippedData: str # base64 encoded string of the file
-    clashDefaultOption: int = 1
+    clashDefaultOption: int = ClashDefaultOption.REPLACE_FILE
     rolesAssignmentType: RoleAssignmentType = RoleAssignmentType.forceparentroles
     roleIds: List[str] = None  # only relevent to RoleAssignmentType.ForceExternalRoles
 
@@ -366,6 +434,156 @@ class PieApiObject(DataClassJsonMixin):
 
 
 @dataclass
+class ConnectionStringData(DataClassJsonMixin):
+    serverId: Optional[str] = None
+    dataBaseName: Optional[str] = None
+    model: Optional[str] = None
+    serverName: Optional[str] = None
+    dynamicModel: Optional[bool] = False
+    uniqueKey: Optional[str] = None
+
+
+@dataclass 
+class ImportDscMapItem(DataClassJsonMixin):
+    connectionStringProperties: ConnectionStringProperties
+    needsToPerformDsc: bool = True
+
+@dataclass
+class RelatedItemData(DataClassJsonMixin):
+    name: str
+    itemId: str
+    contentType: Optional[ContentType] = ContentType.none
+    children: List[RelatedItemData] = default_field([])
+    rootFolderType: Optional[RootFolderType] = RootFolderType.privatedummy
+    hasWriteAccess: Optional[bool] = False
+    numberOfUsages: Optional[int] = 0
+    sourceItemId: Optional[str] = None
+    level: int = 0
+    createdDate: Optional[int] = None
+    createdBy: Optional[str] = None
+    dataSourceProperties: ConnectionStringData = default_field({})
+    folderPath: Optional[str] = None
+    tenantId: Optional[str] = None
+    securityHash: Optional[str] = None
+    folderId: Optional[str] = None
+    lockedByUser: Optional[str] = None
+    itemIdAsString: Optional[str] = None
+
+    def __post_init__(self):
+        self.dataSourceProperties = ConnectionStringData(**self.dataSourceProperties)
+        self.children = [RelatedItemData(**i) for i in self.children]
+
+@dataclass
 class ImportApiResultObject(DataClassJsonMixin):
-    importDscMap: List[Dict] = default_field([])
-    failedItems: List[Dict] = default_field([])
+    importDscMap: Dict[str, List[ImportDscMapItem]] = default_field({})
+    failedItems: List[RelatedItemData] = default_field([])
+    itemsIds: Dict[str, str] = default_field({})
+
+    def __post_init__(self):
+        result = {}
+
+        for k, v in self.importDscMap.items():
+            result[k] = [ImportDscMapItem(**i) for i in v]
+
+        self.importDscMap = result
+        self.failedItems = [RelatedItemData(**i) for i in self.failedItems]
+
+@dataclass
+class ExportOptions(DataClassJsonMixin):
+    showUniqueName: bool = True
+    columnHeaderAsCaption: bool = True
+
+@dataclass
+class FilterParameter(DataClassJsonMixin):
+    value: str
+
+@dataclass
+class TargetParameter(DataClassJsonMixin):
+    name: str
+    filters: List[FilterParameter] = default_field([])
+    syntaxType: Optional[SyntaxType] = SyntaxType.pql
+
+    def __post_init__(self):
+        self.filters = [FilterParameter(**i) for i in self.filters]
+
+@dataclass
+class ExternalParameters(DataClassJsonMixin):
+    reportFilters: List[FilterParameter] = default_field([])
+    targets: List[TargetParameter] = default_field([])
+    slideNumber: Optional[int] = 0
+
+    def __post_init__(self):
+        self.reportFilters = [FilterParameter(**i) for i in self.reportFilters]
+        self.targets = [TargetParameter(**i) for i in self.targets]
+
+@dataclass
+class QueryExportData(DataClassJsonMixin):
+    itemId: str
+    exportType: ApiResponseFormat
+    exportOptions: Optional[ExportOptions] = None
+    externalParameters: Optional[ExternalParameters] = None
+
+@dataclass
+class MasterFlowSourceObject(DataClassJsonMixin):
+    masterFlowNodeId: str
+    masterFlowNodeName: str
+    dataFlowNodeId: str
+    description: str
+    serverId: str
+    serverName: str
+    serverType: ServerType
+    databaseName: str
+    validationMessage: str
+
+@dataclass
+class MasterFlowTargetObject(DataClassJsonMixin):
+    masterFlowNodeId: str
+    masterFlowNodeName: str
+    dataFlowNodeId: str
+    description: str
+    serverId: str
+    serverName: str
+    serverType: ServerType
+    createNewDb: bool
+    databaseName: str
+    validationMessage: str
+
+@dataclass
+class MasterFlowOtherObject(DataClassJsonMixin):
+    masterFlowNodeId: str
+    masterFlowNodeName: str
+    dataFlowNodeId: str
+    dataFlowNodeType: str
+    dataFlowNodeName: str
+    description: str
+    validationMessage: str
+
+@dataclass
+class MasterFlowVariableObject(DataClassJsonMixin):
+    masterFlowNodeId: str
+    masterFlowNodeName: str
+    dataFlowNodeId: str
+    description: str
+    serverId: str
+    serverName: str
+    serverType: ServerType
+    databaseName: str
+    validationMessage: str
+    variableCurrentValue: str
+    variableDataType: str
+    variableType: str
+
+@dataclass
+class MasterFlowValidationResult(DataClassJsonMixin):
+    sources: List[MasterFlowSourceObject]
+    targets: List[MasterFlowTargetObject]
+    others: List[MasterFlowOtherObject]
+    variables: List[MasterFlowVariableObject]
+
+    def __post_init__(self):
+        self.sources = [MasterFlowSourceObject(**i) for i in self.sources]
+        self.targets = [MasterFlowTargetObject(**i) for i in self.targets]
+        self.others = [MasterFlowOtherObject(**i) for i in self.others]
+        self.variables = [MasterFlowVariableObject(**i) for i in self.variables]
+
+
