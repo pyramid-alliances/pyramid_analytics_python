@@ -10,7 +10,7 @@ from .enum import *
 
 
 class ApiModifierResult(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/ApiModifierResult.htm
     """
     success: Optional[bool]  # Format:"" Descr:"Boolean showing success or failure result."
@@ -19,14 +19,14 @@ class ApiModifierResult(BaseModel):
     
 
 class ApiResultTaskStatus(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/ApiResultTaskStatus.htm
     """
     status: Optional[TaskStatus]  # Format:"" Descr:"A schedule's task status."
     
 
 class MemberDataApi(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/MemberDataApi.htm
     """
     caption: Optional[str]  # Format:"" Descr:""
@@ -34,14 +34,14 @@ class MemberDataApi(BaseModel):
     
 
 class EnumerationOutput(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/EnumerationOutput.htm
     """
     members: Optional[List[MemberDataApi]]  # Format:"" Descr:"-"
     
 
 class CalcProps(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/CalcProps.htm
     """
     executionArea: Optional[ExecutionArea]  # Format:"" Descr:"-"
@@ -50,7 +50,7 @@ class CalcProps(BaseModel):
     
 
 class CmsTreeNodeMetadata(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/CmsTreeNodeMetadata.htm
     """
     id: Optional[str]  # Format:"" Descr:""
@@ -86,7 +86,7 @@ class CmsTreeNodeMetadata(BaseModel):
     
 
 class ExternalServerData(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/ExternalServerData.htm
     """
     externalServerId: Optional[str]  # Format:"" Descr:""
@@ -96,14 +96,14 @@ class ExternalServerData(BaseModel):
     
 
 class OdbcDirectQueryOptions(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/OdbcDirectQueryOptions.htm
     """
     baseSqlStyle: Optional[ConnectionStringType]  # Format:"" Descr:"The data source server type enumeration."
     
 
 class TenantSettings(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/TenantSettings.htm
     """
     showGroupFolder: Optional[bool]  # Format:"" Descr:"Boolean to show or hide the tenant's group folders"
@@ -112,7 +112,7 @@ class TenantSettings(BaseModel):
     
 
 class TenantInfo(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/TenantInfo.htm
     """
     tenantId: Optional[str]  # Format:"" Descr:""
@@ -120,7 +120,7 @@ class TenantInfo(BaseModel):
     
 
 class ConnectionStringProperties(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/ConnectionStringProperties.htm
     """
     id: Optional[str]  # Format:"" Descr:"The connection object's system ID"
@@ -137,7 +137,7 @@ class ConnectionStringProperties(BaseModel):
     
 
 class ConnectionStringData(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/ConnectionStringData.htm
     """
     serverId: Optional[str]  # Format:"" Descr:""
@@ -149,7 +149,7 @@ class ConnectionStringData(BaseModel):
     
 
 class SearchCriteria(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/SearchCriteria.htm
     """
     searchValue: str  # Format:"" Descr:"Search string"
@@ -157,7 +157,7 @@ class SearchCriteria(BaseModel):
     
 
 class RelatedItemData(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/RelatedItemData.htm
     """
     name: Optional[str]  # Format:"" Descr:"The related item's name"
@@ -181,7 +181,7 @@ class RelatedItemData(BaseModel):
     
 
 class ApiModifierResultString(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/ApiModifierResultString.htm
     """
     success: Optional[bool]  # Format:"" Descr:"Boolean showing success or failure result."
@@ -190,7 +190,7 @@ class ApiModifierResultString(BaseModel):
     
 
 class ModelingServerInfo(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/ModelingServerInfo.htm
     """
     serverName: Optional[str]  # Format:"" Descr:""
@@ -199,28 +199,28 @@ class ModelingServerInfo(BaseModel):
     
 
 class FormData(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/FormData.htm
     """
     machineKey: Optional[str]  # Format:"" Descr:""
     installationType: Optional[int]  # Format:"int32" Descr:""
     version: Optional[str]  # Format:"" Descr:""
     country: Optional[str]  # Format:"" Descr:""
-    email: Optional[str]  # Format:"" Descr:""
     firstName: Optional[str]  # Format:"" Descr:""
     lastName: Optional[str]  # Format:"" Descr:""
+    email: Optional[str]  # Format:"" Descr:""
     phone: Optional[str]  # Format:"" Descr:""
     
 
 class RegistrationData(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/RegistrationData.htm
     """
     formData: Optional[FormData]  # Format:"" Descr:"-"
     
 
 class UserWorkspaceSettings(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/UserWorkspaceSettings.htm
     """
     customDiscoveryWorkspace: Optional[str]  # Format:"" Descr:""
@@ -228,7 +228,7 @@ class UserWorkspaceSettings(BaseModel):
     
 
 class CmsLayoutSettings(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/CmsLayoutSettings.htm
     """
     measureCalcTreeFlatListView: Optional[bool]  # Format:"" Descr:""
@@ -237,7 +237,7 @@ class CmsLayoutSettings(BaseModel):
     
 
 class UserSettingsData(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/UserSettingsData.htm
     """
     mode: Optional[str]  # Format:"" Descr:""
@@ -257,7 +257,7 @@ class UserSettingsData(BaseModel):
     
 
 class AddUserRoleData(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/AddUserRoleData.htm
     """
     userId: str  # Format:"" Descr:""
@@ -265,14 +265,74 @@ class AddUserRoleData(BaseModel):
     
 
 class ApiResultLicenseStatus(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/ApiResultLicenseStatus.htm
     """
     status: Optional[LicenseStatus]  # Format:"" Descr:"License status enumeration."
     
 
+class HierarchyOverlayData(BaseModel):
+    """
+    generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/HierarchyOverlayData.htm
+    """
+    uniqueName: str  # Format:"" Descr:"The unique name of the hierarchy that the overlays apply to"
+    displayFolder: Optional[str]  # Format:"" Descr:"The display folder of the hierarchy"
+    description: Optional[str]  # Format:"" Descr:"The description of the hierarchy"
+    alternativeName: Optional[str]  # Format:"" Descr:"The alternative name of the hierarchy"
+    type: Optional[ModelingColumnCategories]  # Format:"" Descr:"The type of the hierarchy"
+    
+
+class HierarchyOverlayToDeleteData(BaseModel):
+    """
+    generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/HierarchyOverlayToDeleteData.htm
+    """
+    uniqueName: str  # Format:"" Descr:"The unique name of the hierarchy"
+    propertiesToDelete: Optional[List[HierarchyOverlayProperty]]  # Format:"" Descr:"The list of properties to delete from the hierarchy overlay."
+    
+
+class DeleteHierarchyOverlayApiObject(BaseModel):
+    """
+    generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/DeleteHierarchyOverlayApiObject.htm
+    """
+    modelId: str  # Format:"" Descr:"The model's ID"
+    roleId: str  # Format:"" Descr:"The role id the overlays apply to"
+    overlayPropertiesToDelete: List[HierarchyOverlayToDeleteData]  # Format:"" Descr:"The overlay properties to delete"
+    
+
+class ErrorMessage(BaseModel):
+    """
+    generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/ErrorMessage.htm
+    """
+    exceptionCategory: Optional[int]  # Format:"int32" Descr:""
+    msg: Optional[str]  # Format:"" Descr:""
+    code: Optional[int]  # Format:"int32" Descr:""
+    params: Optional[List[str]]  # Format:"" Descr:""
+    customData: Optional[dict]  # Format:"" Descr:""
+    stackTrace: Optional[str]  # Format:"" Descr:""
+    showErrorPopUpDialog: Optional[bool]  # Format:"" Descr:""
+    
+
+class TaskSummary(BaseModel):
+    """
+    generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/TaskSummary.htm
+    """
+    message: Optional[str]  # Format:"" Descr:""
+    params: Optional[List[str]]  # Format:"" Descr:""
+    error: Optional[ErrorMessage]  # Format:"" Descr:"-"
+    
+
+class ModelSyncColumnsSettings(BaseModel):
+    """
+    generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/ModelSyncColumnsSettings.htm
+    """
+    categoryType: Optional[str]  # Format:"" Descr:""
+    dataTypes: Optional[List[str]]  # Format:"" Descr:""
+    isVisible: Optional[bool]  # Format:"" Descr:""
+    aggregationType: Optional[AggregationType]  # Format:"" Descr:"-"
+    
+
 class AdUserData(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/AdUserData.htm
     """
     userName: str  # Format:"" Descr:"Active Directory username of the user"
@@ -282,8 +342,17 @@ class AdUserData(BaseModel):
     tenantId: str  # Format:"" Descr:"The user's tenant (ID)."
     
 
+class AddHierarchyOverlayApiObject(BaseModel):
+    """
+    generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/AddHierarchyOverlayApiObject.htm
+    """
+    modelId: str  # Format:"" Descr:"The model's ID"
+    roleId: str  # Format:"" Descr:"The role id the overlays apply to"
+    overlaysToAdd: List[HierarchyOverlayData]  # Format:"" Descr:"The overlays to add"
+    
+
 class AddUsersRoleData(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/AddUsersRoleData.htm
     """
     userIds: List[str]  # Format:"" Descr:"List of user ID's that will be attached to a role"
@@ -291,7 +360,7 @@ class AddUsersRoleData(BaseModel):
     
 
 class AdditionalServerProperties(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/AdditionalServerProperties.htm
     """
     sharedFolderPath: Optional[str]  # Format:"" Descr:"Shared Folder Path"
@@ -335,6 +404,8 @@ class AdditionalServerProperties(BaseModel):
     customTrustStore: Optional[str]  # Format:"" Descr:"Path to custom java trust store (in Pyramid server filesystem)"
     customTrustStorePassword: Optional[str]  # Format:"" Descr:"Trust store password"
     isDatabaseSchema: Optional[bool]  # Format:"" Descr:"Treat schemas names as database names in Pyramid"
+    accountId: Optional[str]  # Format:"" Descr:"Account ID"
+    roleId: Optional[str]  # Format:"" Descr:"Role ID"
     sysNumber: Optional[str]  # Format:"" Descr:""
     clientNumber: Optional[str]  # Format:"" Descr:"Custom client parameter for SAP HANA and BW"
     sncPartnerName: Optional[str]  # Format:"" Descr:""
@@ -362,7 +433,7 @@ class AdditionalServerProperties(BaseModel):
     
 
 class AdminMultiTenantData(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/AdminMultiTenantData.htm
     """
     id: Optional[str]  # Format:"" Descr:"The tenant's system ID"
@@ -381,7 +452,7 @@ class AdminMultiTenantData(BaseModel):
     
 
 class AdminTypeApiData(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/AdminTypeApiData.htm
     """
     userId: str  # Format:"" Descr:"The user's system ID"
@@ -389,7 +460,7 @@ class AdminTypeApiData(BaseModel):
     
 
 class ChangeItemDescriptionData(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/ChangeItemDescriptionData.htm
     """
     itemId: str  # Format:"" Descr:"The content item's system ID"
@@ -397,7 +468,7 @@ class ChangeItemDescriptionData(BaseModel):
     
 
 class ChangeUserLicenseData(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/ChangeUserLicenseData.htm
     """
     userId: str  # Format:"" Descr:"The user's system ID"
@@ -406,7 +477,7 @@ class ChangeUserLicenseData(BaseModel):
     
 
 class ChangeUserLicenseObject(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/ChangeUserLicenseObject.htm
     """
     userId: str  # Format:"" Descr:"The user's system ID"
@@ -414,7 +485,7 @@ class ChangeUserLicenseObject(BaseModel):
     
 
 class ConnStringDscApiObject(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/ConnStringDscApiObject.htm
     """
     connectionStringProperties: Optional[ConnectionStringProperties]  # Format:"" Descr:"The connection strings object"
@@ -422,7 +493,7 @@ class ConnStringDscApiObject(BaseModel):
     
 
 class ConnectedItemsSearchCriteria(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/ConnectedItemsSearchCriteria.htm
     """
     dataContainerId: str  # Format:"" Descr:"This is the container or 'parent' system ID: If searching for databases, this is the data source server's ID. If searching for materialized models, its the data source database's ID"
@@ -430,7 +501,7 @@ class ConnectedItemsSearchCriteria(BaseModel):
     
 
 class ConnectionStringProperties(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/ConnectionStringProperties.htm
     """
     id: Optional[str]  # Format:"" Descr:"The connection object's system ID"
@@ -447,7 +518,7 @@ class ConnectionStringProperties(BaseModel):
     
 
 class ContentSearchParamsObject(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/ContentSearchParamsObject.htm
     """
     searchString: str  # Format:"" Descr:"The terms to be used in the search"
@@ -466,7 +537,7 @@ class ContentSearchParamsObject(BaseModel):
     
 
 class CreateUserAdObject(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/CreateUserAdObject.htm
     """
     id: str  # Format:"uuid" Descr:"The user's system ID."
@@ -481,7 +552,7 @@ class CreateUserAdObject(BaseModel):
     
 
 class CreateUserDbObject(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/CreateUserDbObject.htm
     """
     id: Optional[str]  # Format:"uuid" Descr:"The user ID. If provided, the GUID will be used. Otherwise, the function will auto-create it."
@@ -501,7 +572,7 @@ class CreateUserDbObject(BaseModel):
     
 
 class CreateUserOpenIdObject(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/CreateUserOpenIdObject.htm
     """
     id: Optional[str]  # Format:"uuid" Descr:"The user ID. If provided, the GUID will be used. Otherwise, the function will auto-create it."
@@ -522,7 +593,7 @@ class CreateUserOpenIdObject(BaseModel):
     
 
 class CreateUserSamlObject(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/CreateUserSamlObject.htm
     """
     id: Optional[str]  # Format:"uuid" Descr:"The user ID. If provided, the GUID will be used. Otherwise, the function will auto-create it."
@@ -543,7 +614,7 @@ class CreateUserSamlObject(BaseModel):
     
 
 class DataBaseRecognitionObject(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/DataBaseRecognitionObject.htm
     """
     serverId: str  # Format:"" Descr:"The data source server's ID"
@@ -551,7 +622,7 @@ class DataBaseRecognitionObject(BaseModel):
     
 
 class DataSourceTableResult(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/DataSourceTableResult.htm
     """
     tableName: Optional[str]  # Format:"" Descr:"The table name."
@@ -559,14 +630,23 @@ class DataSourceTableResult(BaseModel):
     
 
 class DataSourceUsedTablesResult(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/DataSourceUsedTablesResult.htm
     """
     tables: List[DataSourceTableResult]  # Format:"" Descr:"List of tables. Each table contains table name and schema name."
     
 
+class DeleteHierarchyOverlayApiObject(BaseModel):
+    """
+    generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/DeleteHierarchyOverlayApiObject.htm
+    """
+    modelId: str  # Format:"" Descr:"The model's ID"
+    roleId: str  # Format:"" Descr:"The role id the overlays apply to"
+    overlayPropertiesToDelete: List[HierarchyOverlayToDeleteData]  # Format:"" Descr:"The overlay properties to delete"
+    
+
 class DeleteTenantApiData(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/DeleteTenantApiData.htm
     """
     tenantIds: List[str]  # Format:"" Descr:"A list of tenant ID's"
@@ -575,7 +655,7 @@ class DeleteTenantApiData(BaseModel):
     
 
 class DomainSecurityObject(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/DomainSecurityObject.htm
     """
     securityType: SecurityType  # Format:"" Descr:"Enumeration of the domain server type"
@@ -591,7 +671,7 @@ class DomainSecurityObject(BaseModel):
     
 
 class MasterFlowSourceObject(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/MasterFlowSourceObject.htm
     """
     masterFlowNodeId: Optional[str]  # Format:"" Descr:"Master Flow node id"
@@ -606,7 +686,7 @@ class MasterFlowSourceObject(BaseModel):
     
 
 class MasterFlowOtherObject(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/MasterFlowOtherObject.htm
     """
     masterFlowNodeId: Optional[str]  # Format:"" Descr:"Master Flow node ID"
@@ -619,7 +699,7 @@ class MasterFlowOtherObject(BaseModel):
     
 
 class MasterFlowTargetObject(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/MasterFlowTargetObject.htm
     """
     masterFlowNodeId: Optional[str]  # Format:"" Descr:"Master Flow node id"
@@ -635,7 +715,7 @@ class MasterFlowTargetObject(BaseModel):
     
 
 class MasterFlowVariableObject(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/MasterFlowVariableObject.htm
     """
     variableId: Optional[str]  # Format:"" Descr:"Variable ID"
@@ -651,7 +731,7 @@ class MasterFlowVariableObject(BaseModel):
     
 
 class DscApiData(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/DscApiData.htm
     """
     fromConnId: str  # Format:"" Descr:"The connection ID of the data source to change FROM"
@@ -660,7 +740,7 @@ class DscApiData(BaseModel):
     
 
 class MasterFlowValidationResult(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/MasterFlowValidationResult.htm
     """
     sources: Optional[List[MasterFlowSourceObject]]  # Format:"" Descr:"Validation results for sources objects"
@@ -670,15 +750,16 @@ class MasterFlowValidationResult(BaseModel):
     
 
 class ExecuteMasterFlowObject(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/ExecuteMasterFlowObject.htm
     """
     itemId: str  # Format:"" Descr:"The ID depends on the source: For Model files it is the item's system ID. For materialized/deployed models it is its materialized model ID."
     executionTitle: Optional[str]  # Format:"" Descr:"A title to describe the execution of the job."
+    syncModelColumnsType: Optional[EtlSyncModelColumnsType]  # Format:"" Descr:"In the case of adding or removing columns in the database, the model columns can be synchronized according to this property."
     
 
 class ExecuteMasterFlowResult(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/ExecuteMasterFlowResult.htm
     """
     scheduleId: Optional[str]  # Format:"" Descr:"Schedule's system ID"
@@ -687,7 +768,7 @@ class ExecuteMasterFlowResult(BaseModel):
     
 
 class TaskViewData(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/TaskViewData.htm
     """
     id: Optional[str]  # Format:"" Descr:"The tasks's system ID"
@@ -698,12 +779,13 @@ class TaskViewData(BaseModel):
     resultType: Optional[ScheduleResultType]  # Format:"" Descr:"The tasks's result type enumeration"
     result: Optional[str]  # Format:"" Descr:"The tasks's result"
     summary: Optional[str]  # Format:"" Descr:"The tasks's summary"
+    taskSummary: Optional[TaskSummary]  # Format:"" Descr:"The tasks's summary detailed object"
     startDate: Optional[str]  # Format:"date-time" Descr:"The task's start date"
     endDate: Optional[str]  # Format:"date-time" Descr:"The task's end date"
     
 
 class ExecuteScheduleApiData(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/ExecuteScheduleApiData.htm
     """
     scheduleId: str  # Format:"" Descr:"The schedule's system ID"
@@ -711,7 +793,7 @@ class ExecuteScheduleApiData(BaseModel):
     
 
 class ExecutionViewData(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/ExecutionViewData.htm
     """
     id: Optional[str]  # Format:"" Descr:"The execution's system ID"
@@ -737,7 +819,7 @@ class ExecutionViewData(BaseModel):
     
 
 class ExportData(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/ExportData.htm
     """
     fileName: Optional[str]  # Format:"" Descr:"The file name of the exported data"
@@ -745,14 +827,14 @@ class ExportData(BaseModel):
     
 
 class FilterParameter(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/FilterParameter.htm
     """
     value: Optional[str]  # Format:"" Descr:"The filter string"
     
 
 class TargetParameter(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/TargetParameter.htm
     """
     name: Optional[str]  # Format:"" Descr:"The target's string"
@@ -761,7 +843,7 @@ class TargetParameter(BaseModel):
     
 
 class ExportOptions(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/ExportOptions.htm
     """
     showUniqueName: Optional[bool]  # Format:"" Descr:"Boolean to show or hide unique names in the exported results"
@@ -769,7 +851,7 @@ class ExportOptions(BaseModel):
     
 
 class ExternalParameters(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/ExternalParameters.htm
     """
     reportFilters: Optional[List[FilterParameter]]  # Format:"" Descr:"A list of filter parameters for the report"
@@ -778,25 +860,53 @@ class ExternalParameters(BaseModel):
     
 
 class FolderTenantObject(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/FolderTenantObject.htm
     """
     validRootFolderType: ValidRootFolderType  # Format:"" Descr:"The type of root folder"
     tenantId: str  # Format:"" Descr:"Then tenant's ID"
     
 
+class HierarchyMeasureSecurity(BaseModel):
+    """
+    generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/HierarchyMeasureSecurity.htm
+    """
+    modelId: str  # Format:"" Descr:"The model's ID"
+    roleId: str  # Format:"" Descr:"The role id the settings apply to"
+    uniqueNames: List[str]  # Format:"" Descr:"The unique names of the items, in a list. Use hierarchies for hierarchy security, use measures for measures security"
+    
+
 class HierarchyMeasureSecurityApiObject(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/HierarchyMeasureSecurityApiObject.htm
     """
     modelId: str  # Format:"" Descr:"The model's ID"
     roleId: str  # Format:"" Descr:"The role id the settings apply to"
-    uniqueNames: List[str]  # Format:"" Descr:"The unique names of the items, in a  list"
-    enableMode: Optional[bool]  # Format:"" Descr:""
+    uniqueNames: List[str]  # Format:"" Descr:"The unique names of the items, in a list. Use hierarchies for hierarchy security, use measures for measures security"
+    enableMode: bool  # Format:"" Descr:"Set to true for 'Enable' mode. Set to false for 'Disable' mode."
+    
+
+class HierarchyOverlayData(BaseModel):
+    """
+    generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/HierarchyOverlayData.htm
+    """
+    uniqueName: str  # Format:"" Descr:"The unique name of the hierarchy that the overlays apply to"
+    displayFolder: Optional[str]  # Format:"" Descr:"The display folder of the hierarchy"
+    description: Optional[str]  # Format:"" Descr:"The description of the hierarchy"
+    alternativeName: Optional[str]  # Format:"" Descr:"The alternative name of the hierarchy"
+    type: Optional[ModelingColumnCategories]  # Format:"" Descr:"The type of the hierarchy"
+    
+
+class HierarchyOverlayToDeleteData(BaseModel):
+    """
+    generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/HierarchyOverlayToDeleteData.htm
+    """
+    uniqueName: str  # Format:"" Descr:"The unique name of the hierarchy"
+    propertiesToDelete: Optional[List[HierarchyOverlayProperty]]  # Format:"" Descr:"The list of properties to delete from the hierarchy overlay."
     
 
 class ImportApiResultObject(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/ImportApiResultObject.htm
     """
     importDscMap: Optional[Optional[Dict[str,List[ConnStringDscApiObject]]]]  # Format:"" Descr:"A 'map' of the content items and their matching connection strings needed for data source management"
@@ -805,7 +915,7 @@ class ImportApiResultObject(BaseModel):
     
 
 class ItemId(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/ItemId.htm
     """
     id: Optional[str]  # Format:"" Descr:"The item's ID."
@@ -813,7 +923,7 @@ class ItemId(BaseModel):
     
 
 class ItemParentApiData(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/ItemParentApiData.htm
     """
     itemId: str  # Format:"" Descr:"The content item's system ID"
@@ -821,7 +931,7 @@ class ItemParentApiData(BaseModel):
     
 
 class ItemRolePair(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/ItemRolePair.htm
     """
     roleId: str  # Format:"" Descr:"Role's system ID"
@@ -829,7 +939,7 @@ class ItemRolePair(BaseModel):
     
 
 class ItemRolesForRemoval(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/ItemRolesForRemoval.htm
     """
     itemId: str  # Format:"" Descr:"The item's system ID"
@@ -837,7 +947,7 @@ class ItemRolesForRemoval(BaseModel):
     
 
 class ItemRolesToBeAdded(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/ItemRolesToBeAdded.htm
     """
     itemId: str  # Format:"" Descr:"The item's system ID"
@@ -848,7 +958,7 @@ class ItemRolesToBeAdded(BaseModel):
     
 
 class ItemsForFavorites(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/ItemsForFavorites.htm
     """
     userId: str  # Format:"" Descr:"The system user ID"
@@ -856,7 +966,7 @@ class ItemsForFavorites(BaseModel):
     
 
 class LdapGroupDetails(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/LdapGroupDetails.htm
     """
     samAccountName: Optional[str]  # Format:"" Descr:"The group's AD account name"
@@ -867,7 +977,7 @@ class LdapGroupDetails(BaseModel):
     
 
 class LdapGroupIdentifier(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/LdapGroupIdentifier.htm
     """
     domainNetBios: str  # Format:"" Descr:"Domain name"
@@ -875,7 +985,7 @@ class LdapGroupIdentifier(BaseModel):
     
 
 class LdapSearchObject(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/LdapSearchObject.htm
     """
     domainNetBios: str  # Format:"" Descr:"The AD domain"
@@ -884,7 +994,7 @@ class LdapSearchObject(BaseModel):
     
 
 class LdapUserObject(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/LdapUserObject.htm
     """
     firstName: Optional[str]  # Format:"" Descr:"The user's first name"
@@ -895,7 +1005,7 @@ class LdapUserObject(BaseModel):
     
 
 class LdapUsersSearchObject(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/LdapUsersSearchObject.htm
     """
     domainNetBios: str  # Format:"" Descr:"The domain name"
@@ -903,8 +1013,16 @@ class LdapUsersSearchObject(BaseModel):
     ldapSearchType: LdapSearchType  # Format:"" Descr:"The search type using the type enumeration"
     
 
+class LicenseCountObject(BaseModel):
+    """
+    generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/LicenseCountObject.htm
+    """
+    totalViewerSeats: Optional[int]  # Format:"int32" Descr:"The total number of viewer licenses for the tenant"
+    totalProSeats: Optional[int]  # Format:"int32" Descr:"The total number of professional licenses for the tenant"
+    
+
 class MasterFlowFindDataSourceObject(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/MasterFlowFindDataSourceObject.htm
     """
     itemId: str  # Format:"" Descr:"The item's system ID."
@@ -912,7 +1030,7 @@ class MasterFlowFindDataSourceObject(BaseModel):
     
 
 class MasterFlowModelNameObject(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/MasterFlowModelNameObject.htm
     """
     itemId: str  # Format:"" Descr:"The ID depends on the source: For Model files it is the item's system ID. For materialized/deployed models it is its materialized model ID."
@@ -921,7 +1039,7 @@ class MasterFlowModelNameObject(BaseModel):
     
 
 class MasterFlowProgressResult(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/MasterFlowProgressResult.htm
     """
     taskStatus: Optional[TaskStatus]  # Format:"" Descr:"The task status"
@@ -930,17 +1048,18 @@ class MasterFlowProgressResult(BaseModel):
     
 
 class MasterFlowSchemasObject(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/MasterFlowSchemasObject.htm
     """
     itemId: str  # Format:"" Descr:"The ID depends on the source: For Model files it is the item's system ID. For materialized/deployed models it is its materialized model ID."
     dataFlowNodeId: str  # Format:"" Descr:"Data Flow node's ID. The ID can be found in the node's property pane within the 'description' card. For materialized/deployed model of direct query, this value can by blank."
     fromSchema: str  # Format:"" Descr:"Current schema name."
     toSchema: str  # Format:"" Descr:"New schema name."
+    schemaValidation: Optional[str]  # Format:"" Descr:"Define whether to check if the new schema exists, before changing."
     
 
 class MasterFlowSourceConnectionObject(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/MasterFlowSourceConnectionObject.htm
     """
     dataFlowNodeId: str  # Format:"" Descr:"The data flow node ID."
@@ -950,7 +1069,7 @@ class MasterFlowSourceConnectionObject(BaseModel):
     
 
 class MasterFlowTargetConnectionObject(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/MasterFlowTargetConnectionObject.htm
     """
     dataFlowNodeId: str  # Format:"" Descr:"The data flow node ID."
@@ -961,14 +1080,14 @@ class MasterFlowTargetConnectionObject(BaseModel):
     
 
 class MasterFlowUpdatedVariableResult(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/MasterFlowUpdatedVariableResult.htm
     """
     results: Optional[List[ApiModifierResultString]]  # Format:"" Descr:"List of result. each result shows the updated response - success or error message."
     
 
 class MasterFlowVariableConnectionObject(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/MasterFlowVariableConnectionObject.htm
     """
     itemId: str  # Format:"" Descr:"The ID depends on the source: For Model files it is the item's system ID. For materialized/deployed models it is its materialized model ID."
@@ -978,7 +1097,7 @@ class MasterFlowVariableConnectionObject(BaseModel):
     
 
 class MasterFlowVariableValueObject(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/MasterFlowVariableValueObject.htm
     """
     itemId: str  # Format:"" Descr:"The ID depends on the source: For Model files it is the item's system ID. For materialized/deployed models it is its materialized model ID."
@@ -987,21 +1106,21 @@ class MasterFlowVariableValueObject(BaseModel):
     
 
 class MasterFlowVariablesResult(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/MasterFlowVariablesResult.htm
     """
     variablesObjects: List[MasterFlowVariableObject]  # Format:"" Descr:"List of MasterFlowVariableObject. Each object contains a variable and its datasource details."
     
 
 class MasterFlowVariablesValueObject(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/MasterFlowVariablesValueObject.htm
     """
     variableValueList: List[MasterFlowVariableValueObject]  # Format:"" Descr:"List of Variables to update."
     
 
 class MaterializedApiObject(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/MaterializedApiObject.htm
     """
     fileZippedData: str  # Format:"" Descr:"The PIE file contents (base64 data payload)"
@@ -1011,7 +1130,7 @@ class MaterializedApiObject(BaseModel):
     
 
 class ModelDataFlowSourceInfo(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/ModelDataFlowSourceInfo.htm
     """
     flowId: Optional[str]  # Format:"uuid" Descr:"Source Data Flow system ID"
@@ -1019,7 +1138,7 @@ class ModelDataFlowSourceInfo(BaseModel):
     
 
 class MaterializedItemObject(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/MaterializedItemObject.htm
     """
     itemId: Optional[str]  # Format:"" Descr:"The item's system ID"
@@ -1028,7 +1147,7 @@ class MaterializedItemObject(BaseModel):
     
 
 class MeasureGroup(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/MeasureGroup.htm
     """
     Name: Optional[str]  # Format:"" Descr:"Measure group name"
@@ -1036,20 +1155,30 @@ class MeasureGroup(BaseModel):
     Description: Optional[str]  # Format:"" Descr:"Measure group description"
     
 
+class MembersSecurity(BaseModel):
+    """
+    generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/MembersSecurity.htm
+    """
+    modelId: str  # Format:"" Descr:"The model's ID"
+    roleId: str  # Format:"" Descr:"The role id that the settings apply to"
+    hierarchyUniqueName: str  # Format:"" Descr:"The unique name of the hierarchy that contain the members"
+    
+
 class MembersSecurityApiObject(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/MembersSecurityApiObject.htm
     """
     modelId: str  # Format:"" Descr:"The model's ID"
-    roleId: str  # Format:"" Descr:"The role name to set the settings on"
-    hierarchyUniqueName: str  # Format:"" Descr:"The hierarchy unique name"
-    members: Optional[List[str]]  # Format:"" Descr:"The members to apply the security to. Use member unique names in a list."
-    script: Optional[str]  # Format:"" Descr:"The PQL script to be used to evaluate for determining member security."
-    enableMode: Optional[bool]  # Format:"" Descr:""
+    roleId: str  # Format:"" Descr:"The role id that the settings apply to"
+    hierarchyUniqueName: str  # Format:"" Descr:"The unique name of the hierarchy that contain the members"
+    enableMode: bool  # Format:"" Descr:"Set to true for 'Enabled' (included) mode. Set to false for 'Disabled' (excluded) mode."
+    visualTotals: Optional[bool]  # Format:"" Descr:"Enable or disable visual totals. Relevant in parent-child hierarchies security only."
+    members: Optional[List[str]]  # Format:"" Descr:"A listing of the unique names of members that need to be secured."
+    script: Optional[str]  # Format:"" Descr:"The PQL script to be used to evaluate the member listing that needs to be secured."
     
 
 class ModelingProperty(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/ModelingProperty.htm
     """
     uniqueName: Optional[str]  # Format:"" Descr:"Unique Name of the property column"
@@ -1063,7 +1192,7 @@ class ModelingProperty(BaseModel):
     
 
 class ModelRecognitionObject(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/ModelRecognitionObject.htm
     """
     serverId: str  # Format:"" Descr:"The data source server's ID"
@@ -1073,7 +1202,7 @@ class ModelRecognitionObject(BaseModel):
     
 
 class ModelingHierarchyLevel(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/ModelingHierarchyLevel.htm
     """
     levelId: Optional[str]  # Format:"uuid" Descr:"System ID of this hierarchy level"
@@ -1090,7 +1219,7 @@ class ModelingHierarchyLevel(BaseModel):
     
 
 class ModelingColumn(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/ModelingColumn.htm
     """
     columnId: Optional[str]  # Format:"uuid" Descr:"The column's system ID"
@@ -1120,7 +1249,7 @@ class ModelingColumn(BaseModel):
     
 
 class ModelingRelationshipColumnPair(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/ModelingRelationshipColumnPair.htm
     """
     primaryColumnUniqueName: Optional[str]  # Format:"" Descr:"The primary column's unique name"
@@ -1129,7 +1258,7 @@ class ModelingRelationshipColumnPair(BaseModel):
     
 
 class ModelingHierarchy(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/ModelingHierarchy.htm
     """
     hierarchyId: Optional[str]  # Format:"uuid" Descr:"The hierarchy's System ID"
@@ -1149,13 +1278,13 @@ class ModelingHierarchy(BaseModel):
     unaryOperatorSourceColumnUniqueName: Optional[str]  # Format:"" Descr:"Parent-Child hierarchy's unary-operator column"
     parentChildRollupType: Optional[ParentChildRollupType]  # Format:"" Descr:"Parent-Child hierarchy's rollup type"
     parentChildOrphanHandlingType: Optional[ParentChildOrphanHandlingType]  # Format:"" Descr:"Parent-Child hierarchy's handling for orphan nodes"
+    startingLevel: Optional[int]  # Format:"int32" Descr:""
     orderColumnUniqueNameOrNullIfSelf: Optional[str]  # Format:"" Descr:""
     captionColumnUniqueNameOrNullIfSelf: Optional[str]  # Format:"" Descr:""
-    startingLevel: Optional[int]  # Format:"int32" Descr:""
     
 
 class ModelingMeasure(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/ModelingMeasure.htm
     """
     measureId: Optional[str]  # Format:"uuid" Descr:"The measure's System ID"
@@ -1176,7 +1305,7 @@ class ModelingMeasure(BaseModel):
     
 
 class ModelingRelationship(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/ModelingRelationship.htm
     """
     relationshipId: Optional[str]  # Format:"uuid" Descr:"The relationship's system ID"
@@ -1188,7 +1317,7 @@ class ModelingRelationship(BaseModel):
     
 
 class ModelingTable(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/ModelingTable.htm
     """
     tableId: Optional[str]  # Format:"uuid" Descr:"The table's system ID"
@@ -1205,11 +1334,12 @@ class ModelingTable(BaseModel):
     measureGroups: Optional[List[str]]  # Format:"" Descr:"List of measure group ids"
     customQuery: Optional[str]  # Format:"" Descr:"If this tables is based on a query, instead of schema and table name"
     modelingTableType: Optional[ModelingTableType]  # Format:"" Descr:"Table type"
+    syncColumnsWithDb: Optional[bool]  # Format:"" Descr:"Defines whether to synchronize columns with DB columns."
     modelAttributeType: Optional[ModelAttributeType]  # Format:"" Descr:"-"
     
 
 class ModelingModel(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/ModelingModel.htm
     """
     modelId: Optional[str]  # Format:"uuid" Descr:"The model's system ID"
@@ -1229,10 +1359,13 @@ class ModelingModel(BaseModel):
     additionalLanguages: Optional[dict]  # Format:"" Descr:"Additional languages in the model"
     serverInfo: Optional[ModelingServerInfo]  # Format:"" Descr:"-"
     nullMemberCaption: Optional[str]  # Format:"" Descr:""
+    calculatedMembersByAttribute: Optional[dict]  # Format:"" Descr:""
+    syncColumnsSettings: Optional[List[ModelSyncColumnsSettings]]  # Format:"" Descr:"settings for sync columns by schedule. defines an aggregation and visibility for each new column data type."
+    materializedItemType: Optional[MaterializedItemType]  # Format:"" Descr:"The type of materialized model or data item."
     
 
 class ModifiedItemsResult(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/ModifiedItemsResult.htm
     """
     success: Optional[bool]  # Format:"" Descr:"Boolean showing success or failure result."
@@ -1241,7 +1374,7 @@ class ModifiedItemsResult(BaseModel):
     
 
 class MoveItemsObject(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/MoveItemsObject.htm
     """
     itemsForMove: List[str]  # Format:"" Descr:"List of content item ID's"
@@ -1249,7 +1382,7 @@ class MoveItemsObject(BaseModel):
     
 
 class NewFolderApiData(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/NewFolderApiData.htm
     """
     folderId: Optional[str]  # Format:"" Descr:"The system ID of the new folder. If provided, the GUID will be used. Otherwise, the function will auto-create it."
@@ -1258,7 +1391,7 @@ class NewFolderApiData(BaseModel):
     
 
 class NewTenantObject(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/NewTenantObject.htm
     """
     id: Optional[str]  # Format:"" Descr:"The tenant ID. If provided, the GUID will be used. Otherwise, the function will auto-create it."
@@ -1269,7 +1402,7 @@ class NewTenantObject(BaseModel):
     
 
 class NotificationIndicatorsResult(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/NotificationIndicatorsResult.htm
     """
     models: Optional[int]  # Format:"int32" Descr:"model notification count."
@@ -1280,7 +1413,7 @@ class NotificationIndicatorsResult(BaseModel):
     
 
 class ProfilePermissionHolder(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/ProfilePermissionHolder.htm
     """
     permissionBitIndexList: Optional[List[PermissionBitIndex]]  # Format:"" Descr:"A list of permission bit index switches [x,y,...]"
@@ -1288,7 +1421,7 @@ class ProfilePermissionHolder(BaseModel):
     
 
 class PieApiObject(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/PieApiObject.htm
     """
     rootFolderId: str  # Format:"" Descr:"The system ID of the root folder that will house the imported content"
@@ -1299,7 +1432,7 @@ class PieApiObject(BaseModel):
     
 
 class ProfileApiData(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/ProfileApiData.htm
     """
     profileId: Optional[str]  # Format:"" Descr:"The system ID of the profile. When adding a profile, the provided GUID will be used if supplied. Otherwise, the function will auto-create it."
@@ -1310,7 +1443,7 @@ class ProfileApiData(BaseModel):
     
 
 class ProfileRolesData(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/ProfileRolesData.htm
     """
     profileId: str  # Format:"" Descr:"The system ID of the profile"
@@ -1319,7 +1452,7 @@ class ProfileRolesData(BaseModel):
     
 
 class PyramidContentItem(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/PyramidContentItem.htm
     """
     id: Optional[str]  # Format:"" Descr:"The content item's ID"
@@ -1337,7 +1470,7 @@ class PyramidContentItem(BaseModel):
     
 
 class PyramidItemIdentifier(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/PyramidItemIdentifier.htm
     """
     itemId: str  # Format:"" Descr:"The item's ID"
@@ -1345,7 +1478,7 @@ class PyramidItemIdentifier(BaseModel):
     
 
 class PyramidViewUserObject(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/PyramidViewUserObject.htm
     """
     id: str  # Format:"uuid" Descr:"The user's system ID."
@@ -1368,7 +1501,7 @@ class PyramidViewUserObject(BaseModel):
     
 
 class QueryExportData(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/QueryExportData.htm
     """
     itemId: str  # Format:"uuid" Descr:"Content item's ID that houses the query to execute"
@@ -1378,7 +1511,7 @@ class QueryExportData(BaseModel):
     
 
 class RenameItemApiData(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/RenameItemApiData.htm
     """
     itemId: str  # Format:"" Descr:"The system ID of the item to rename"
@@ -1386,7 +1519,7 @@ class RenameItemApiData(BaseModel):
     
 
 class ResultsObjectData(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/ResultsObjectData.htm
     """
     result: Optional[dict]  # Format:"" Descr:"The resulting object"
@@ -1394,7 +1527,7 @@ class ResultsObjectData(BaseModel):
     
 
 class RoleAdGroupsModifyObject(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/RoleAdGroupsModifyObject.htm
     """
     roleId: str  # Format:"" Descr:"The role's ID"
@@ -1403,7 +1536,7 @@ class RoleAdGroupsModifyObject(BaseModel):
     
 
 class RoleData(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/RoleData.htm
     """
     roleId: Optional[str]  # Format:"uuid" Descr:"The role's system ID"
@@ -1414,7 +1547,7 @@ class RoleData(BaseModel):
     
 
 class RoleMinimalData(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/RoleMinimalData.htm
     """
     roleId: Optional[str]  # Format:"" Descr:"The role's system ID"
@@ -1423,7 +1556,7 @@ class RoleMinimalData(BaseModel):
     
 
 class RoleToItemApiData(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/RoleToItemApiData.htm
     """
     itemId: str  # Format:"" Descr:"The system ID of the content item"
@@ -1433,7 +1566,7 @@ class RoleToItemApiData(BaseModel):
     
 
 class RolesInItemRemovalObject(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/RolesInItemRemovalObject.htm
     """
     itemId: str  # Format:"" Descr:"The system ID of the content item"
@@ -1441,7 +1574,7 @@ class RolesInItemRemovalObject(BaseModel):
     
 
 class ScheduleSearchCriteria(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/ScheduleSearchCriteria.htm
     """
     searchCriteria: Optional[SearchCriteria]  # Format:"" Descr:"Search criteria object for specifying schedule search conditions and strings"
@@ -1449,7 +1582,7 @@ class ScheduleSearchCriteria(BaseModel):
     
 
 class ScheduleViewObject(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/ScheduleViewObject.htm
     """
     scheduleId: Optional[str]  # Format:"" Descr:"Schedule's system ID"
@@ -1468,7 +1601,7 @@ class ScheduleViewObject(BaseModel):
     
 
 class SearchAdGroupUsersData(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/SearchAdGroupUsersData.htm
     """
     domainNetBios: str  # Format:"" Descr:"The AD domain"
@@ -1476,7 +1609,7 @@ class SearchAdGroupUsersData(BaseModel):
     
 
 class SearchAdUserGroupsData(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/SearchAdUserGroupsData.htm
     """
     domainNetBios: str  # Format:"" Descr:"The AD domain"
@@ -1484,7 +1617,7 @@ class SearchAdUserGroupsData(BaseModel):
     
 
 class SearchCriteria(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/SearchCriteria.htm
     """
     searchValue: str  # Format:"" Descr:"Search string"
@@ -1492,7 +1625,7 @@ class SearchCriteria(BaseModel):
     
 
 class ServerData(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/ServerData.htm
     """
     id: Optional[str]  # Format:"" Descr:"The data source's system ID"
@@ -1513,11 +1646,12 @@ class ServerData(BaseModel):
     pulseClient: Optional[str]  # Format:"" Descr:"The Pulse client ID if used with the data source"
     defaultDatabaseName: Optional[str]  # Format:"" Descr:"The default database to be used with the data source"
     overlayPyramidSecurity: Optional[bool]  # Format:"" Descr:"Boolean flag if the data source will use Pyramid's security and metadata overlays"
+    modifiedDate: Optional[str]  # Format:"date-time" Descr:""
     serverIpAndInstanceName: Optional[str]  # Format:"" Descr:""
     
 
 class TagData(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/TagData.htm
     """
     tagId: Optional[str]  # Format:"" Descr:"The tag ID. If provided, the GUID will be used. Otherwise, the function will auto-create it."
@@ -1526,7 +1660,7 @@ class TagData(BaseModel):
     
 
 class TagUsageApiData(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/TagUsageApiData.htm
     """
     itemId: str  # Format:"" Descr:"The content item's system ID"
@@ -1534,7 +1668,7 @@ class TagUsageApiData(BaseModel):
     
 
 class TaskUserApiData(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/TaskUserApiData.htm
     """
     taskId: str  # Format:"" Descr:"The task's ID"
@@ -1542,7 +1676,7 @@ class TaskUserApiData(BaseModel):
     
 
 class TenantLicenseTypeData(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/TenantLicenseTypeData.htm
     """
     tenantId: str  # Format:"" Descr:"The tenant's system ID"
@@ -1550,7 +1684,7 @@ class TenantLicenseTypeData(BaseModel):
     
 
 class TenantSettings(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/TenantSettings.htm
     """
     showGroupFolder: Optional[bool]  # Format:"" Descr:"Boolean to show or hide the tenant's group folders"
@@ -1559,7 +1693,7 @@ class TenantSettings(BaseModel):
     
 
 class TenantUsersGetObject(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/TenantUsersGetObject.htm
     """
     tenantId: str  # Format:"" Descr:"The user's tenant ID"
@@ -1567,7 +1701,7 @@ class TenantUsersGetObject(BaseModel):
     
 
 class ThemeApiData(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/ThemeApiData.htm
     """
     themeData: str  # Format:"" Descr:"The encrypted data"
@@ -1575,7 +1709,7 @@ class ThemeApiData(BaseModel):
     
 
 class ThemeApiObject(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/ThemeApiObject.htm
     """
     themeId: Optional[str]  # Format:"" Descr:"The theme ID. If provided, the GUID will be used. Otherwise, the function will auto-create it."
@@ -1585,7 +1719,7 @@ class ThemeApiObject(BaseModel):
     
 
 class ThemeListObject(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/ThemeListObject.htm
     """
     themeId: Optional[str]  # Format:"" Descr:"The theme's system ID"
@@ -1593,7 +1727,7 @@ class ThemeListObject(BaseModel):
     
 
 class ToggleUserApiData(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/ToggleUserApiData.htm
     """
     userId: str  # Format:"" Descr:"A user's system ID"
@@ -1601,7 +1735,7 @@ class ToggleUserApiData(BaseModel):
     
 
 class UpdateTenantSeatsObject(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/UpdateTenantSeatsObject.htm
     """
     id: str  # Format:"" Descr:"The tenant ID."
@@ -1610,7 +1744,7 @@ class UpdateTenantSeatsObject(BaseModel):
     
 
 class UpdateUserAdObject(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/UpdateUserAdObject.htm
     """
     id: str  # Format:"uuid" Descr:"The user's system ID."
@@ -1624,7 +1758,7 @@ class UpdateUserAdObject(BaseModel):
     
 
 class UpdateUserDbObject(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/UpdateUserDbObject.htm
     """
     id: str  # Format:"uuid" Descr:"The user's system ID."
@@ -1639,11 +1773,12 @@ class UpdateUserDbObject(BaseModel):
     clientLicenseType: Optional[ClientLicenseType]  # Format:"" Descr:"The user's license type using the type enumeration"
     statusID: Optional[UserStatusID]  # Format:"" Descr:"The user's status using the status type enumeration"
     tenantId: Optional[str]  # Format:"" Descr:"The user's tenant ID"
+    profileId: Optional[str]  # Format:"" Descr:"The profile ID to be applied for this user"
     password: Optional[str]  # Format:"" Descr:"The User's password"
     
 
 class UpdateUserOpenIdObject(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/UpdateUserOpenIdObject.htm
     """
     id: str  # Format:"uuid" Descr:"The user's system ID."
@@ -1658,12 +1793,13 @@ class UpdateUserOpenIdObject(BaseModel):
     clientLicenseType: Optional[ClientLicenseType]  # Format:"" Descr:"The user's license type using the type enumeration"
     statusID: Optional[UserStatusID]  # Format:"" Descr:"The user's status using the status type enumeration"
     tenantId: Optional[str]  # Format:"" Descr:"The user's tenant ID"
+    profileId: Optional[str]  # Format:"" Descr:"The profile ID to be applied for this user"
     principalName: Optional[str]  # Format:"" Descr:"The user's OpenID principal name identifier"
     password: Optional[str]  # Format:"" Descr:"User's password. relevant only for enterprise admin users"
     
 
 class UpdateUserSamlObject(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/UpdateUserSamlObject.htm
     """
     id: str  # Format:"uuid" Descr:"The user's system ID."
@@ -1678,12 +1814,13 @@ class UpdateUserSamlObject(BaseModel):
     clientLicenseType: Optional[ClientLicenseType]  # Format:"" Descr:"The user's license type using the type enumeration"
     statusID: Optional[UserStatusID]  # Format:"" Descr:"The user's status using the status type enumeration"
     tenantId: Optional[str]  # Format:"" Descr:"The user's tenant ID"
+    profileId: Optional[str]  # Format:"" Descr:"The profile ID to be applied for this user"
     principalName: Optional[str]  # Format:"" Descr:"The user's SAML identifier"
     password: Optional[str]  # Format:"" Descr:"User's password. relevant only for enterprise admin users"
     
 
 class UserCredentials(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/UserCredentials.htm
     """
     username: str  # Format:"" Descr:"The user's login identity The format depends on the authentication provider: Its 'username' for internal database authentication. For AD, its either UPN or 'domain\username'."
@@ -1693,7 +1830,7 @@ class UserCredentials(BaseModel):
     
 
 class UserData(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/UserData.htm
     """
     id: Optional[str]  # Format:"uuid" Descr:"The user's system ID"
@@ -1728,10 +1865,11 @@ class UserData(BaseModel):
     tenantName: Optional[str]  # Format:"" Descr:""
     userWorkspace: Optional[UserWorkspaceSettings]  # Format:"" Descr:"-"
     profilePicture: Optional[str]  # Format:"" Descr:""
+    certification: Optional[str]  # Format:"" Descr:""
     
 
 class UserOpenIdCredentials(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/UserOpenIdCredentials.htm
     """
     parameterMap: str  # Format:"" Descr:"The OpenID auth parameter map serialized to String."
@@ -1740,7 +1878,7 @@ class UserOpenIdCredentials(BaseModel):
     
 
 class UserRolesData(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/UserRolesData.htm
     """
     userId: str  # Format:"" Descr:"The system ID of the user"
@@ -1749,7 +1887,7 @@ class UserRolesData(BaseModel):
     
 
 class UserSamlCredentials(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/UserSamlCredentials.htm
     """
     token: str  # Format:"" Descr:"The SAML auth token."
@@ -1758,7 +1896,7 @@ class UserSamlCredentials(BaseModel):
     
 
 class UserTokenCredentials(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/UserTokenCredentials.htm
     """
     token: str  # Format:"" Descr:"The administrative authority token - generated by by an administrator using normal authentication methods first."
@@ -1767,7 +1905,7 @@ class UserTokenCredentials(BaseModel):
     
 
 class MasterFlowValidationResult(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/MasterFlowValidationResult.htm
     """
     sources: Optional[List[MasterFlowSourceObject]]  # Format:"" Descr:"Validation results for sources objects"
@@ -1777,7 +1915,7 @@ class MasterFlowValidationResult(BaseModel):
     
 
 class MasterFlowSourceObject(BaseModel):
-    """ 
+    """
     generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/MasterFlowSourceObject.htm
     """
     masterFlowNodeId: Optional[str]  # Format:"" Descr:"Master Flow node id"

@@ -32,7 +32,7 @@ def deleteSchedule(scheduleId: str) -> ModifiedItemsResult:
     
     data = {"scheduleId" : scheduleId,}
     return call_api("/API2/tasks/deleteSchedule",
-                data=data, 
+                data=data,
                 response_type=ModifiedItemsResult
            )
 
@@ -60,7 +60,7 @@ def findSchedule(searchCriteria: ScheduleSearchCriteria) -> List[ScheduleViewObj
     """
     data = { "searchCriteria" : searchCriteria }
     return call_api("/API2/tasks/findSchedule",
-                data=data, 
+                data=data,
                 response_type=List[ScheduleViewObject]
            )
 
@@ -89,7 +89,7 @@ def getExecutions(scheduleId: str) -> List[ExecutionViewData]:
     
     data = {"scheduleId" : scheduleId,}
     return call_api("/API2/tasks/getExecutions",
-                data=data, 
+                data=data,
                 response_type=List[ExecutionViewData]
            )
 
@@ -118,7 +118,7 @@ def getScheduleExecutionStatus(executionId: str) -> ApiResultTaskStatus:
     
     data = {"executionId" : executionId,}
     return call_api("/API2/tasks/getScheduleExecutionStatus",
-                data=data, 
+                data=data,
                 response_type=ApiResultTaskStatus
            )
 
@@ -147,7 +147,7 @@ def getSchedulesForUser(userId: str) -> List[ScheduleViewObject]:
     
     data = {"userId" : userId,}
     return call_api("/API2/tasks/getSchedulesForUser",
-                data=data, 
+                data=data,
                 response_type=List[ScheduleViewObject]
            )
 
@@ -176,7 +176,7 @@ def getTaskData(taskId: str) -> TaskViewData:
     
     data = {"taskId" : taskId,}
     return call_api("/API2/tasks/getTaskData",
-                data=data, 
+                data=data,
                 response_type=TaskViewData
            )
 
@@ -205,7 +205,7 @@ def getTaskOutputs(taskId: str) -> List[ItemId]:
     
     data = {"taskId" : taskId,}
     return call_api("/API2/tasks/getTaskOutputs",
-                data=data, 
+                data=data,
                 response_type=List[ItemId]
            )
 
@@ -233,7 +233,7 @@ def getTaskOutputsForUser(taskUserApiData: TaskUserApiData) -> List[ItemId]:
     """
     data = { "taskUserApiData" : taskUserApiData }
     return call_api("/API2/tasks/getTaskOutputsForUser",
-                data=data, 
+                data=data,
                 response_type=List[ItemId]
            )
 
@@ -262,7 +262,7 @@ def getTasks(executionsId: str) -> List[TaskViewData]:
     
     data = {"executionsId" : executionsId,}
     return call_api("/API2/tasks/getTasks",
-                data=data, 
+                data=data,
                 response_type=List[TaskViewData]
            )
 
@@ -291,7 +291,7 @@ def getTasksIds(executionsId: str) -> List[ItemId]:
     
     data = {"executionsId" : executionsId,}
     return call_api("/API2/tasks/getTasksIds",
-                data=data, 
+                data=data,
                 response_type=List[ItemId]
            )
 
@@ -320,7 +320,7 @@ def reRunTask(taskId: str) -> ModifiedItemsResult:
     
     data = {"taskId" : taskId,}
     return call_api("/API2/tasks/reRunTask",
-                data=data, 
+                data=data,
                 response_type=ModifiedItemsResult
            )
 
@@ -349,7 +349,7 @@ def resumeSchedule(scheduleId: str) -> ModifiedItemsResult:
     
     data = {"scheduleId" : scheduleId,}
     return call_api("/API2/tasks/resumeSchedule",
-                data=data, 
+                data=data,
                 response_type=ModifiedItemsResult
            )
 
@@ -376,7 +376,7 @@ def runSchedule(ExecuteScheduleApiData: ExecuteScheduleApiData) -> None:
     """
     data = { "ExecuteScheduleApiData" : ExecuteScheduleApiData }
     return call_api("/API2/tasks/runSchedule",
-                data=data, 
+                data=data,
                 response_type=None
            )
 
@@ -405,7 +405,7 @@ def suspendSchedule(scheduleId: str) -> ModifiedItemsResult:
     
     data = {"scheduleId" : scheduleId,}
     return call_api("/API2/tasks/suspendSchedule",
-                data=data, 
+                data=data,
                 response_type=ModifiedItemsResult
            )
 
