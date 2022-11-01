@@ -9,6 +9,34 @@ from .objects import *
 from .enum import *
 from .api_interface import call_api
 
+def addHierarchyOverlayToModel(data: AddHierarchyOverlayApiObject) -> ModifiedItemsResult:
+    """
+    Description:
+        Set hierarchy overlay properties
+    
+    Input:
+        Name: data
+        Object Type: AddHierarchyOverlayApiObject
+        Description: An object representing the hierarchy overlays to be applied to a data model.
+        
+        
+    
+    Output:
+        Successful Result Code: 200
+        Response Type: ModifiedItemsResult
+        Description of Response Type: Generic API response object with success or failure flag and related messages.
+        
+
+    generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/API2/dataSources/addHierarchyOverlayToModel.htm
+    """
+    data = { "data" : data }
+    return call_api("/API2/dataSources/addHierarchyOverlayToModel",
+                data=data,
+                response_type=ModifiedItemsResult
+           )
+
+
+
 def addHierarchySecurityToModel(hierarchyMeasureSecurityApiObject: HierarchyMeasureSecurityApiObject) -> ModifiedItemsResult:
     """
     Description:
@@ -31,7 +59,7 @@ def addHierarchySecurityToModel(hierarchyMeasureSecurityApiObject: HierarchyMeas
     """
     data = { "hierarchyMeasureSecurityApiObject" : hierarchyMeasureSecurityApiObject }
     return call_api("/API2/dataSources/addHierarchySecurityToModel",
-                data=data, 
+                data=data,
                 response_type=ModifiedItemsResult
            )
 
@@ -59,7 +87,7 @@ def addMeasureSecurityToModel(hierarchyMeasureSecurityApiObject: HierarchyMeasur
     """
     data = { "hierarchyMeasureSecurityApiObject" : hierarchyMeasureSecurityApiObject }
     return call_api("/API2/dataSources/addMeasureSecurityToModel",
-                data=data, 
+                data=data,
                 response_type=ModifiedItemsResult
            )
 
@@ -73,7 +101,7 @@ def addMembersSecurityToModel(membersSecurityObject: MembersSecurityApiObject) -
     Input:
         Name: membersSecurityObject
         Object Type: MembersSecurityApiObject
-        Description: Details of the security settings to be applied to a data model hierarchy's member elements.
+        Description: The details of the security settings for the hierarchy's member elements.
         
         
     
@@ -87,7 +115,7 @@ def addMembersSecurityToModel(membersSecurityObject: MembersSecurityApiObject) -
     """
     data = { "membersSecurityObject" : membersSecurityObject }
     return call_api("/API2/dataSources/addMembersSecurityToModel",
-                data=data, 
+                data=data,
                 response_type=ModifiedItemsResult
            )
 
@@ -115,7 +143,7 @@ def addRolesToDataBase(itemRoles: ItemRolesToBeAdded) -> ModifiedItemsResult:
     """
     data = { "itemRoles" : itemRoles }
     return call_api("/API2/dataSources/addRolesToDataBase",
-                data=data, 
+                data=data,
                 response_type=ModifiedItemsResult
            )
 
@@ -143,7 +171,7 @@ def addRolesToItemAndBubbleUp(itemRoles: ItemRolesToBeAdded) -> ModifiedItemsRes
     """
     data = { "itemRoles" : itemRoles }
     return call_api("/API2/dataSources/addRolesToItemAndBubbleUp",
-                data=data, 
+                data=data,
                 response_type=ModifiedItemsResult
            )
 
@@ -171,7 +199,7 @@ def addRolesToItemAndPropagate(itemRoles: ItemRolesToBeAdded) -> ModifiedItemsRe
     """
     data = { "itemRoles" : itemRoles }
     return call_api("/API2/dataSources/addRolesToItemAndPropagate",
-                data=data, 
+                data=data,
                 response_type=ModifiedItemsResult
            )
 
@@ -199,7 +227,7 @@ def addRolesToModel(itemRoles: ItemRolesToBeAdded) -> ModifiedItemsResult:
     """
     data = { "itemRoles" : itemRoles }
     return call_api("/API2/dataSources/addRolesToModel",
-                data=data, 
+                data=data,
                 response_type=ModifiedItemsResult
            )
 
@@ -227,7 +255,7 @@ def addRolesToServer(itemRoles: ItemRolesToBeAdded) -> ModifiedItemsResult:
     """
     data = { "itemRoles" : itemRoles }
     return call_api("/API2/dataSources/addRolesToServer",
-                data=data, 
+                data=data,
                 response_type=ModifiedItemsResult
            )
 
@@ -255,7 +283,7 @@ def changeDataSource(dscApiData: DscApiData) -> ModifiedItemsResult:
     """
     data = { "dscApiData" : dscApiData }
     return call_api("/API2/dataSources/changeDataSource",
-                data=data, 
+                data=data,
                 response_type=ModifiedItemsResult
            )
 
@@ -283,7 +311,7 @@ def createDataServer(serverData: ServerData) -> ModifiedItemsResult:
     """
     data = { "serverData" : serverData }
     return call_api("/API2/dataSources/createDataServer",
-                data=data, 
+                data=data,
                 response_type=ModifiedItemsResult
            )
 
@@ -311,7 +339,7 @@ def createDataServers(serverData: List[ServerData]) -> ModifiedItemsResult:
     """
     data = { "serverData" : serverData }
     return call_api("/API2/dataSources/createDataServers",
-                data=data, 
+                data=data,
                 response_type=ModifiedItemsResult
            )
 
@@ -340,7 +368,7 @@ def deleteDataBase(databaseId: str) -> ModifiedItemsResult:
     
     data = {"databaseId" : databaseId,}
     return call_api("/API2/dataSources/deleteDataBase",
-                data=data, 
+                data=data,
                 response_type=ModifiedItemsResult
            )
 
@@ -369,7 +397,63 @@ def deleteDataSource(sourceId: str) -> ModifiedItemsResult:
     
     data = {"sourceId" : sourceId,}
     return call_api("/API2/dataSources/deleteDataSource",
-                data=data, 
+                data=data,
+                response_type=ModifiedItemsResult
+           )
+
+
+
+def deleteHierarchyOverlayFromModel(data: DeleteHierarchyOverlayApiObject) -> ModifiedItemsResult:
+    """
+    Description:
+        Removes hierarchy overlay properties
+    
+    Input:
+        Name: data
+        Object Type: DeleteHierarchyOverlayApiObject
+        Description: An object representing the hierarchy overlays to be deleted from a data model.
+        
+        
+    
+    Output:
+        Successful Result Code: 200
+        Response Type: ModifiedItemsResult
+        Description of Response Type: Generic API response object with success or failure flag and related messages.
+        
+
+    generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/API2/dataSources/deleteHierarchyOverlayFromModel.htm
+    """
+    data = { "data" : data }
+    return call_api("/API2/dataSources/deleteHierarchyOverlayFromModel",
+                data=data,
+                response_type=ModifiedItemsResult
+           )
+
+
+
+def deleteHierarchySecurityFromModel(hierarchyMeasureSecurity: HierarchyMeasureSecurity) -> ModifiedItemsResult:
+    """
+    Description:
+        Remove data security from model attribute hierarchies
+    
+    Input:
+        Name: hierarchyMeasureSecurity
+        Object Type: HierarchyMeasureSecurity
+        Description: Details of the security settings to be applied to a data model's hierarchies or measures.
+        
+        
+    
+    Output:
+        Successful Result Code: 200
+        Response Type: ModifiedItemsResult
+        Description of Response Type: Generic API response object with success or failure flag and related messages.
+        
+
+    generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/API2/dataSources/deleteHierarchySecurityFromModel.htm
+    """
+    data = { "hierarchyMeasureSecurity" : hierarchyMeasureSecurity }
+    return call_api("/API2/dataSources/deleteHierarchySecurityFromModel",
+                data=data,
                 response_type=ModifiedItemsResult
            )
 
@@ -398,7 +482,63 @@ def deleteMaterializedModel(modelId: str) -> ModifiedItemsResult:
     
     data = {"modelId" : modelId,}
     return call_api("/API2/dataSources/deleteMaterializedModel",
-                data=data, 
+                data=data,
+                response_type=ModifiedItemsResult
+           )
+
+
+
+def deleteMeasureSecurityFromModel(hierarchyMeasureSecurity: HierarchyMeasureSecurity) -> ModifiedItemsResult:
+    """
+    Description:
+        Remove data security from model measures
+    
+    Input:
+        Name: hierarchyMeasureSecurity
+        Object Type: HierarchyMeasureSecurity
+        Description: Details of the security settings to be applied to a data model's hierarchies or measures.
+        
+        
+    
+    Output:
+        Successful Result Code: 200
+        Response Type: ModifiedItemsResult
+        Description of Response Type: Generic API response object with success or failure flag and related messages.
+        
+
+    generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/API2/dataSources/deleteMeasureSecurityFromModel.htm
+    """
+    data = { "hierarchyMeasureSecurity" : hierarchyMeasureSecurity }
+    return call_api("/API2/dataSources/deleteMeasureSecurityFromModel",
+                data=data,
+                response_type=ModifiedItemsResult
+           )
+
+
+
+def deleteMembersSecurityFromModel(membersSecurity: MembersSecurity) -> ModifiedItemsResult:
+    """
+    Description:
+        Removes data security from hierarchy members
+    
+    Input:
+        Name: membersSecurity
+        Object Type: MembersSecurity
+        Description: The details of the security settings for the hierarchy's member elements.
+        
+        
+    
+    Output:
+        Successful Result Code: 200
+        Response Type: ModifiedItemsResult
+        Description of Response Type: Generic API response object with success or failure flag and related messages.
+        
+
+    generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/API2/dataSources/deleteMembersSecurityFromModel.htm
+    """
+    data = { "membersSecurity" : membersSecurity }
+    return call_api("/API2/dataSources/deleteMembersSecurityFromModel",
+                data=data,
                 response_type=ModifiedItemsResult
            )
 
@@ -426,7 +566,7 @@ def deleteRolesFromDatabase(itemRoles: ItemRolesForRemoval) -> ModifiedItemsResu
     """
     data = { "itemRoles" : itemRoles }
     return call_api("/API2/dataSources/deleteRolesFromDatabase",
-                data=data, 
+                data=data,
                 response_type=ModifiedItemsResult
            )
 
@@ -454,7 +594,7 @@ def deleteRolesFromModel(itemRoles: ItemRolesForRemoval) -> ModifiedItemsResult:
     """
     data = { "itemRoles" : itemRoles }
     return call_api("/API2/dataSources/deleteRolesFromModel",
-                data=data, 
+                data=data,
                 response_type=ModifiedItemsResult
            )
 
@@ -482,7 +622,7 @@ def deleteRolesFromServer(itemRoles: ItemRolesForRemoval) -> ModifiedItemsResult
     """
     data = { "itemRoles" : itemRoles }
     return call_api("/API2/dataSources/deleteRolesFromServer",
-                data=data, 
+                data=data,
                 response_type=ModifiedItemsResult
            )
 
@@ -510,7 +650,7 @@ def executeMasterFlow(executeMasterFlowObject: ExecuteMasterFlowObject) -> Execu
     """
     data = { "executeMasterFlowObject" : executeMasterFlowObject }
     return call_api("/API2/dataSources/executeMasterFlow",
-                data=data, 
+                data=data,
                 response_type=ExecuteMasterFlowResult
            )
 
@@ -539,7 +679,7 @@ def exportModel(materializedModelId: str) -> ExportData:
     
     data = {"materializedModelId" : materializedModelId,}
     return call_api("/API2/dataSources/exportModel",
-                data=data, 
+                data=data,
                 response_type=ExportData
            )
 
@@ -567,7 +707,7 @@ def findDatabaseByName(searchCriteria: ConnectedItemsSearchCriteria) -> List[Mat
     """
     data = { "searchCriteria" : searchCriteria }
     return call_api("/API2/dataSources/findDatabaseByName",
-                data=data, 
+                data=data,
                 response_type=List[MaterializedItemObject]
            )
 
@@ -595,7 +735,7 @@ def findModelByName(searchCriteria: ConnectedItemsSearchCriteria) -> List[Materi
     """
     data = { "searchCriteria" : searchCriteria }
     return call_api("/API2/dataSources/findModelByName",
-                data=data, 
+                data=data,
                 response_type=List[MaterializedItemObject]
            )
 
@@ -623,7 +763,7 @@ def findServerByName(searchCriteria: SearchCriteria) -> List[MaterializedItemObj
     """
     data = { "searchCriteria" : searchCriteria }
     return call_api("/API2/dataSources/findServerByName",
-                data=data, 
+                data=data,
                 response_type=List[MaterializedItemObject]
            )
 
@@ -644,7 +784,7 @@ def getAllConnectionStrings() -> List[ConnectionStringProperties]:
     """
     
     return call_api("/API2/dataSources/getAllConnectionStrings",
-                data=None, 
+                data=None,
                 response_type=List[ConnectionStringProperties]
            )
 
@@ -673,7 +813,7 @@ def getDataModelStructure(modelId: str) -> ModelingModel:
     
     data = {"modelId" : modelId,}
     return call_api("/API2/dataSources/getDataModelStructure",
-                data=data, 
+                data=data,
                 response_type=ModelingModel
            )
 
@@ -702,7 +842,7 @@ def getDataSourcesByTenant(tenantId: str) -> List[MaterializedItemObject]:
     
     data = {"tenantId" : tenantId,}
     return call_api("/API2/dataSources/getDataSourcesByTenant",
-                data=data, 
+                data=data,
                 response_type=List[MaterializedItemObject]
            )
 
@@ -731,7 +871,7 @@ def getDataSourcesByUserId(userId: str) -> ModifiedItemsResult:
     
     data = {"userId" : userId,}
     return call_api("/API2/dataSources/getDataSourcesByUserId",
-                data=data, 
+                data=data,
                 response_type=ModifiedItemsResult
            )
 
@@ -759,7 +899,7 @@ def getDatasourceUsedTables(findDataSourceObject: MasterFlowFindDataSourceObject
     """
     data = { "findDataSourceObject" : findDataSourceObject }
     return call_api("/API2/dataSources/getDatasourceUsedTables",
-                data=data, 
+                data=data,
                 response_type=DataSourceUsedTablesResult
            )
 
@@ -787,7 +927,7 @@ def getItemConnectionString(pyramidItemIdentifier: PyramidItemIdentifier) -> Lis
     """
     data = { "pyramidItemIdentifier" : pyramidItemIdentifier }
     return call_api("/API2/dataSources/getItemConnectionString",
-                data=data, 
+                data=data,
                 response_type=List[ConnectionStringProperties]
            )
 
@@ -816,7 +956,7 @@ def getMasterFlowProgressUpdate(scheduleId: str) -> MasterFlowProgressResult:
     
     data = {"scheduleId" : scheduleId,}
     return call_api("/API2/dataSources/getMasterFlowProgressUpdate",
-                data=data, 
+                data=data,
                 response_type=MasterFlowProgressResult
            )
 
@@ -845,7 +985,7 @@ def getMasterFlowVariables(itemId: str) -> MasterFlowVariablesResult:
     
     data = {"itemId" : itemId,}
     return call_api("/API2/dataSources/getMasterFlowVariables",
-                data=data, 
+                data=data,
                 response_type=MasterFlowVariablesResult
            )
 
@@ -874,7 +1014,7 @@ def getRolesByDataBase(dataBaseId: str) -> List[ItemRolePair]:
     
     data = {"dataBaseId" : dataBaseId,}
     return call_api("/API2/dataSources/getRolesByDataBase",
-                data=data, 
+                data=data,
                 response_type=List[ItemRolePair]
            )
 
@@ -903,7 +1043,7 @@ def getRolesByModel(modelId: str) -> List[ItemRolePair]:
     
     data = {"modelId" : modelId,}
     return call_api("/API2/dataSources/getRolesByModel",
-                data=data, 
+                data=data,
                 response_type=List[ItemRolePair]
            )
 
@@ -932,7 +1072,7 @@ def getRolesByServer(serverId: str) -> List[ItemRolePair]:
     
     data = {"serverId" : serverId,}
     return call_api("/API2/dataSources/getRolesByServer",
-                data=data, 
+                data=data,
                 response_type=List[ItemRolePair]
            )
 
@@ -961,7 +1101,7 @@ def getServerDataById(dataServerId: str) -> ServerData:
     
     data = {"dataServerId" : dataServerId,}
     return call_api("/API2/dataSources/getServerDataById",
-                data=data, 
+                data=data,
                 response_type=ServerData
            )
 
@@ -989,7 +1129,7 @@ def getSourceByNodeId(findDataSourceObject: MasterFlowFindDataSourceObject) -> M
     """
     data = { "findDataSourceObject" : findDataSourceObject }
     return call_api("/API2/dataSources/getSourceByNodeId",
-                data=data, 
+                data=data,
                 response_type=MasterFlowSourceObject
            )
 
@@ -1017,7 +1157,7 @@ def getTargetByNodeId(findDataSourceObject: MasterFlowFindDataSourceObject) -> M
     """
     data = { "findDataSourceObject" : findDataSourceObject }
     return call_api("/API2/dataSources/getTargetByNodeId",
-                data=data, 
+                data=data,
                 response_type=MasterFlowTargetObject
            )
 
@@ -1044,7 +1184,7 @@ def importModel(modelApiObject: MaterializedApiObject) -> None:
     """
     data = { "modelApiObject" : modelApiObject }
     return call_api("/API2/dataSources/importModel",
-                data=data, 
+                data=data,
                 response_type=None
            )
 
@@ -1072,7 +1212,7 @@ def recognizeDataBase(dataBaseRecognitionObject: DataBaseRecognitionObject) -> M
     """
     data = { "dataBaseRecognitionObject" : dataBaseRecognitionObject }
     return call_api("/API2/dataSources/recognizeDataBase",
-                data=data, 
+                data=data,
                 response_type=ModifiedItemsResult
            )
 
@@ -1100,7 +1240,7 @@ def recognizeModel(modelRecognitionObject: ModelRecognitionObject) -> ModifiedIt
     """
     data = { "modelRecognitionObject" : modelRecognitionObject }
     return call_api("/API2/dataSources/recognizeModel",
-                data=data, 
+                data=data,
                 response_type=ModifiedItemsResult
            )
 
@@ -1128,7 +1268,7 @@ def updateDataFlowNodeSchemas(schemasObject: MasterFlowSchemasObject) -> ApiModi
     """
     data = { "schemasObject" : schemasObject }
     return call_api("/API2/dataSources/updateDataFlowNodeSchemas",
-                data=data, 
+                data=data,
                 response_type=ApiModifierResult
            )
 
@@ -1156,7 +1296,7 @@ def updateModelName(modelNameObject: MasterFlowModelNameObject) -> MasterFlowUpd
     """
     data = { "modelNameObject" : modelNameObject }
     return call_api("/API2/dataSources/updateModelName",
-                data=data, 
+                data=data,
                 response_type=MasterFlowUpdatedVariableResult
            )
 
@@ -1184,7 +1324,7 @@ def updateSourceNodeConnection(connectionObject: MasterFlowSourceConnectionObjec
     """
     data = { "connectionObject" : connectionObject }
     return call_api("/API2/dataSources/updateSourceNodeConnection",
-                data=data, 
+                data=data,
                 response_type=ModifiedItemsResult
            )
 
@@ -1212,7 +1352,7 @@ def updateTargetNodeConnection(connectionObject: MasterFlowTargetConnectionObjec
     """
     data = { "connectionObject" : connectionObject }
     return call_api("/API2/dataSources/updateTargetNodeConnection",
-                data=data, 
+                data=data,
                 response_type=ModifiedItemsResult
            )
 
@@ -1240,7 +1380,7 @@ def updateVariableConnection(connectionObject: MasterFlowVariableConnectionObjec
     """
     data = { "connectionObject" : connectionObject }
     return call_api("/API2/dataSources/updateVariableConnection",
-                data=data, 
+                data=data,
                 response_type=ModifiedItemsResult
            )
 
@@ -1268,7 +1408,7 @@ def updateVariableValue(variablesValueObject: MasterFlowVariablesValueObject) ->
     """
     data = { "variablesValueObject" : variablesValueObject }
     return call_api("/API2/dataSources/updateVariableValue",
-                data=data, 
+                data=data,
                 response_type=MasterFlowUpdatedVariableResult
            )
 
@@ -1296,7 +1436,7 @@ def validateMasterFlow(validateMasterFlowObject: ExecuteMasterFlowObject) -> Mas
     """
     data = { "validateMasterFlowObject" : validateMasterFlowObject }
     return call_api("/API2/dataSources/validateMasterFlow",
-                data=data, 
+                data=data,
                 response_type=MasterFlowValidationResult
            )
 

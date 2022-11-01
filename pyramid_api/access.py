@@ -31,7 +31,7 @@ def addDomainSettings(domainSecurityData: DomainSecurityObject) -> ModifiedItems
     """
     data = { "domainSecurityData" : domainSecurityData }
     return call_api("/API2/access/addDomainSettings",
-                data=data, 
+                data=data,
                 response_type=ModifiedItemsResult
            )
 
@@ -59,7 +59,7 @@ def addProfile(profileApiData: ProfileApiData) -> ModifiedItemsResult:
     """
     data = { "profileApiData" : profileApiData }
     return call_api("/API2/access/addProfile",
-                data=data, 
+                data=data,
                 response_type=ModifiedItemsResult
            )
 
@@ -87,7 +87,7 @@ def addUserToRole(addUserRoleData: AddUserRoleData) -> ModifiedItemsResult:
     """
     data = { "addUserRoleData" : addUserRoleData }
     return call_api("/API2/access/addUserToRole",
-                data=data, 
+                data=data,
                 response_type=ModifiedItemsResult
            )
 
@@ -115,7 +115,7 @@ def addUsersToRole(addUsersRoleData: AddUsersRoleData) -> ModifiedItemsResult:
     """
     data = { "addUsersRoleData" : addUsersRoleData }
     return call_api("/API2/access/addUsersToRole",
-                data=data, 
+                data=data,
                 response_type=ModifiedItemsResult
            )
 
@@ -143,7 +143,7 @@ def changeLicenseForUser(changeUserLicense: ChangeUserLicenseObject) -> Modified
     """
     data = { "changeUserLicense" : changeUserLicense }
     return call_api("/API2/access/changeLicenseForUser",
-                data=data, 
+                data=data,
                 response_type=ModifiedItemsResult
            )
 
@@ -171,7 +171,7 @@ def changeRoleAdGroupMembership(roleAdGroups: RoleAdGroupsModifyObject) -> Modif
     """
     data = { "roleAdGroups" : roleAdGroups }
     return call_api("/API2/access/changeRoleAdGroupMembership",
-                data=data, 
+                data=data,
                 response_type=ModifiedItemsResult
            )
 
@@ -199,7 +199,7 @@ def createRole(roleData: RoleData) -> ModifiedItemsResult:
     """
     data = { "roleData" : roleData }
     return call_api("/API2/access/createRole",
-                data=data, 
+                data=data,
                 response_type=ModifiedItemsResult
            )
 
@@ -227,7 +227,7 @@ def createRoles(roleData: List[RoleData]) -> ModifiedItemsResult:
     """
     data = { "roleData" : roleData }
     return call_api("/API2/access/createRoles",
-                data=data, 
+                data=data,
                 response_type=ModifiedItemsResult
            )
 
@@ -255,7 +255,7 @@ def createTenant(newTenant: NewTenantObject) -> ModifiedItemsResult:
     """
     data = { "newTenant" : newTenant }
     return call_api("/API2/access/createTenant",
-                data=data, 
+                data=data,
                 response_type=ModifiedItemsResult
            )
 
@@ -283,7 +283,7 @@ def createTenants(newTenant: List[NewTenantObject]) -> ModifiedItemsResult:
     """
     data = { "newTenant" : newTenant }
     return call_api("/API2/access/createTenants",
-                data=data, 
+                data=data,
                 response_type=ModifiedItemsResult
            )
 
@@ -311,7 +311,7 @@ def createUserAd(createUserAd: CreateUserAdObject) -> ModifiedItemsResult:
     """
     data = { "createUserAd" : createUserAd }
     return call_api("/API2/access/createUserAd",
-                data=data, 
+                data=data,
                 response_type=ModifiedItemsResult
            )
 
@@ -339,7 +339,7 @@ def createUserDb(createUserDb: CreateUserDbObject) -> ModifiedItemsResult:
     """
     data = { "createUserDb" : createUserDb }
     return call_api("/API2/access/createUserDb",
-                data=data, 
+                data=data,
                 response_type=ModifiedItemsResult
            )
 
@@ -367,7 +367,7 @@ def createUserOpenId(createUserOpenId: CreateUserOpenIdObject) -> ModifiedItemsR
     """
     data = { "createUserOpenId" : createUserOpenId }
     return call_api("/API2/access/createUserOpenId",
-                data=data, 
+                data=data,
                 response_type=ModifiedItemsResult
            )
 
@@ -395,7 +395,7 @@ def createUserSaml(createUserSaml: CreateUserSamlObject) -> ModifiedItemsResult:
     """
     data = { "createUserSaml" : createUserSaml }
     return call_api("/API2/access/createUserSaml",
-                data=data, 
+                data=data,
                 response_type=ModifiedItemsResult
            )
 
@@ -423,7 +423,7 @@ def createUsersAd(createUserAdArr: List[CreateUserAdObject]) -> ModifiedItemsRes
     """
     data = { "createUserAdArr" : createUserAdArr }
     return call_api("/API2/access/createUsersAd",
-                data=data, 
+                data=data,
                 response_type=ModifiedItemsResult
            )
 
@@ -451,7 +451,7 @@ def createUsersDb(createUserDbArr: List[CreateUserDbObject]) -> ModifiedItemsRes
     """
     data = { "createUserDbArr" : createUserDbArr }
     return call_api("/API2/access/createUsersDb",
-                data=data, 
+                data=data,
                 response_type=ModifiedItemsResult
            )
 
@@ -479,7 +479,7 @@ def createUsersOpenId(createUserOpenIdArr: List[CreateUserOpenIdObject]) -> Modi
     """
     data = { "createUserOpenIdArr" : createUserOpenIdArr }
     return call_api("/API2/access/createUsersOpenId",
-                data=data, 
+                data=data,
                 response_type=ModifiedItemsResult
            )
 
@@ -507,7 +507,7 @@ def createUsersSaml(createUserSamlArr: List[CreateUserSamlObject]) -> ModifiedIt
     """
     data = { "createUserSamlArr" : createUserSamlArr }
     return call_api("/API2/access/createUsersSaml",
-                data=data, 
+                data=data,
                 response_type=ModifiedItemsResult
            )
 
@@ -536,7 +536,7 @@ def deleteProfile(profileId: str) -> ModifiedItemsResult:
     
     data = {"profileId" : profileId,}
     return call_api("/API2/access/deleteProfile",
-                data=data, 
+                data=data,
                 response_type=ModifiedItemsResult
            )
 
@@ -565,7 +565,7 @@ def deleteRole(roleId: str) -> ModifiedItemsResult:
     
     data = {"roleId" : roleId,}
     return call_api("/API2/access/deleteRole",
-                data=data, 
+                data=data,
                 response_type=ModifiedItemsResult
            )
 
@@ -593,7 +593,7 @@ def deleteTenants(deleteTenantApiData: DeleteTenantApiData) -> ModifiedItemsResu
     """
     data = { "deleteTenantApiData" : deleteTenantApiData }
     return call_api("/API2/access/deleteTenants",
-                data=data, 
+                data=data,
                 response_type=ModifiedItemsResult
            )
 
@@ -622,7 +622,7 @@ def deleteUser(userId: str) -> ModifiedItemsResult:
     
     data = {"userId" : userId,}
     return call_api("/API2/access/deleteUser",
-                data=data, 
+                data=data,
                 response_type=ModifiedItemsResult
            )
 
@@ -643,7 +643,7 @@ def getAllNonPrivateRoles() -> List[ItemId]:
     """
     
     return call_api("/API2/access/getAllNonPrivateRoles",
-                data=None, 
+                data=None,
                 response_type=List[ItemId]
            )
 
@@ -672,7 +672,7 @@ def getAllNonPrivateRolesByTenant(tenantId: str) -> List[RoleData]:
     
     data = {"tenantId" : tenantId,}
     return call_api("/API2/access/getAllNonPrivateRolesByTenant",
-                data=data, 
+                data=data,
                 response_type=List[RoleData]
            )
 
@@ -701,7 +701,7 @@ def getAllNonPrivateRolesIDByTenant(tenantId: str) -> List[ItemId]:
     
     data = {"tenantId" : tenantId,}
     return call_api("/API2/access/getAllNonPrivateRolesIDByTenant",
-                data=data, 
+                data=data,
                 response_type=List[ItemId]
            )
 
@@ -722,7 +722,7 @@ def getAllProfiles() -> List[ProfileApiData]:
     """
     
     return call_api("/API2/access/getAllProfiles",
-                data=None, 
+                data=None,
                 response_type=List[ProfileApiData]
            )
 
@@ -751,7 +751,7 @@ def getAllProfilesByTenantId(tenantId: str) -> List[ProfileApiData]:
     
     data = {"tenantId" : tenantId,}
     return call_api("/API2/access/getAllProfilesByTenantId",
-                data=data, 
+                data=data,
                 response_type=List[ProfileApiData]
            )
 
@@ -772,7 +772,7 @@ def getAllRoles() -> List[ItemId]:
     """
     
     return call_api("/API2/access/getAllRoles",
-                data=None, 
+                data=None,
                 response_type=List[ItemId]
            )
 
@@ -801,7 +801,7 @@ def getAllRolesByProfileId(profileId: str) -> List[RoleData]:
     
     data = {"profileId" : profileId,}
     return call_api("/API2/access/getAllRolesByProfileId",
-                data=data, 
+                data=data,
                 response_type=List[RoleData]
            )
 
@@ -830,7 +830,7 @@ def getAllRolesByUser(userId: str) -> List[ItemId]:
     
     data = {"userId" : userId,}
     return call_api("/API2/access/getAllRolesByUser",
-                data=data, 
+                data=data,
                 response_type=List[ItemId]
            )
 
@@ -851,7 +851,7 @@ def getAllTenants() -> List[AdminMultiTenantData]:
     """
     
     return call_api("/API2/access/getAllTenants",
-                data=None, 
+                data=None,
                 response_type=List[AdminMultiTenantData]
            )
 
@@ -872,7 +872,7 @@ def getAllUsersByCurrentTenant() -> List[ItemId]:
     """
     
     return call_api("/API2/access/getAllUsersByCurrentTenant",
-                data=None, 
+                data=None,
                 response_type=List[ItemId]
            )
 
@@ -901,7 +901,7 @@ def getAllUsersByTenant(tenantId: str) -> List[ItemId]:
     
     data = {"tenantId" : tenantId,}
     return call_api("/API2/access/getAllUsersByTenant",
-                data=data, 
+                data=data,
                 response_type=List[ItemId]
            )
 
@@ -929,7 +929,7 @@ def getAllUsersDataByTenantAndLicenceType(tenantUsersGetObject: TenantUsersGetOb
     """
     data = { "tenantUsersGetObject" : tenantUsersGetObject }
     return call_api("/API2/access/getAllUsersDataByTenantAndLicenceType",
-                data=data, 
+                data=data,
                 response_type=List[PyramidViewUserObject]
            )
 
@@ -956,7 +956,7 @@ def getAvailableTenantLicenseCount(tenantLicenseTypeData: TenantLicenseTypeData)
     """
     data = { "tenantLicenseTypeData" : tenantLicenseTypeData }
     return call_api("/API2/access/getAvailableTenantLicenseCount",
-                data=data, 
+                data=data,
                 response_type=None
            )
 
@@ -976,7 +976,7 @@ def getDefaultTenant() -> None:
     """
     
     return call_api("/API2/access/getDefaultTenant",
-                data=None, 
+                data=None,
                 response_type=None
            )
 
@@ -1005,7 +1005,7 @@ def getGroupsByRole(roleId: str) -> List[LdapGroupDetails]:
     
     data = {"roleId" : roleId,}
     return call_api("/API2/access/getGroupsByRole",
-                data=data, 
+                data=data,
                 response_type=List[LdapGroupDetails]
            )
 
@@ -1033,8 +1033,37 @@ def getLicenseCount(tenantId: str) -> None:
     
     data = {"tenantId" : tenantId,}
     return call_api("/API2/access/getLicenseCount",
-                data=data, 
+                data=data,
                 response_type=None
+           )
+
+
+
+def getLicenseCount2(tenantId: str) -> LicenseCountObject:
+    """
+    Description:
+        Get Tenant License Count
+    
+    Input:
+        Name: tenantId
+        Type: string
+        Description: The system tenant ID
+        
+        
+    
+    Output:
+        Successful Result Code: 200
+        Response Type: LicenseCountObject
+        Description of Response Type: Object which represents the total numbers of Pro and Viewer user licenses
+        
+
+    generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/API2/access/getLicenseCount2.htm
+    """
+    
+    data = {"tenantId" : tenantId,}
+    return call_api("/API2/access/getLicenseCount2",
+                data=data,
+                response_type=LicenseCountObject
            )
 
 
@@ -1053,7 +1082,7 @@ def getLicenseExpirationDate() -> None:
     """
     
     return call_api("/API2/access/getLicenseExpirationDate",
-                data=None, 
+                data=None,
                 response_type=None
            )
 
@@ -1074,7 +1103,7 @@ def getLicenseValidationStatus() -> ApiResultLicenseStatus:
     """
     
     return call_api("/API2/access/getLicenseValidationStatus",
-                data=None, 
+                data=None,
                 response_type=ApiResultLicenseStatus
            )
 
@@ -1095,7 +1124,7 @@ def getMe() -> PyramidViewUserObject:
     """
     
     return call_api("/API2/access/getMe",
-                data=None, 
+                data=None,
                 response_type=PyramidViewUserObject
            )
 
@@ -1124,7 +1153,7 @@ def getPrivateProfileIdForUser(userId: str) -> ItemId:
     
     data = {"userId" : userId,}
     return call_api("/API2/access/getPrivateProfileIdForUser",
-                data=data, 
+                data=data,
                 response_type=ItemId
            )
 
@@ -1153,7 +1182,7 @@ def getRoleById(roleId: str) -> RoleData:
     
     data = {"roleId" : roleId,}
     return call_api("/API2/access/getRoleById",
-                data=data, 
+                data=data,
                 response_type=RoleData
            )
 
@@ -1181,7 +1210,7 @@ def getRolesByName(searchCriteria: SearchCriteria) -> List[RoleMinimalData]:
     """
     data = { "searchCriteria" : searchCriteria }
     return call_api("/API2/access/getRolesByName",
-                data=data, 
+                data=data,
                 response_type=List[RoleMinimalData]
            )
 
@@ -1210,7 +1239,7 @@ def getTenantByName(name: str) -> AdminMultiTenantData:
     
     data = {"name" : name,}
     return call_api("/API2/access/getTenantByName",
-                data=data, 
+                data=data,
                 response_type=AdminMultiTenantData
            )
 
@@ -1239,7 +1268,7 @@ def getUser(userId: str) -> PyramidViewUserObject:
     
     data = {"userId" : userId,}
     return call_api("/API2/access/getUser",
-                data=data, 
+                data=data,
                 response_type=PyramidViewUserObject
            )
 
@@ -1268,7 +1297,7 @@ def getUserByOpenIdPrincipalName(PrincipalName: str) -> PyramidViewUserObject:
     
     data = {"PrincipalName" : PrincipalName,}
     return call_api("/API2/access/getUserByOpenIdPrincipalName",
-                data=data, 
+                data=data,
                 response_type=PyramidViewUserObject
            )
 
@@ -1297,7 +1326,7 @@ def getUserBySamlPrincipalName(PrincipalName: str) -> PyramidViewUserObject:
     
     data = {"PrincipalName" : PrincipalName,}
     return call_api("/API2/access/getUserBySamlPrincipalName",
-                data=data, 
+                data=data,
                 response_type=PyramidViewUserObject
            )
 
@@ -1325,7 +1354,7 @@ def getUserLastLogin(userName: str) -> None:
     
     data = {"userName" : userName,}
     return call_api("/API2/access/getUserLastLogin",
-                data=data, 
+                data=data,
                 response_type=None
            )
 
@@ -1353,7 +1382,7 @@ def getUserStatusById(userId: str) -> None:
     
     data = {"userId" : userId,}
     return call_api("/API2/access/getUserStatusById",
-                data=data, 
+                data=data,
                 response_type=None
            )
 
@@ -1381,7 +1410,7 @@ def getUserStatusByName(userName: str) -> None:
     
     data = {"userName" : userName,}
     return call_api("/API2/access/getUserStatusByName",
-                data=data, 
+                data=data,
                 response_type=None
            )
 
@@ -1410,7 +1439,7 @@ def getUsersByName(userName: str) -> List[PyramidViewUserObject]:
     
     data = {"userName" : userName,}
     return call_api("/API2/access/getUsersByName",
-                data=data, 
+                data=data,
                 response_type=List[PyramidViewUserObject]
            )
 
@@ -1439,7 +1468,7 @@ def getUsersByRole(roleId: str) -> List[PyramidViewUserObject]:
     
     data = {"roleId" : roleId,}
     return call_api("/API2/access/getUsersByRole",
-                data=data, 
+                data=data,
                 response_type=List[PyramidViewUserObject]
            )
 
@@ -1467,7 +1496,7 @@ def searchAdGroups(searchdata: LdapSearchObject) -> List[LdapGroupDetails]:
     """
     data = { "searchdata" : searchdata }
     return call_api("/API2/access/searchAdGroups",
-                data=data, 
+                data=data,
                 response_type=List[LdapGroupDetails]
            )
 
@@ -1495,7 +1524,7 @@ def searchAdGroupsForUser(searchdata: SearchAdUserGroupsData) -> List[LdapGroupD
     """
     data = { "searchdata" : searchdata }
     return call_api("/API2/access/searchAdGroupsForUser",
-                data=data, 
+                data=data,
                 response_type=List[LdapGroupDetails]
            )
 
@@ -1523,7 +1552,7 @@ def searchAdUsers(ldapUsersSearch: LdapUsersSearchObject) -> List[LdapUserObject
     """
     data = { "ldapUsersSearch" : ldapUsersSearch }
     return call_api("/API2/access/searchAdUsers",
-                data=data, 
+                data=data,
                 response_type=List[LdapUserObject]
            )
 
@@ -1551,7 +1580,7 @@ def searchAdUsersForGroups(searchdata: SearchAdGroupUsersData) -> List[LdapUserO
     """
     data = { "searchdata" : searchdata }
     return call_api("/API2/access/searchAdUsersForGroups",
-                data=data, 
+                data=data,
                 response_type=List[LdapUserObject]
            )
 
@@ -1579,7 +1608,7 @@ def setUserAdministrationLevel(adminTypeApiData: AdminTypeApiData) -> ModifiedIt
     """
     data = { "adminTypeApiData" : adminTypeApiData }
     return call_api("/API2/access/setUserAdministrationLevel",
-                data=data, 
+                data=data,
                 response_type=ModifiedItemsResult
            )
 
@@ -1607,7 +1636,7 @@ def toggleEnableUser(toggleUserApiData: ToggleUserApiData) -> ModifiedItemsResul
     """
     data = { "toggleUserApiData" : toggleUserApiData }
     return call_api("/API2/access/toggleEnableUser",
-                data=data, 
+                data=data,
                 response_type=ModifiedItemsResult
            )
 
@@ -1635,7 +1664,7 @@ def updateRolesByProfileId(profileRolesData: ProfileRolesData) -> List[ItemId]:
     """
     data = { "profileRolesData" : profileRolesData }
     return call_api("/API2/access/updateRolesByProfileId",
-                data=data, 
+                data=data,
                 response_type=List[ItemId]
            )
 
@@ -1663,7 +1692,7 @@ def updateTenantSeats(updateTenantSeatsObject: UpdateTenantSeatsObject) -> Modif
     """
     data = { "updateTenantSeatsObject" : updateTenantSeatsObject }
     return call_api("/API2/access/updateTenantSeats",
-                data=data, 
+                data=data,
                 response_type=ModifiedItemsResult
            )
 
@@ -1691,7 +1720,7 @@ def updateUserAd(updateUserAd: UpdateUserAdObject) -> ModifiedItemsResult:
     """
     data = { "updateUserAd" : updateUserAd }
     return call_api("/API2/access/updateUserAd",
-                data=data, 
+                data=data,
                 response_type=ModifiedItemsResult
            )
 
@@ -1719,7 +1748,7 @@ def updateUserDb(updateUserDb: UpdateUserDbObject) -> ModifiedItemsResult:
     """
     data = { "updateUserDb" : updateUserDb }
     return call_api("/API2/access/updateUserDb",
-                data=data, 
+                data=data,
                 response_type=ModifiedItemsResult
            )
 
@@ -1747,7 +1776,7 @@ def updateUserOpenId(updateUserOpenId: UpdateUserOpenIdObject) -> ModifiedItemsR
     """
     data = { "updateUserOpenId" : updateUserOpenId }
     return call_api("/API2/access/updateUserOpenId",
-                data=data, 
+                data=data,
                 response_type=ModifiedItemsResult
            )
 
@@ -1775,7 +1804,7 @@ def updateUserRoles(userRolesData: UserRolesData) -> List[ItemId]:
     """
     data = { "userRolesData" : userRolesData }
     return call_api("/API2/access/updateUserRoles",
-                data=data, 
+                data=data,
                 response_type=List[ItemId]
            )
 
@@ -1803,7 +1832,7 @@ def updateUserSaml(updateUserSaml: UpdateUserSamlObject) -> ModifiedItemsResult:
     """
     data = { "updateUserSaml" : updateUserSaml }
     return call_api("/API2/access/updateUserSaml",
-                data=data, 
+                data=data,
                 response_type=ModifiedItemsResult
            )
 
@@ -1831,7 +1860,7 @@ def updateUsersAd(updateUserAdArr: List[UpdateUserAdObject]) -> ModifiedItemsRes
     """
     data = { "updateUserAdArr" : updateUserAdArr }
     return call_api("/API2/access/updateUsersAd",
-                data=data, 
+                data=data,
                 response_type=ModifiedItemsResult
            )
 
@@ -1859,7 +1888,7 @@ def updateUsersDb(updateUserDbArr: List[UpdateUserDbObject]) -> ModifiedItemsRes
     """
     data = { "updateUserDbArr" : updateUserDbArr }
     return call_api("/API2/access/updateUsersDb",
-                data=data, 
+                data=data,
                 response_type=ModifiedItemsResult
            )
 
@@ -1887,7 +1916,7 @@ def updateUsersOpenId(updateUserOpenIdArr: List[UpdateUserOpenIdObject]) -> Modi
     """
     data = { "updateUserOpenIdArr" : updateUserOpenIdArr }
     return call_api("/API2/access/updateUsersOpenId",
-                data=data, 
+                data=data,
                 response_type=ModifiedItemsResult
            )
 
@@ -1915,7 +1944,7 @@ def updateUsersPhones(updateUser: dict) -> None:
     
     data = {"updateUser" : updateUser,}
     return call_api("/API2/access/updateUsersPhones",
-                data=data, 
+                data=data,
                 response_type=None
            )
 
@@ -1943,7 +1972,7 @@ def updateUsersSaml(updateUserSamlArr: List[UpdateUserSamlObject]) -> ModifiedIt
     """
     data = { "updateUserSamlArr" : updateUserSamlArr }
     return call_api("/API2/access/updateUsersSaml",
-                data=data, 
+                data=data,
                 response_type=ModifiedItemsResult
            )
 

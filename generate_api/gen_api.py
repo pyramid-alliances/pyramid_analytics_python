@@ -23,9 +23,9 @@ classes = [
     "EnumerationOutput",
     "CalcProps",
     "CmsTreeNodeMetadata",
-    "ExternalServerData", 
-    "OdbcDirectQueryOptions", 
-    "TenantSettings", 
+    "ExternalServerData",
+    "OdbcDirectQueryOptions",
+    "TenantSettings",
     "TenantInfo",
     "ConnectionStringProperties",
     "ConnectionStringData",
@@ -40,6 +40,12 @@ classes = [
     "UserSettingsData",
     "AddUserRoleData",
     "ApiResultLicenseStatus",
+    "HierarchyOverlayData",
+    "HierarchyOverlayToDeleteData",
+    "DeleteHierarchyOverlayApiObject",
+    "ErrorMessage",
+    "TaskSummary",
+    "ModelSyncColumnsSettings"
 ] + classes + [
     "MasterFlowValidationResult",
     "MasterFlowSourceObject"
@@ -75,7 +81,7 @@ from typing import (
 
 tpl = '''
 class {{ classname }}(BaseModel):
-    """ 
+    """
     generated from {{ url }}
     """
     {% for attr in classattrs -%}
@@ -90,7 +96,7 @@ class {{ classname }}(BaseModel):
 
 tpl_enum = '''
 class {{ classname }}(IntEnum):#
-    """ 
+    """
     generated from  {{ url }}
     """
     {% for attr in classattrs -%}
@@ -131,7 +137,7 @@ def {{ methodname }}({{ inputs }}) -> {{ response_type }}:
     {% endif -%}
 
     return call_api("{{method_url}}",
-                data={% if in_attrs %}data{% else %}None{% endif -%}, 
+                data={% if in_attrs %}data{% else %}None{% endif -%},
                 response_type={{ response_type }}
            )
 
@@ -160,7 +166,7 @@ def gen_enum(basedir="pyramid_api"):
             print(f"processing enum: {classname}")
 
             url = base_url.format(classname=classname)
-            
+
             soup = None
             cachename = "cache/{}.htm".format(classname)
             if os.path.exists(cachename):
@@ -240,7 +246,7 @@ def gen_object(basedir="pyramid_api"):
             #if "ImportApiResultObject" in classname:
             #     import ipdb;ipdb.set_trace()
             url = base_url.format(classname=classname)
-            
+
             soup = None
             cachename = "cache/{}.htm".format(classname)
             if os.path.exists(cachename):
@@ -251,9 +257,11 @@ def gen_object(basedir="pyramid_api"):
                 soup = BeautifulSoup(attrs_html.text, features="html.parser")
                 with open(cachename, "w") as f:
                     f.write(attrs_html.text)
-            
-            api_tbl = soup.find("table", {"class" : "apiCode"})
 
+            api_tbl = soup.find("table", {"class" : "apiCode"})
+            if not api_tbl:
+                print("error finding table with class 'apiCode' in html. skipping")
+                continue
             header = [x.text.strip() for x in api_tbl.select("tr th p")]
             #print(header)
             attrs = []
@@ -282,7 +290,7 @@ def gen_object(basedir="pyramid_api"):
                             attr_type = "int"
 
 
-                    
+
 
                     if m:= re.search("(\w+)\s*\[\s*\]", attr_type):
                         attr_type="List[{}]".format(m.group(1))
@@ -292,7 +300,7 @@ def gen_object(basedir="pyramid_api"):
                     python_type = "Optional[{}]".format(python_types.get(attr_type,attr_type))
                 else:
                     attr["Default"] = ""
-                
+
                 # deal with self-references
                 if 'RelatedItemData' in python_type:
                     python_type = python_type.replace("RelatedItemData", "'RelatedItemData'")
@@ -313,7 +321,7 @@ def gen_object(basedir="pyramid_api"):
             #     import ipdb;ipdb.set_trace()
             #pprint(attrs)
             out.write(t.render(classname=classname, classattrs=attrs, url=url))
-            
+
 
 
 def gen_methods(basedir="pyramid_api"):
@@ -360,10 +368,10 @@ def gen_methods(basedir="pyramid_api"):
                 description = soup.find("h1").text.strip()
                 details = [x.text.strip() for x in soup.select("li")]
                 spec = dict([(n.text.strip(), n) for n in soup.select("h5")])
-                
+
                 if "Input Parameters" in spec:
                     input_header = spec["Input Parameters"]
-                    
+
                     node = input_header.find_next_sibling("div")
                     #import ipdb;ipdb.set_trace()
                     while 1:
@@ -384,7 +392,7 @@ def gen_methods(basedir="pyramid_api"):
 
                 if "Output Response" in spec:
                     header = spec["Output Response"]
-                    
+
                     node = header.find_next_sibling("div")
                     #import ipdb;ipdb.set_trace()
                     while 1:
@@ -447,7 +455,7 @@ def gen_methods(basedir="pyramid_api"):
                     response_type = "ModifiedItemsResult"
 
                 out.write(t.render(
-                        methodname=methodname.split("/")[-1], 
+                        methodname=methodname.split("/")[-1],
                         url=url, method_url=method_url,
                         description=description,
                         inputname=inputname,

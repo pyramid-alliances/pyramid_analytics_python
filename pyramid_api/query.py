@@ -30,7 +30,7 @@ def extractQueryResult(data: QueryExportData) -> None:
     """
     data = { "data" : data }
     return call_api("/API2/query/extractQueryResult",
-                data=data, 
+                data=data,
                 response_type=None
            )
 
@@ -59,7 +59,7 @@ def getParameterElements(parameterId: str) -> EnumerationOutput:
     
     data = {"parameterId" : parameterId,}
     return call_api("/API2/query/getParameterElements",
-                data=data, 
+                data=data,
                 response_type=EnumerationOutput
            )
 

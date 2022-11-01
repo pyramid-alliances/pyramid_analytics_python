@@ -32,7 +32,7 @@ def getNotificationIndicators(userId: str) -> NotificationIndicatorsResult:
     
     data = {"userId" : userId,}
     return call_api("/API2/notification/getNotificationIndicators",
-                data=data, 
+                data=data,
                 response_type=NotificationIndicatorsResult
            )
 

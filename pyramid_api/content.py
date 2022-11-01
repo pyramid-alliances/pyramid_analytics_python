@@ -31,7 +31,7 @@ def addContentItemsToFavorites(data: ItemsForFavorites) -> ModifiedItemsResult:
     """
     data = { "data" : data }
     return call_api("/API2/content/addContentItemsToFavorites",
-                data=data, 
+                data=data,
                 response_type=ModifiedItemsResult
            )
 
@@ -59,7 +59,7 @@ def addRoleToItem(roleToItemApiData: RoleToItemApiData) -> ModifiedItemsResult:
     """
     data = { "roleToItemApiData" : roleToItemApiData }
     return call_api("/API2/content/addRoleToItem",
-                data=data, 
+                data=data,
                 response_type=ModifiedItemsResult
            )
 
@@ -87,7 +87,7 @@ def addTag(tagData: TagData) -> ModifiedItemsResult:
     """
     data = { "tagData" : tagData }
     return call_api("/API2/content/addTag",
-                data=data, 
+                data=data,
                 response_type=ModifiedItemsResult
            )
 
@@ -115,7 +115,7 @@ def addTagToItem(tagUsageApiData: TagUsageApiData) -> ModifiedItemsResult:
     """
     data = { "tagUsageApiData" : tagUsageApiData }
     return call_api("/API2/content/addTagToItem",
-                data=data, 
+                data=data,
                 response_type=ModifiedItemsResult
            )
 
@@ -143,7 +143,7 @@ def changeItemDescription(changeItemDescriptionData: ChangeItemDescriptionData) 
     """
     data = { "changeItemDescriptionData" : changeItemDescriptionData }
     return call_api("/API2/content/changeItemDescription",
-                data=data, 
+                data=data,
                 response_type=ModifiedItemsResult
            )
 
@@ -171,7 +171,7 @@ def changeItemFolder(itemParentApiData: ItemParentApiData) -> ModifiedItemsResul
     """
     data = { "itemParentApiData" : itemParentApiData }
     return call_api("/API2/content/changeItemFolder",
-                data=data, 
+                data=data,
                 response_type=ModifiedItemsResult
            )
 
@@ -199,7 +199,7 @@ def copyItems(moveItemsObject: MoveItemsObject) -> ModifiedItemsResult:
     """
     data = { "moveItemsObject" : moveItemsObject }
     return call_api("/API2/content/copyItems",
-                data=data, 
+                data=data,
                 response_type=ModifiedItemsResult
            )
 
@@ -227,7 +227,7 @@ def createNewFolder(folderApiData: NewFolderApiData) -> ModifiedItemsResult:
     """
     data = { "folderApiData" : folderApiData }
     return call_api("/API2/content/createNewFolder",
-                data=data, 
+                data=data,
                 response_type=ModifiedItemsResult
            )
 
@@ -256,7 +256,7 @@ def deleteTag(tagId: str) -> ModifiedItemsResult:
     
     data = {"tagId" : tagId,}
     return call_api("/API2/content/deleteTag",
-                data=data, 
+                data=data,
                 response_type=ModifiedItemsResult
            )
 
@@ -283,7 +283,7 @@ def exportContent(itemIds: List[str]) -> None:
     
     data = {"itemIds" : itemIds,}
     return call_api("/API2/content/exportContent",
-                data=data, 
+                data=data,
                 response_type=None
            )
 
@@ -311,7 +311,7 @@ def findContentItem(searchParams: ContentSearchParamsObject) -> List[PyramidCont
     """
     data = { "searchParams" : searchParams }
     return call_api("/API2/content/findContentItem",
-                data=data, 
+                data=data,
                 response_type=List[PyramidContentItem]
            )
 
@@ -340,7 +340,7 @@ def findItemsByTagId(tag: str) -> List[ItemId]:
     
     data = {"tag" : tag,}
     return call_api("/API2/content/findItemsByTagId",
-                data=data, 
+                data=data,
                 response_type=List[ItemId]
            )
 
@@ -369,7 +369,7 @@ def findItemsByTagName(tag: str) -> List[ItemId]:
     
     data = {"tag" : tag,}
     return call_api("/API2/content/findItemsByTagName",
-                data=data, 
+                data=data,
                 response_type=List[ItemId]
            )
 
@@ -398,7 +398,7 @@ def getAllItemTags(itemId: str) -> List[ItemId]:
     
     data = {"itemId" : itemId,}
     return call_api("/API2/content/getAllItemTags",
-                data=data, 
+                data=data,
                 response_type=List[ItemId]
            )
 
@@ -427,7 +427,7 @@ def getAllItemsCreatedByUser(userId: str) -> List[PyramidContentItem]:
     
     data = {"userId" : userId,}
     return call_api("/API2/content/getAllItemsCreatedByUser",
-                data=data, 
+                data=data,
                 response_type=List[PyramidContentItem]
            )
 
@@ -448,8 +448,29 @@ def getAllTags() -> List[ItemId]:
     """
     
     return call_api("/API2/content/getAllTags",
-                data=None, 
+                data=None,
                 response_type=List[ItemId]
+           )
+
+
+
+def getAllTagsData() -> List[TagData]:
+    """
+    Description:
+        Gets all Tags Ids and Data
+    
+    Output:
+        Successful Result Code: 200
+        Response List Type: TagData[]
+        Description of Response Type: The tag object used to capture a tag's settings. Note that the response is returned as a list of items of this object type.
+        
+
+    generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/API2/content/getAllTagsData.htm
+    """
+    
+    return call_api("/API2/content/getAllTagsData",
+                data=None,
+                response_type=List[TagData]
            )
 
 
@@ -477,7 +498,7 @@ def getAllUserContentItems(userId: str) -> List[PyramidContentItem]:
     
     data = {"userId" : userId,}
     return call_api("/API2/content/getAllUserContentItems",
-                data=data, 
+                data=data,
                 response_type=List[PyramidContentItem]
            )
 
@@ -506,7 +527,7 @@ def getAutoRecommendedItems(userId: str) -> List[PyramidContentItem]:
     
     data = {"userId" : userId,}
     return call_api("/API2/content/getAutoRecommendedItems",
-                data=data, 
+                data=data,
                 response_type=List[PyramidContentItem]
            )
 
@@ -535,7 +556,7 @@ def getContentItemMetaData(itemId: str) -> PyramidContentItem:
     
     data = {"itemId" : itemId,}
     return call_api("/API2/content/getContentItemMetaData",
-                data=data, 
+                data=data,
                 response_type=PyramidContentItem
            )
 
@@ -564,7 +585,7 @@ def getContentItemSecurityRoles(contentItemId: str) -> List[RoleData]:
     
     data = {"contentItemId" : contentItemId,}
     return call_api("/API2/content/getContentItemSecurityRoles",
-                data=data, 
+                data=data,
                 response_type=List[RoleData]
            )
 
@@ -593,7 +614,7 @@ def getContentItemSecurityRolesID(contentItemId: str) -> List[ItemId]:
     
     data = {"contentItemId" : contentItemId,}
     return call_api("/API2/content/getContentItemSecurityRolesID",
-                data=data, 
+                data=data,
                 response_type=List[ItemId]
            )
 
@@ -622,7 +643,7 @@ def getFavoriteItems(userId: str) -> List[PyramidContentItem]:
     
     data = {"userId" : userId,}
     return call_api("/API2/content/getFavoriteItems",
-                data=data, 
+                data=data,
                 response_type=List[PyramidContentItem]
            )
 
@@ -650,7 +671,7 @@ def getFolderChildrenOnlyFolders(folder: CmsTreeNodeMetadata) -> List[CmsTreeNod
     """
     data = { "folder" : folder }
     return call_api("/API2/content/getFolderChildrenOnlyFolders",
-                data=data, 
+                data=data,
                 response_type=List[CmsTreeNodeMetadata]
            )
 
@@ -679,7 +700,7 @@ def getFolderItems(folderId: str) -> List[PyramidContentItem]:
     
     data = {"folderId" : folderId,}
     return call_api("/API2/content/getFolderItems",
-                data=data, 
+                data=data,
                 response_type=List[PyramidContentItem]
            )
 
@@ -708,7 +729,7 @@ def getMostUsedItems(userId: str) -> List[PyramidContentItem]:
     
     data = {"userId" : userId,}
     return call_api("/API2/content/getMostUsedItems",
-                data=data, 
+                data=data,
                 response_type=List[PyramidContentItem]
            )
 
@@ -737,7 +758,7 @@ def getPrivateFolderForUser(userId: str) -> PyramidContentItem:
     
     data = {"userId" : userId,}
     return call_api("/API2/content/getPrivateFolderForUser",
-                data=data, 
+                data=data,
                 response_type=PyramidContentItem
            )
 
@@ -766,7 +787,7 @@ def getPrivateRootFolder(userId: str) -> PyramidContentItem:
     
     data = {"userId" : userId,}
     return call_api("/API2/content/getPrivateRootFolder",
-                data=data, 
+                data=data,
                 response_type=PyramidContentItem
            )
 
@@ -794,7 +815,7 @@ def getPublicOrGroupFolderByTenantId(folderTenantObject: FolderTenantObject) -> 
     """
     data = { "folderTenantObject" : folderTenantObject }
     return call_api("/API2/content/getPublicOrGroupFolderByTenantId",
-                data=data, 
+                data=data,
                 response_type=PyramidContentItem
            )
 
@@ -823,7 +844,7 @@ def getRecentItems(userId: str) -> List[PyramidContentItem]:
     
     data = {"userId" : userId,}
     return call_api("/API2/content/getRecentItems",
-                data=data, 
+                data=data,
                 response_type=List[PyramidContentItem]
            )
 
@@ -852,7 +873,7 @@ def getRecommendedItems(userId: str) -> List[PyramidContentItem]:
     
     data = {"userId" : userId,}
     return call_api("/API2/content/getRecommendedItems",
-                data=data, 
+                data=data,
                 response_type=List[PyramidContentItem]
            )
 
@@ -881,7 +902,7 @@ def getTag(tagId: str) -> TagData:
     
     data = {"tagId" : tagId,}
     return call_api("/API2/content/getTag",
-                data=data, 
+                data=data,
                 response_type=TagData
            )
 
@@ -910,7 +931,7 @@ def getUserGroupFolders(userId: str) -> List[PyramidContentItem]:
     
     data = {"userId" : userId,}
     return call_api("/API2/content/getUserGroupFolders",
-                data=data, 
+                data=data,
                 response_type=List[PyramidContentItem]
            )
 
@@ -939,7 +960,7 @@ def getUserGroupRootFolder(userId: str) -> PyramidContentItem:
     
     data = {"userId" : userId,}
     return call_api("/API2/content/getUserGroupRootFolder",
-                data=data, 
+                data=data,
                 response_type=PyramidContentItem
            )
 
@@ -968,7 +989,7 @@ def getUserPrivateFolder(userId: str) -> List[PyramidContentItem]:
     
     data = {"userId" : userId,}
     return call_api("/API2/content/getUserPrivateFolder",
-                data=data, 
+                data=data,
                 response_type=List[PyramidContentItem]
            )
 
@@ -997,7 +1018,7 @@ def getUserPrivateRootFolder(userId: str) -> PyramidContentItem:
     
     data = {"userId" : userId,}
     return call_api("/API2/content/getUserPrivateRootFolder",
-                data=data, 
+                data=data,
                 response_type=PyramidContentItem
            )
 
@@ -1026,7 +1047,7 @@ def getUserPublicFolders(userId: str) -> List[PyramidContentItem]:
     
     data = {"userId" : userId,}
     return call_api("/API2/content/getUserPublicFolders",
-                data=data, 
+                data=data,
                 response_type=List[PyramidContentItem]
            )
 
@@ -1055,7 +1076,7 @@ def getUserPublicRootFolder(userId: str) -> PyramidContentItem:
     
     data = {"userId" : userId,}
     return call_api("/API2/content/getUserPublicRootFolder",
-                data=data, 
+                data=data,
                 response_type=PyramidContentItem
            )
 
@@ -1083,7 +1104,7 @@ def importContent(pieApiObject: PieApiObject) -> ImportApiResultObject:
     """
     data = { "pieApiObject" : pieApiObject }
     return call_api("/API2/content/importContent",
-                data=data, 
+                data=data,
                 response_type=ImportApiResultObject
            )
 
@@ -1111,7 +1132,7 @@ def moveItems(moveItemsObject: MoveItemsObject) -> ModifiedItemsResult:
     """
     data = { "moveItemsObject" : moveItemsObject }
     return call_api("/API2/content/moveItems",
-                data=data, 
+                data=data,
                 response_type=ModifiedItemsResult
            )
 
@@ -1139,7 +1160,7 @@ def purgeContentItems(itemIds: List[str]) -> ModifiedItemsResult:
     
     data = {"itemIds" : itemIds,}
     return call_api("/API2/content/purgeContentItems",
-                data=data, 
+                data=data,
                 response_type=ModifiedItemsResult
            )
 
@@ -1167,7 +1188,7 @@ def removeContentItemsFromFavorites(data: ItemsForFavorites) -> ModifiedItemsRes
     """
     data = { "data" : data }
     return call_api("/API2/content/removeContentItemsFromFavorites",
-                data=data, 
+                data=data,
                 response_type=ModifiedItemsResult
            )
 
@@ -1195,7 +1216,7 @@ def removeRolesFromItem(rolesInItemRemovalObject: RolesInItemRemovalObject) -> M
     """
     data = { "rolesInItemRemovalObject" : rolesInItemRemovalObject }
     return call_api("/API2/content/removeRolesFromItem",
-                data=data, 
+                data=data,
                 response_type=ModifiedItemsResult
            )
 
@@ -1223,7 +1244,7 @@ def removeTagFromItem(tagUsageApiData: TagUsageApiData) -> ModifiedItemsResult:
     """
     data = { "tagUsageApiData" : tagUsageApiData }
     return call_api("/API2/content/removeTagFromItem",
-                data=data, 
+                data=data,
                 response_type=ModifiedItemsResult
            )
 
@@ -1251,7 +1272,7 @@ def renameItem(renameItemApiData: RenameItemApiData) -> ModifiedItemsResult:
     """
     data = { "renameItemApiData" : renameItemApiData }
     return call_api("/API2/content/renameItem",
-                data=data, 
+                data=data,
                 response_type=ModifiedItemsResult
            )
 
@@ -1279,8 +1300,28 @@ def restoreSoftDeletedContentItems(itemIds: List[str]) -> ModifiedItemsResult:
     
     data = {"itemIds" : itemIds,}
     return call_api("/API2/content/restoreSoftDeletedContentItems",
-                data=data, 
+                data=data,
                 response_type=ModifiedItemsResult
+           )
+
+
+
+def runOrphanCleaner() -> None:
+    """
+    Description:
+        Runorphan cleaner
+    
+    Output:
+        Successful Result Code: 200
+        Description of Response Type: Returns a summary of the orphan cleaner job
+        
+
+    generated from https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/API2/content/runOrphanCleaner.htm
+    """
+    
+    return call_api("/API2/content/runOrphanCleaner",
+                data=None,
+                response_type=None
            )
 
 
@@ -1307,7 +1348,7 @@ def softDeleteContentItems(itemIds: List[str]) -> ModifiedItemsResult:
     
     data = {"itemIds" : itemIds,}
     return call_api("/API2/content/softDeleteContentItems",
-                data=data, 
+                data=data,
                 response_type=ModifiedItemsResult
            )
 

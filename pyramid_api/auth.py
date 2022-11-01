@@ -30,7 +30,7 @@ def authenticateUser(userCredentials: UserCredentials) -> str:
     """
     data = { "userCredentials" : userCredentials }
     return call_api("/API2/auth/authenticateUser",
-                data=data, 
+                data=data,
                 response_type=str
            )
 
@@ -57,7 +57,7 @@ def authenticateUserByToken(userTokenCredentials: UserTokenCredentials) -> str:
     """
     data = { "userTokenCredentials" : userTokenCredentials }
     return call_api("/API2/auth/authenticateUserByToken",
-                data=data, 
+                data=data,
                 response_type=str
            )
 
@@ -84,7 +84,7 @@ def authenticateUserEmbed(userCredentials: UserCredentials) -> str:
     """
     data = { "userCredentials" : userCredentials }
     return call_api("/API2/auth/authenticateUserEmbed",
-                data=data, 
+                data=data,
                 response_type=str
            )
 
@@ -111,7 +111,7 @@ def authenticateUserEmbedByToken(userTokenCredentials: UserTokenCredentials) -> 
     """
     data = { "userTokenCredentials" : userTokenCredentials }
     return call_api("/API2/auth/authenticateUserEmbedByToken",
-                data=data, 
+                data=data,
                 response_type=str
            )
 
@@ -138,7 +138,7 @@ def authenticateUserEmbedOPENID(userOpenIdCredentials: UserOpenIdCredentials) ->
     """
     data = { "userOpenIdCredentials" : userOpenIdCredentials }
     return call_api("/API2/auth/authenticateUserEmbedOPENID",
-                data=data, 
+                data=data,
                 response_type=str
            )
 
@@ -165,7 +165,7 @@ def authenticateUserEmbedSAML(userSamlCredentials: UserSamlCredentials) -> str:
     """
     data = { "userSamlCredentials" : userSamlCredentials }
     return call_api("/API2/auth/authenticateUserEmbedSAML",
-                data=data, 
+                data=data,
                 response_type=str
            )
 
@@ -193,7 +193,7 @@ def authenticateUserEmbedWindows(domain: str) -> str:
     
     data = {"domain" : domain,}
     return call_api("/API2/auth/authenticateUserEmbedWindows",
-                data=data, 
+                data=data,
                 response_type=str
            )
 
@@ -221,7 +221,7 @@ def authenticateUserOPENID(parameterMap: str) -> str:
     
     data = {"parameterMap" : parameterMap,}
     return call_api("/API2/auth/authenticateUserOPENID",
-                data=data, 
+                data=data,
                 response_type=str
            )
 
@@ -248,7 +248,7 @@ def authenticateUserOPENIDAlt(userOpenIdCredentials: UserOpenIdCredentials) -> s
     """
     data = { "userOpenIdCredentials" : userOpenIdCredentials }
     return call_api("/API2/auth/authenticateUserOPENIDAlt",
-                data=data, 
+                data=data,
                 response_type=str
            )
 
@@ -276,7 +276,7 @@ def authenticateUserSAML(token: str) -> str:
     
     data = {"token" : token,}
     return call_api("/API2/auth/authenticateUserSAML",
-                data=data, 
+                data=data,
                 response_type=str
            )
 
@@ -303,7 +303,7 @@ def authenticateUserSAMLAlt(userSamlCredentials: UserSamlCredentials) -> str:
     """
     data = { "userSamlCredentials" : userSamlCredentials }
     return call_api("/API2/auth/authenticateUserSAMLAlt",
-                data=data, 
+                data=data,
                 response_type=str
            )
 
@@ -323,7 +323,7 @@ def authenticateUserWindows() -> str:
     """
     
     return call_api("/API2/auth/authenticateUserWindows",
-                data=None, 
+                data=None,
                 response_type=str
            )
 
