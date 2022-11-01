@@ -8,7 +8,7 @@ from typing import (
 )
 
 class AccessType(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/AccessType.htm
     """
     none = 0
@@ -19,7 +19,7 @@ class AccessType(IntEnum):#
     
 
 class AdjunctRequestType(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/AdjunctRequestType.htm
     """
     slicer = 0
@@ -28,7 +28,7 @@ class AdjunctRequestType(IntEnum):#
     
 
 class AdminType(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/AdminType.htm
     """
     none = 0
@@ -37,7 +37,7 @@ class AdminType(IntEnum):#
     
 
 class AggregationType(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/AggregationType.htm
     """
     sum = 0
@@ -63,7 +63,7 @@ class AggregationType(IntEnum):#
     
 
 class AlertIndicatorType(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/AlertIndicatorType.htm
     """
     same = 0
@@ -72,7 +72,7 @@ class AlertIndicatorType(IntEnum):#
     
 
 class ApiResponseFormat(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/ApiResponseFormat.htm
     """
     json = 0
@@ -84,7 +84,7 @@ class ApiResponseFormat(IntEnum):#
     
 
 class AssetType(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/AssetType.htm
     """
     text = 0
@@ -105,7 +105,7 @@ class AssetType(IntEnum):#
     
 
 class AxisTotalsType(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/AxisTotalsType.htm
     """
     none = 0
@@ -115,7 +115,7 @@ class AxisTotalsType(IntEnum):#
     
 
 class AxisType(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/AxisType.htm
     """
     columns = 0
@@ -126,7 +126,7 @@ class AxisType(IntEnum):#
     
 
 class CacheMode(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/CacheMode.htm
     """
     avoid_cache = 0
@@ -135,7 +135,7 @@ class CacheMode(IntEnum):#
     
 
 class CalcCategoryType(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/CalcCategoryType.htm
     """
     general = 0
@@ -143,7 +143,7 @@ class CalcCategoryType(IntEnum):#
     
 
 class CalcType(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/CalcType.htm
     """
     none = 0
@@ -157,7 +157,7 @@ class CalcType(IntEnum):#
     
 
 class CartesianType(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/CartesianType.htm
     """
     grid = 0
@@ -170,7 +170,7 @@ class CartesianType(IntEnum):#
     
 
 class ChipCategory(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/ChipCategory.htm
     """
     measure = 0
@@ -179,7 +179,7 @@ class ChipCategory(IntEnum):#
     
 
 class ClashDefaultOption(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/ClashDefaultOption.htm
     """
     regular_pie_import = 0
@@ -189,7 +189,7 @@ class ClashDefaultOption(IntEnum):#
     
 
 class ClientLicenseType(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/ClientLicenseType.htm
     """
     none = 0
@@ -198,7 +198,7 @@ class ClientLicenseType(IntEnum):#
     
 
 class CmsNodeExtraDataType(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/CmsNodeExtraDataType.htm
     """
     script = 0
@@ -210,7 +210,7 @@ class CmsNodeExtraDataType(IntEnum):#
     
 
 class CollaborationOpenOptions(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/CollaborationOpenOptions.htm
     """
     default = 0
@@ -220,7 +220,7 @@ class CollaborationOpenOptions(IntEnum):#
     
 
 class CollaborationRequestType(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/CollaborationRequestType.htm
     """
     none = 0
@@ -229,7 +229,7 @@ class CollaborationRequestType(IntEnum):#
     
 
 class ColoringDirection(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/ColoringDirection.htm
     """
     bottomup = 0
@@ -239,7 +239,7 @@ class ColoringDirection(IntEnum):#
     
 
 class ColumnPropertiesType(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/ColumnPropertiesType.htm
     """
     formatted_value = 0
@@ -252,7 +252,7 @@ class ColumnPropertiesType(IntEnum):#
     
 
 class ComponentType(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/ComponentType.htm
     """
     none = 0
@@ -320,7 +320,7 @@ class ComponentType(IntEnum):#
     
 
 class ConditionConjunctionType(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/ConditionConjunctionType.htm
     """
     none = 0
@@ -329,7 +329,7 @@ class ConditionConjunctionType(IntEnum):#
     
 
 class ConditionFormulaType(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/ConditionFormulaType.htm
     """
     formulavsvalue = 0
@@ -338,7 +338,7 @@ class ConditionFormulaType(IntEnum):#
     
 
 class ConnectionStringType(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/ConnectionStringType.htm
     """
     none = 0
@@ -392,10 +392,11 @@ class ConnectionStringType(IntEnum):#
     sparksql = 48
     databricks = 49
     denodo = 50
+    netsuite = 51
     
 
 class ContainerType(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/ContainerType.htm
     """
     none = 0
@@ -406,7 +407,7 @@ class ContainerType(IntEnum):#
     
 
 class ContentItemObject(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/ContentItemObject.htm
     """
     asset = 0
@@ -418,7 +419,7 @@ class ContentItemObject(IntEnum):#
     
 
 class ContentType(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/ContentType.htm
     """
     none = 0
@@ -440,7 +441,7 @@ class ContentType(IntEnum):#
     
 
 class ContentTypeObject(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/ContentTypeObject.htm
     """
     none = 0
@@ -454,7 +455,7 @@ class ContentTypeObject(IntEnum):#
     
 
 class ConversationType(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/ConversationType.htm
     """
     default = 0
@@ -463,7 +464,7 @@ class ConversationType(IntEnum):#
     
 
 class CubeAuthMethod(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/CubeAuthMethod.htm
     """
     effectiveusername = 0
@@ -472,7 +473,7 @@ class CubeAuthMethod(IntEnum):#
     
 
 class CustomFontContentType(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/CustomFontContentType.htm
     """
     fontstylesheet = 0
@@ -480,7 +481,7 @@ class CustomFontContentType(IntEnum):#
     
 
 class CustomSetDiscreteValueType(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/CustomSetDiscreteValueType.htm
     """
     static = 0
@@ -491,7 +492,7 @@ class CustomSetDiscreteValueType(IntEnum):#
     
 
 class CustomVisualApiVersion(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/CustomVisualApiVersion.htm
     """
     getv1 = 0
@@ -499,7 +500,7 @@ class CustomVisualApiVersion(IntEnum):#
     
 
 class DataFlowModelType(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/DataFlowModelType.htm
     """
     virtualmodel = 0
@@ -510,7 +511,7 @@ class DataFlowModelType(IntEnum):#
     
 
 class DataPattern(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/DataPattern.htm
     """
     continuous = 0
@@ -522,7 +523,7 @@ class DataPattern(IntEnum):#
     
 
 class DateSearchType(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/DateSearchType.htm
     """
     equals = 0
@@ -532,7 +533,7 @@ class DateSearchType(IntEnum):#
     
 
 class DateSelectionType(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/DateSelectionType.htm
     """
     value = 0
@@ -540,7 +541,7 @@ class DateSelectionType(IntEnum):#
     
 
 class DayType(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/DayType.htm
     """
     specific = 0
@@ -548,7 +549,7 @@ class DayType(IntEnum):#
     
 
 class DeviceType(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/DeviceType.htm
     """
     none = 0
@@ -558,7 +559,7 @@ class DeviceType(IntEnum):#
     
 
 class DiscoveryWorkspaceType(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/DiscoveryWorkspaceType.htm
     """
     classic = 0
@@ -570,7 +571,7 @@ class DiscoveryWorkspaceType(IntEnum):#
     
 
 class DocumentTypeEnum(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/DocumentTypeEnum.htm
     """
     regular = 0
@@ -578,7 +579,7 @@ class DocumentTypeEnum(IntEnum):#
     
 
 class DrillState(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/DrillState.htm
     """
     none = 0
@@ -587,7 +588,7 @@ class DrillState(IntEnum):#
     
 
 class DropZoneType(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/DropZoneType.htm
     """
     columns = 0
@@ -617,7 +618,7 @@ class DropZoneType(IntEnum):#
     
 
 class DynamicEntityType(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/DynamicEntityType.htm
     """
     query = 0
@@ -627,7 +628,7 @@ class DynamicEntityType(IntEnum):#
     
 
 class ElementFunctionType(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/ElementFunctionType.htm
     """
     all = 0
@@ -671,15 +672,24 @@ class ElementFunctionType(IntEnum):#
     
 
 class EtlExecutionContextType(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/EtlExecutionContextType.htm
     """
     item = 0
     materialized = 1
     
 
+class EtlSyncModelColumnsType(IntEnum):#
+    """
+    generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/EtlSyncModelColumnsType.htm
+    """
+    none = 0
+    syncall = 1
+    syncbytable = 2
+    
+
 class EvaluationSetFunctionType(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/EvaluationSetFunctionType.htm
     """
     getmin = 0
@@ -693,7 +703,7 @@ class EvaluationSetFunctionType(IntEnum):#
     
 
 class ExcelRenderingType(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/ExcelRenderingType.htm
     """
     matrixgrid = 0
@@ -704,7 +714,7 @@ class ExcelRenderingType(IntEnum):#
     
 
 class ExecutionArea(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/ExecutionArea.htm
     """
     semantic = 0
@@ -714,7 +724,7 @@ class ExecutionArea(IntEnum):#
     
 
 class FirstWorkday(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/FirstWorkday.htm
     """
     sunday = 1
@@ -722,7 +732,7 @@ class FirstWorkday(IntEnum):#
     
 
 class FunctionArgumentType(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/FunctionArgumentType.htm
     """
     constant = 0
@@ -731,7 +741,7 @@ class FunctionArgumentType(IntEnum):#
     
 
 class GeneralExecutionError(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/GeneralExecutionError.htm
     """
     error = 1
@@ -743,7 +753,7 @@ class GeneralExecutionError(IntEnum):#
     
 
 class HideMemberType(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/HideMemberType.htm
     """
     never = 0
@@ -751,7 +761,7 @@ class HideMemberType(IntEnum):#
     
 
 class HideShowOption(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/HideShowOption.htm
     """
     hide = 0
@@ -759,7 +769,7 @@ class HideShowOption(IntEnum):#
     
 
 class HierarchyCategory(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/HierarchyCategory.htm
     """
     none = 0
@@ -768,8 +778,18 @@ class HierarchyCategory(IntEnum):#
     person = 3
     
 
+class HierarchyOverlayProperty(IntEnum):#
+    """
+    generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/HierarchyOverlayProperty.htm
+    """
+    alternativename = 0
+    type = 1
+    description = 2
+    displayfolder = 3
+    
+
 class HierarchyType(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/HierarchyType.htm
     """
     drill_path = 0
@@ -778,7 +798,7 @@ class HierarchyType(IntEnum):#
     
 
 class ImageSize(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/ImageSize.htm
     """
     none = 0
@@ -789,7 +809,7 @@ class ImageSize(IntEnum):#
     
 
 class ImageUploadStatus(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/ImageUploadStatus.htm
     """
     pending = 0
@@ -798,7 +818,7 @@ class ImageUploadStatus(IntEnum):#
     
 
 class InteractionContainerType(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/InteractionContainerType.htm
     """
     layoutelement = 0
@@ -809,7 +829,7 @@ class InteractionContainerType(IntEnum):#
     
 
 class InteractionType(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/InteractionType.htm
     """
     data = 0
@@ -819,7 +839,7 @@ class InteractionType(IntEnum):#
     
 
 class ItemType(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/ItemType.htm
     """
     none = 0
@@ -835,7 +855,7 @@ class ItemType(IntEnum):#
     
 
 class JoinType(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/JoinType.htm
     """
     inner = 0
@@ -846,7 +866,7 @@ class JoinType(IntEnum):#
     
 
 class KpiAttributeType(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/KpiAttributeType.htm
     """
     value = 0
@@ -857,7 +877,7 @@ class KpiAttributeType(IntEnum):#
     
 
 class KpiStylesOptions(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/KpiStylesOptions.htm
     """
     balls = 0
@@ -877,7 +897,7 @@ class KpiStylesOptions(IntEnum):#
     
 
 class LayoutBehaviorType(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/LayoutBehaviorType.htm
     """
     tiles = 0
@@ -887,7 +907,7 @@ class LayoutBehaviorType(IntEnum):#
     
 
 class LayoutElementContentType(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/LayoutElementContentType.htm
     """
     visual = 0
@@ -907,7 +927,7 @@ class LayoutElementContentType(IntEnum):#
     
 
 class LayoutElementLegendPosition(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/LayoutElementLegendPosition.htm
     """
     left = 0
@@ -919,7 +939,7 @@ class LayoutElementLegendPosition(IntEnum):#
     
 
 class LdapSearchType(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/LdapSearchType.htm
     """
     exact = 0
@@ -928,7 +948,7 @@ class LdapSearchType(IntEnum):#
     
 
 class LicenseStatus(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/LicenseStatus.htm
     """
     valid = 0
@@ -939,7 +959,7 @@ class LicenseStatus(IntEnum):#
     
 
 class MasterPageType(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/MasterPageType.htm
     """
     cover = 0
@@ -947,7 +967,7 @@ class MasterPageType(IntEnum):#
     
 
 class MaterializedItemType(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/MaterializedItemType.htm
     """
     none = 0
@@ -961,7 +981,7 @@ class MaterializedItemType(IntEnum):#
     
 
 class MaterializedRoleAssignmentType(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/MaterializedRoleAssignmentType.htm
     """
     usedefaultbehavior = 0
@@ -971,7 +991,7 @@ class MaterializedRoleAssignmentType(IntEnum):#
     
 
 class MathFunction(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/MathFunction.htm
     """
     linear = 0
@@ -1000,7 +1020,7 @@ class MathFunction(IntEnum):#
     
 
 class MessagesDisplayType(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/MessagesDisplayType.htm
     """
     none = 0
@@ -1013,7 +1033,7 @@ class MessagesDisplayType(IntEnum):#
     
 
 class MiniatureMode(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/MiniatureMode.htm
     """
     auto = 0
@@ -1021,7 +1041,7 @@ class MiniatureMode(IntEnum):#
     
 
 class MobileApplicationType(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/MobileApplicationType.htm
     """
     none = 0
@@ -1030,7 +1050,7 @@ class MobileApplicationType(IntEnum):#
     
 
 class MobileDeviceType(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/MobileDeviceType.htm
     """
     ios = 0
@@ -1038,7 +1058,7 @@ class MobileDeviceType(IntEnum):#
     
 
 class ModelAttributeType(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/ModelAttributeType.htm
     """
     model_column = 0
@@ -1062,7 +1082,7 @@ class ModelAttributeType(IntEnum):#
     
 
 class ModelParameterOperator(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/ModelParameterOperator.htm
     """
     between = 0
@@ -1077,7 +1097,7 @@ class ModelParameterOperator(IntEnum):#
     
 
 class ModelTextOption(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/ModelTextOption.htm
     """
     none = 0
@@ -1086,7 +1106,7 @@ class ModelTextOption(IntEnum):#
     
 
 class ModelingColumnCategories(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/ModelingColumnCategories.htm
     """
     none = 0
@@ -1119,7 +1139,7 @@ class ModelingColumnCategories(IntEnum):#
     
 
 class ModelingParameterSelectionType(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/ModelingParameterSelectionType.htm
     """
     singlevalue = 1
@@ -1128,7 +1148,7 @@ class ModelingParameterSelectionType(IntEnum):#
     
 
 class ModelingTableType(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/ModelingTableType.htm
     """
     table = 0
@@ -1136,7 +1156,7 @@ class ModelingTableType(IntEnum):#
     
 
 class MonthDayType(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/MonthDayType.htm
     """
     calendar = 0
@@ -1145,7 +1165,7 @@ class MonthDayType(IntEnum):#
     
 
 class NaturalOrderType(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/NaturalOrderType.htm
     """
     alphabetically_asc = 0
@@ -1158,7 +1178,7 @@ class NaturalOrderType(IntEnum):#
     
 
 class OnPeakDayOfWeek(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/OnPeakDayOfWeek.htm
     """
     monday = 1
@@ -1171,7 +1191,7 @@ class OnPeakDayOfWeek(IntEnum):#
     
 
 class OperatorType(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/OperatorType.htm
     """
     equals = 0
@@ -1184,7 +1204,7 @@ class OperatorType(IntEnum):#
     
 
 class OsType(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/OsType.htm
     """
     windows = 0
@@ -1196,7 +1216,7 @@ class OsType(IntEnum):#
     
 
 class PDFConverterType(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/PDFConverterType.htm
     """
     phantomjs = 0
@@ -1210,7 +1230,7 @@ class PDFConverterType(IntEnum):#
     
 
 class PanelPosition(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/PanelPosition.htm
     """
     top = 0
@@ -1218,7 +1238,7 @@ class PanelPosition(IntEnum):#
     
 
 class PanelSubTitleType(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/PanelSubTitleType.htm
     """
     breadcrumbs = 0
@@ -1226,7 +1246,7 @@ class PanelSubTitleType(IntEnum):#
     
 
 class PanelTitleType(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/PanelTitleType.htm
     """
     auto = 0
@@ -1235,7 +1255,7 @@ class PanelTitleType(IntEnum):#
     
 
 class PaperType(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/PaperType.htm
     """
     letter = 0
@@ -1251,7 +1271,7 @@ class PaperType(IntEnum):#
     
 
 class ParentChildOrphanHandlingType(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/ParentChildOrphanHandlingType.htm
     """
     ignored = 0
@@ -1260,7 +1280,7 @@ class ParentChildOrphanHandlingType(IntEnum):#
     
 
 class ParentChildRollupType(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/ParentChildRollupType.htm
     """
     self = 0
@@ -1269,7 +1289,7 @@ class ParentChildRollupType(IntEnum):#
     
 
 class PermissionBitIndex(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/PermissionBitIndex.htm
     """
     app_assets = 0
@@ -1301,7 +1321,7 @@ class PermissionBitIndex(IntEnum):#
     
 
 class PredefinedItemSaveType(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/PredefinedItemSaveType.htm
     """
     none = 0
@@ -1310,7 +1330,7 @@ class PredefinedItemSaveType(IntEnum):#
     
 
 class PrintingHeaderFooterSectionPosition(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/PrintingHeaderFooterSectionPosition.htm
     """
     left = 0
@@ -1319,7 +1339,7 @@ class PrintingHeaderFooterSectionPosition(IntEnum):#
     
 
 class PrintingHeaderFooterType(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/PrintingHeaderFooterType.htm
     """
     header = 0
@@ -1327,7 +1347,7 @@ class PrintingHeaderFooterType(IntEnum):#
     
 
 class PrintingImageQuality(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/PrintingImageQuality.htm
     """
     low = 1
@@ -1336,7 +1356,7 @@ class PrintingImageQuality(IntEnum):#
     
 
 class PrintingJobType(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/PrintingJobType.htm
     """
     online = 0
@@ -1345,7 +1365,7 @@ class PrintingJobType(IntEnum):#
     
 
 class PrintingOnlineJobType(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/PrintingOnlineJobType.htm
     """
     single = 0
@@ -1354,7 +1374,7 @@ class PrintingOnlineJobType(IntEnum):#
     
 
 class PrintingOutputType(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/PrintingOutputType.htm
     """
     pdf = 0
@@ -1372,7 +1392,7 @@ class PrintingOutputType(IntEnum):#
     
 
 class PrintingPagingType(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/PrintingPagingType.htm
     """
     fitallcontrolstopage = 0
@@ -1381,7 +1401,7 @@ class PrintingPagingType(IntEnum):#
     
 
 class PrintingType(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/PrintingType.htm
     """
     currentanalysis = 0
@@ -1390,7 +1410,7 @@ class PrintingType(IntEnum):#
     
 
 class PromDefaultSelectionType(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/PromDefaultSelectionType.htm
     """
     fixedfirst = 0
@@ -1407,7 +1427,7 @@ class PromDefaultSelectionType(IntEnum):#
     
 
 class PromSelectionType(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/PromSelectionType.htm
     """
     element = 0
@@ -1417,7 +1437,7 @@ class PromSelectionType(IntEnum):#
     
 
 class PropertyFieldType(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/PropertyFieldType.htm
     """
     alignment = 0
@@ -1444,7 +1464,7 @@ class PropertyFieldType(IntEnum):#
     
 
 class PyramidActionParentContainerType(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/PyramidActionParentContainerType.htm
     """
     model = 0
@@ -1454,7 +1474,7 @@ class PyramidActionParentContainerType(IntEnum):#
     
 
 class PyramidActionTargetType(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/PyramidActionTargetType.htm
     """
     report = 0
@@ -1465,7 +1485,7 @@ class PyramidActionTargetType(IntEnum):#
     
 
 class PyramidActionType(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/PyramidActionType.htm
     """
     jumptourl = 0
@@ -1480,7 +1500,7 @@ class PyramidActionType(IntEnum):#
     
 
 class QomAxisFilterCalculationType(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/QomAxisFilterCalculationType.htm
     """
     raw_value = 0
@@ -1491,7 +1511,7 @@ class QomAxisFilterCalculationType(IntEnum):#
     
 
 class QomAxisOrderType(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/QomAxisOrderType.htm
     """
     values = 0
@@ -1503,7 +1523,7 @@ class QomAxisOrderType(IntEnum):#
     
 
 class QomSelectionType(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/QomSelectionType.htm
     """
     hierarchy = 0
@@ -1512,7 +1532,7 @@ class QomSelectionType(IntEnum):#
     
 
 class QueryInputSelectionType(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/QueryInputSelectionType.htm
     """
     double = 0
@@ -1521,7 +1541,7 @@ class QueryInputSelectionType(IntEnum):#
     
 
 class QueryLanguageState(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/QueryLanguageState.htm
     """
     fixedlanguage = 0
@@ -1530,7 +1550,7 @@ class QueryLanguageState(IntEnum):#
     
 
 class QueryScope(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/QueryScope.htm
     """
     container = 0
@@ -1538,7 +1558,7 @@ class QueryScope(IntEnum):#
     
 
 class RatingSearchType(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/RatingSearchType.htm
     """
     above = 0
@@ -1547,7 +1567,7 @@ class RatingSearchType(IntEnum):#
     
 
 class RecurringType(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/RecurringType.htm
     """
     hourly = 0
@@ -1557,7 +1577,7 @@ class RecurringType(IntEnum):#
     
 
 class ReductionType(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/ReductionType.htm
     """
     aggregate = 0
@@ -1579,7 +1599,7 @@ class ReductionType(IntEnum):#
     
 
 class RequestOrigin(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/RequestOrigin.htm
     """
     js_client = 0
@@ -1593,8 +1613,23 @@ class RequestOrigin(IntEnum):#
     sdk_api = 8
     
 
+class RequestShellOrigin(IntEnum):#
+    """
+    generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/RequestShellOrigin.htm
+    """
+    none = 0
+    mobile = 1
+    tablet = 2
+    fullshell = 3
+    fullshellpro = 4
+    fullshellviewer = 5
+    directshell = 6
+    embed = 7
+    api = 8
+    
+
 class RoleAssignmentType(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/RoleAssignmentType.htm
     """
     usedefaultbehavior = 0
@@ -1604,7 +1639,7 @@ class RoleAssignmentType(IntEnum):#
     
 
 class RootFolderType(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/RootFolderType.htm
     """
     private = 0
@@ -1621,7 +1656,7 @@ class RootFolderType(IntEnum):#
     
 
 class RotationDirection(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/RotationDirection.htm
     """
     clockwise = 0
@@ -1629,7 +1664,7 @@ class RotationDirection(IntEnum):#
     
 
 class ScaleMode(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/ScaleMode.htm
     """
     none = 0
@@ -1639,7 +1674,7 @@ class ScaleMode(IntEnum):#
     
 
 class ScheduleDataType(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/ScheduleDataType.htm
     """
     once = 0
@@ -1648,7 +1683,7 @@ class ScheduleDataType(IntEnum):#
     
 
 class ScheduleResultType(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/ScheduleResultType.htm
     """
     none = 0
@@ -1661,7 +1696,7 @@ class ScheduleResultType(IntEnum):#
     
 
 class ScheduleStatus(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/ScheduleStatus.htm
     """
     idle = 0
@@ -1670,10 +1705,11 @@ class ScheduleStatus(IntEnum):#
     deleted = 3
     hold = 4
     canceled = 5
+    disabled_after_failures = 6
     
 
 class ScheduleType(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/ScheduleType.htm
     """
     printing = 0
@@ -1695,10 +1731,13 @@ class ScheduleType(IntEnum):#
     upgrade_te_outputs = 16
     upgrade_content_snapshot_results = 17
     update_private_roles = 18
+    clean_duplicate_tags = 19
+    update_system_schedules = 20
+    certificates_reader = 21
     
 
 class ScheduleViewType(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/ScheduleViewType.htm
     """
     none = 0
@@ -1707,7 +1746,7 @@ class ScheduleViewType(IntEnum):#
     
 
 class ScriptType(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/ScriptType.htm
     """
     bat = 0
@@ -1743,7 +1782,7 @@ class ScriptType(IntEnum):#
     
 
 class SearchMatchType(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/SearchMatchType.htm
     """
     contains = 0
@@ -1754,7 +1793,7 @@ class SearchMatchType(IntEnum):#
     
 
 class SearchRootFolderType(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/SearchRootFolderType.htm
     """
     private = 0
@@ -1768,7 +1807,7 @@ class SearchRootFolderType(IntEnum):#
     
 
 class SectionType(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/SectionType.htm
     """
     general = 0
@@ -1817,7 +1856,7 @@ class SectionType(IntEnum):#
     
 
 class SecurityType(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/SecurityType.htm
     """
     active_directory = 0
@@ -1830,7 +1869,7 @@ class SecurityType(IntEnum):#
     
 
 class SelectionMethod(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/SelectionMethod.htm
     """
     allitems = 0
@@ -1840,7 +1879,7 @@ class SelectionMethod(IntEnum):#
     
 
 class ServerAuthenticationMethod(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/ServerAuthenticationMethod.htm
     """
     userpassword = 0
@@ -1858,7 +1897,7 @@ class ServerAuthenticationMethod(IntEnum):#
     
 
 class SimpleAdvancedOptions(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/SimpleAdvancedOptions.htm
     """
     simple = 0
@@ -1866,7 +1905,7 @@ class SimpleAdvancedOptions(IntEnum):#
     
 
 class SlicerMemberDataType(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/SlicerMemberDataType.htm
     """
     uniquename = 0
@@ -1874,7 +1913,7 @@ class SlicerMemberDataType(IntEnum):#
     
 
 class SlicerSearchType(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/SlicerSearchType.htm
     """
     contains = 0
@@ -1885,7 +1924,7 @@ class SlicerSearchType(IntEnum):#
     
 
 class SlicerSelectionMode(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/SlicerSelectionMode.htm
     """
     singleselect = 0
@@ -1893,7 +1932,7 @@ class SlicerSelectionMode(IntEnum):#
     
 
 class SyntaxType(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/SyntaxType.htm
     """
     pql = 0
@@ -1902,7 +1941,7 @@ class SyntaxType(IntEnum):#
     
 
 class TabAppearanceType(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/TabAppearanceType.htm
     """
     text = 0
@@ -1911,7 +1950,7 @@ class TabAppearanceType(IntEnum):#
     
 
 class TabPosition(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/TabPosition.htm
     """
     left = 0
@@ -1922,7 +1961,7 @@ class TabPosition(IntEnum):#
     
 
 class TagType(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/TagType.htm
     """
     content = 0
@@ -1930,7 +1969,7 @@ class TagType(IntEnum):#
     
 
 class TaskStatus(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/TaskStatus.htm
     """
     pending = 0
@@ -1952,7 +1991,7 @@ class TaskStatus(IntEnum):#
     
 
 class TextFieldType(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/TextFieldType.htm
     """
     currentdate = 0
@@ -1969,7 +2008,7 @@ class TextFieldType(IntEnum):#
     
 
 class ThemeType(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/ThemeType.htm
     """
     general = 0
@@ -1983,7 +2022,7 @@ class ThemeType(IntEnum):#
     
 
 class ThreadType(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/ThreadType.htm
     """
     component = 0
@@ -1993,7 +2032,7 @@ class ThreadType(IntEnum):#
     
 
 class TitlePosition(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/TitlePosition.htm
     """
     vertical = 0
@@ -2002,7 +2041,7 @@ class TitlePosition(IntEnum):#
     
 
 class UserStatusID(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/UserStatusID.htm
     """
     disabled = 0
@@ -2010,7 +2049,7 @@ class UserStatusID(IntEnum):#
     
 
 class ValidRootFolderType(IntEnum):#
-    """ 
+    """
     generated from  https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/definitions/ValidRootFolderType.htm
     """
     private = 0
