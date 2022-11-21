@@ -4,7 +4,7 @@ setup(
     author='Shawn Sarwar, Lutz Paelike',
     author_email="shawn.sarwar@pyramidanalytics.com",
     description='''Pyramid Analytics REST APIs in Python (2020.26.0)''',
-    version='1.1.3',
+    version='1.1.4',
     packages=['pyramid_api'],
     setup_requires=['pytest','pytest-runner', 'requests', 'pydantic'],
     url='https://github.com/pyramid-alliances/pyramid_analytics_python',
