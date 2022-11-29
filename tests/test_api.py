@@ -189,9 +189,9 @@ def test_imported_discovers(pa_api, folder):
             assert(("You don't have access" in res) == False)
             log.info(res[:100])
 
+
+
 """
-
-
 @pytest.mark.integration
 def test__data_source_create_PG():
     server_req: Server = Server(**{
@@ -253,7 +253,7 @@ def test__data_source_create_PG():
             list
         ))
     assert(len(result) == 0)
-"""
+
 
 @pytest.mark.unit
 @pytest.mark.integration
@@ -334,7 +334,7 @@ def test__data_source_create(pa_api, pyramid_settings, role, new_tenant_id):
         log.info(result)
         assert result.success
 
-"""
+
 @pytest.mark.integration
 def test__upload_content(pa_api, pyramid_settings, new_tenant_id):
     # make a folder in public content for the Content

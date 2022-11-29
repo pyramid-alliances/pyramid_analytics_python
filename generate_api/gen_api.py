@@ -11,6 +11,9 @@ import keyword
 from pathlib import Path
 from time import sleep
 
+BASEDIR = Path(Path(__file__).absolute()).parent
+ROOTDIR = Path(BASEDIR).parent
+
 res = requests.get("https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/objects.htm")
 doc = BeautifulSoup(res.text, features="html.parser")
 tbl = doc.find("table", {"class": "fxlist"})
@@ -168,8 +171,8 @@ def gen_enum(basedir="pyramid_api"):
             url = base_url.format(classname=classname)
 
             soup = None
-            cachename = "cache/{}.htm".format(classname)
-            if os.path.exists(cachename):
+            cachename = Path(BASEDIR, "cache/{}.htm".format(classname))
+            if cachename.exists():
                 with open(cachename, "r") as f:
                     soup = BeautifulSoup(f.read(), features="html.parser")
             else:
@@ -248,8 +251,8 @@ def gen_object(basedir="pyramid_api"):
             url = base_url.format(classname=classname)
 
             soup = None
-            cachename = "cache/{}.htm".format(classname)
-            if os.path.exists(cachename):
+            cachename = Path(BASEDIR, "cache/{}.htm".format(classname))
+            if cachename.exists():
                 with open(cachename, "r") as f:
                     soup = BeautifulSoup(f.read(), features="html.parser")
             else:
@@ -346,13 +349,13 @@ def gen_methods(basedir="pyramid_api"):
                 out_nodes = []
                 in_attrs = []
                 out_attrs = {}
-                cachename = "cache/method/{}.htm".format(methodname)
+                cachename = Path(BASEDIR, "cache/method/{}.htm".format(methodname))
                 p = Path(cachename).parent
                 if not p.exists():
                     p.mkdir()
                 url = f"https://help.pyramidanalytics.com/Content/Root/developer/reference/APIs/REST%20API/API2/{methodname}.htm"
                 soup = None
-                if os.path.exists(cachename):
+                if cachename.exists():
                     with open(cachename, "r") as f:
                         soup = BeautifulSoup(f.read(), features="html.parser")
                 else:
@@ -470,19 +473,20 @@ def gen_methods(basedir="pyramid_api"):
 
 
 def main():
-    basedir = "pyramid_api"
+    basedir = Path(ROOTDIR, "pyramid_api")
     output_dir = Path(basedir)
     if not output_dir.exists():
         output_dir.mkdir()
 
-    cache_dir = Path("cache")
+    cache_dir = Path(BASEDIR, "cache")
     if not cache_dir.exists():
         cache_dir.mkdir()
         (cache_dir / Path("method")).mkdir()
 
     # base functionality
-    shutil.copy2("api_base/__init__.py", f"{basedir}/__init__.py")
-    shutil.copy2("api_base/api_interface.py", f"{basedir}/api_interface.py")
+    shutil.copy2(Path(BASEDIR, "api_base", "__init__.py"), Path(ROOTDIR, "pyramid_api","__init__.py"))
+    shutil.copy2(Path(BASEDIR, "api_base", "api_interface.py"), Path(ROOTDIR, "pyramid_api","api_interface.py"))
+
 
     gen_enum(basedir=basedir)
     gen_object(basedir=basedir)
