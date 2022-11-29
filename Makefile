@@ -11,11 +11,12 @@ venv:
 	./venv/bin/pip install --upgrade pip
 	./venv/bin/pip install -r requirements.txt
 
-build: clean venv
+build: venv
 	./venv/bin/python generate_api/gen_api.py
 
 test: build
 	PA_TEST_SETTINGS=test_settings.json ./venv/bin/pytest
 
-dist: build test
+dist: build
+	rm -rf dist
 	./venv/bin/python setup.py bdist_wheel
